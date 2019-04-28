@@ -357,84 +357,119 @@
               </div>
             </header>
             <div class="slds-docked-composer__body" id="dialog-content-id-1">
-                <div class="slds-m-around_x-large slds-m-bottom_x-large slds-form" role="list">
-                  <div class="slds-form__row slds-p-bottom_large">
-                    <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-2" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input_start-test">
-                          Start Date <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <input type="text" id="input_start-test" name="input_start-test" class="slds-input" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-2" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input_end-test">
-                          End Date <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <input type="text" id="input_end-test" name="input_end-test" class="slds-input" />
-                        </div>
+              <div class="slds-m-around_x-large slds-m-bottom_x-large slds-form" role="list">
+                <div class="slds-form__row slds-p-bottom_large">
+                  <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-2" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input__start-test">
+                        Start Date <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <input type="text" id="input__start-test" name="input__start-test" class="slds-input" />
                       </div>
                     </div>
                   </div>
-                  <div class="slds-form__row slds-m-bottom_x-large">
-                    <div class="slds-form__item slds-size_1-of-2" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input_campaign-1">
-                          Test Name <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
-                        </div>
+                  <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-2" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input__end-test">
+                        End Date <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <input type="text" id="input__end-test" name="input__end-test" class="slds-input" />
                       </div>
-                    </div>  
+                    </div>
                   </div>
-                  <div class="slds-form__row slds-m-bottom_medium">
-                    <div class="slds-form__item" role="listitem">
+                </div>
+                <div class="slds-form__row slds-m-bottom_x-large">
+                  <div class="slds-form__item slds-size_1-of-2" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input__test">
+                        Test Name <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <input type="text" id="input__test" name="input__test" class="slds-input" />
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-2" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input__campaign">
+                        Territory <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <div class="slds-select_container">
+                          <select class="slds-select" id="input__cterritory" name="input__cterritory">
+                            <option value="AT">AT</option>
+                            <option value="BE">BE</option>
+                            <option value="CH">CH</option>
+                            <option value="CZ">CZ</option>
+                            <option value="DE">DE</option>
+                            <option value="DK">DK</option>
+                            <option value="ES">ES</option>
+                            <option value="FR">FR</option>
+                            <option value="HG">HG</option>
+                            <option value="HK">HK</option>
+                            <option value="ID">ID</option>
+                            <option value="IT">IT</option>
+                            <option value="MY">MY</option>
+                            <option value="NL">NL</option>
+                            <option value="NO">NO</option>
+                            <option value="PH">PH</option>
+                            <option value="PL">PL</option>
+                            <option value="SE">SE</option>
+                            <option value="SG">SG</option>
+                            <option value="SK">SK</option>
+                            <option value="UK">UK</option>
+                            <option value="US">US</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+                <div class="slds-form__row slds-m-bottom_medium">
+                  <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input__test1">
+                        Variation 1 <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <input type="text" id="input__test1" name="input__test1" class="slds-input" />
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="slds-form__item" role="listitem">
                       <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input_campaign-1">
-                          Variation 1 <abbr class="slds-required" title="Required">* </abbr>
+                        <label class="slds-form-element__label" for="input__test2">
+                          Variation 2 <abbr class="slds-required" title="Required">* </abbr>
                         </label>
                         <div class="slds-form-element__control">
-                          <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
+                          <input type="text" id="input__test2" name="input__test2" class="slds-input" />
                         </div>
                       </div>
                     </div>  
-                    <div class="slds-form__item" role="listitem">
-                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                          <label class="slds-form-element__label" for="input_campaign-1">
-                            Variation 2 <abbr class="slds-required" title="Required">* </abbr>
-                          </label>
-                          <div class="slds-form-element__control">
-                            <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
-                          </div>
-                        </div>
-                      </div>  
-                  </div>
-                  <div class="slds-form__row slds-m-bottom_x-large">
-                    <div class="slds-form__item" role="listitem">
+                </div>
+                <div class="slds-form__row slds-m-bottom_x-large">
+                  <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input__test3">
+                          Variation 3 <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <input type="text" id="input__test3" name="input__test3" class="slds-input" />
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="slds-form__item" role="listitem">
                       <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input_campaign-1">
-                            Variation 3 <abbr class="slds-required" title="Required">* </abbr>
+                        <label class="slds-form-element__label" for="input__test4">
+                            Variation 4 <abbr class="slds-required" title="Required">* </abbr>
                         </label>
                         <div class="slds-form-element__control">
-                          <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
+                          <input type="text" id="input__test4" name="input__test4" class="slds-input" />
                         </div>
                       </div>
                     </div>  
-                    <div class="slds-form__item" role="listitem">
-                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                          <label class="slds-form-element__label" for="input_campaign-1">
-                              Variation 4 <abbr class="slds-required" title="Required">* </abbr>
-                          </label>
-                          <div class="slds-form-element__control">
-                            <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
-                          </div>
-                        </div>
-                      </div>  
                   </div>
                   <div class="slds-form__row slds-m-vertical_medium">
                     <div class="slds-form__item slds-size_1-of-2" role="listitem">
@@ -460,7 +495,7 @@
       </form>
 
       <!-- Docked Composer: New Banner -->
-      <form id="panel__new-banner" class="cs-composer-planner" method="post" action="#">
+      <form id="panel__new-banner" class="cs-composer-planner" method="post" action="https://pages.email.secretescapes.com/aurora/planner/banner/">
         <div class="slds-docked_container slds-hide">
           <section class="slds-docked-composer cs-composer__large slds-grid slds-grid_vertical slds-is-open" role="dialog" aria-labelledby="dialog-heading-id-1" aria-describedby="dialog-content-id-1">
             <header class="slds-docked-composer__header slds-grid slds-shrink-none" aria-live="assertive">
@@ -495,41 +530,76 @@
               <div class="slds-m-around_x-large slds-m-vertical_x-large">
                 <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
                   <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                    <label class="slds-form-element__label" for="input_start-banner">
-                      Start Date <abbr class="slds-required" title="Required">* </abbr>
+                    <label class="slds-form-element__label" for="input__campaign">
+                      Campaign Name <abbr class="slds-required" title="Required">* </abbr>
                     </label>
                     <div class="slds-form-element__control">
-                      <input type="text" id="input_start-banner" name="input_start-banner" class="slds-input" />
-                    </div>
-                  </div>
-                </div>
-                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
-                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                    <label class="slds-form-element__label" for="input_end-banner">
-                      End Date <abbr class="slds-required" title="Required">* </abbr>
-                    </label>
-                    <div class="slds-form-element__control">
-                      <input type="text" id="input_end-banner" name="input_end-banner" class="slds-input" />
-                    </div>
-                  </div>
-                </div> 
-                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
-                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                    <label class="slds-form-element__label" for="input_send-date">
-                      Banner Name <abbr class="slds-required" title="Required">* </abbr>
-                    </label>
-                    <div class="slds-form-element__control">
-                      <input type="text" id="input_send-date" name="input_send-date" class="slds-input" />
+                      <input type="text" id="input__campaign" name="input__campaign" class="slds-input" />
                     </div>
                   </div>
                 </div>  
                 <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
                   <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                    <label class="slds-form-element__label" for="input_send-date">
+                    <label class="slds-form-element__label" for="input__campaign">
+                      Territory <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <div class="slds-select_container">
+                        <select class="slds-select" id="input__cterritory" name="input__cterritory">
+                          <option value="AT">AT</option>
+                          <option value="BE">BE</option>
+                          <option value="CH">CH</option>
+                          <option value="CZ">CZ</option>
+                          <option value="DE">DE</option>
+                          <option value="DK">DK</option>
+                          <option value="ES">ES</option>
+                          <option value="FR">FR</option>
+                          <option value="HG">HG</option>
+                          <option value="HK">HK</option>
+                          <option value="ID">ID</option>
+                          <option value="IT">IT</option>
+                          <option value="MY">MY</option>
+                          <option value="NL">NL</option>
+                          <option value="NO">NO</option>
+                          <option value="PH">PH</option>
+                          <option value="PL">PL</option>
+                          <option value="SE">SE</option>
+                          <option value="SG">SG</option>
+                          <option value="SK">SK</option>
+                          <option value="UK">UK</option>
+                          <option value="US">US</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input__start-banner">
+                      Start Date <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input__start-banner" name="input__start-banner" class="slds-input" />
+                    </div>
+                  </div>
+                </div>
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input__end-banner">
+                      End Date <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input__end-banner" name="input__end-banner" class="slds-input" />
+                    </div>
+                  </div>
+                </div> 
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input__description">
                       Description <abbr class="slds-required" title="Required">* </abbr>
                     </label>
                     <div class="slds-form-element__control">
-                      <textarea id="input_description" name="input_description" class="slds-textarea" rows="10" placeholder="Please provide a short description of the banner"></textarea>
+                      <textarea id="input__description" name="input__description" class="slds-textarea" rows="5" placeholder="Please provide a short description of the campaign"></textarea>
                     </div>
                   </div>
                 </div>     
@@ -722,25 +792,25 @@
         firstDay:1
       }).datepicker( "setDate", '+1d');
 
-      $('#input_start-test').datepicker({
+      $('#input__start-test').datepicker({
         dateFormat: "yy-mm-dd",
         setDate: '+1d',
         firstDay:1
       }).datepicker( "setDate", '+1d');
 
-      $('#input_end-test').datepicker({
+      $('#input__end-test').datepicker({
         dateFormat: "yy-mm-dd",
         setDate: '+1d',
         firstDay:1
       }).datepicker( "setDate", '+1d');
 
-      $('#input_start-banner').datepicker({
+      $('#input__start-banner').datepicker({
         dateFormat: "yy-mm-dd",
         setDate: '+1d',
         firstDay:1
       }).datepicker( "setDate", '+1d');
 
-      $('#input_end-banner').datepicker({
+      $('#input__end-banner').datepicker({
         dateFormat: "yy-mm-dd",
         setDate: '+1d',
         firstDay:1
