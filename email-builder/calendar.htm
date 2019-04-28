@@ -13,7 +13,7 @@
     <div id="app-launcher"></div>
     <div id="wrapper" class="slds-grid slds-wrap slds-m-around_medium">
       <div class="slds-col slds-size_1-of-1">
-        <article class="slds-card">
+        <article class="slds-card"> 
           <div class="slds-card__header slds-grid">
             <header class="slds-media slds-media_center slds-has-flexi-truncate">
               <div class="slds-media__figure">
@@ -95,14 +95,14 @@
         defaultView: 'listWeek',
         firstDay: 1,
         eventLimit: true, // allow "more" link when too many events
-        events: 'https://pages.email.secretescapes.com/calendar-test?territory=UK',
+        events: 'https://pages.email.secretescapes.com/aurora/email/calendar?t=UK',
         loading: function( isLoading, view ) {$(".slds-spinner").toggleClass('slds-hide')}
       });
     });
 
     $( "#input-territory" ).change(function() {
       $('#calendar').fullCalendar('removeEventSources');
-      var newEventSource = 'https://pages.email.secretescapes.com/calendar-test?territory=' + this.value
+      var newEventSource = 'https://pages.email.secretescapes.com/aurora/email/calendar?t=' + this.value
       $('#calendar').fullCalendar('addEventSource', newEventSource);
     });
   </script>
