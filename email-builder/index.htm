@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Welcome to Aurora</title>
+    <link rel="stylesheet" href="../styles/salesforce-lightning-design-system.min.css"/>
+    <link rel="stylesheet" href="../styles/custom-styles.css"/>
+    <link rel="icon" type="image/png" href="../images/aurora.ico">
+    <link rel="stylesheet" href="../styles/fullcalendar.min.css"/>
+  </head>
+  <body class="slds-brand-band slds-brand-band_medium">
+    <div id="global-header__email" aria-label="1"></div>
+    <div id="app-launcher"></div>
+    <div id="wrapper" class="slds-grid slds-wrap slds-m-around_medium">
+      <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
+        <!-- Page Headers -->
+        <div class="slds-page-header">
+          <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+              <div class="slds-media">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-event" title="event">
+                      <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/standard-sprite/svg/symbols.svg#event" />
+                      </svg>
+                      <span class="slds-assistive-text">event</span>
+                    </span>
+                  </div>
+                  <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                      <span class="slds-text-heading_large font_1dot5">Planning Calendar</span>
+                    </h2>
+                  </div>
+                <div class="slds-page-header__col-actions">
+                  <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                      <ul class="slds-button-group-list">
+                        <li>
+                          <button class="slds-button slds-button_neutral" onclick="newDailyPlan()">
+                            <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#dayview" />
+                            </svg>Add Daily Campaign Plan
+                          </button>
+                        </li>
+                        <li>
+                          <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                            <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
+                              <svg class="slds-button__icon" aria-hidden="true">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#down" />
+                              </svg>
+                              <span class="slds-assistive-text">More Actions</span>
+                            </button>
+                            <div class="slds-dropdown slds-dropdown_right slds-dropdown_small">
+                                <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+                                  <li class="slds-dropdown__item" role="presentation">
+                                    <a role="menuitem" tabindex="0" onclick="newCampaign()">
+                                      <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#campaign" />
+                                      </svg>Add New Campaign Plan</span>
+                                    </a>
+                                  </li>
+                                  <li class="slds-dropdown__item" role="presentation">
+                                    <a role="menuitem" tabindex="-1" onclick="newTestPlan()">
+                                      <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#light_bulb" />
+                                      </svg>Add New Testing Plan</span>
+                                    </a>
+                                  </li>
+                                  <li class="slds-dropdown__item" role="presentation">
+                                      <a role="menuitem" tabindex="-1" onclick="newBanner()">
+                                        <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#image" />
+                                        </svg>Add New Banner Schedule</span>
+                                      </a>
+                                    </li>
+                                </ul>
+                              </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Docked Composer: New Campaign -->
+      <form id="panel__new-campaign" class="cs-composer-planner" method="post" action="#">
+        <div class="slds-docked_container slds-hide">
+          <section class="slds-docked-composer cs-composer__large slds-grid slds-grid_vertical slds-is-open" role="dialog" aria-labelledby="dialog-heading-id-1" aria-describedby="dialog-content-id-1">
+            <header class="slds-docked-composer__header slds-grid slds-shrink-none" aria-live="assertive">
+              <div class="slds-media slds-media_center slds-no-space">
+                <div class="slds-media__figure slds-m-right_x-small">
+                  <span class="slds-icon_container">
+                    <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#campaign" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h2 class="slds-truncate" id="dialog-heading-id-1" title="Add new campaign">Add New Campaign Plan</h2>
+                </div>
+              </div>
+              <div class="slds-col_bump-left slds-shrink-none">
+                <a class="slds-button slds-button_icon slds-button_icon minimize" title="Minimize window">
+                  <svg class="slds-button__icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#minimize_window" />
+                  </svg>
+                  <span class="slds-assistive-text">Minimize Composer Panel</span>
+                </a>
+                <a class="slds-button slds-button_icon slds-button_icon close" title="Close">
+                  <svg class="slds-button__icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#close" />
+                  </svg>
+                  <span class="slds-assistive-text">Close Composer Panel</span>
+                </a>
+              </div>
+            </header>
+            <div class="slds-docked-composer__body" id="dialog-content-id-1">
+              <div class="slds-m-around_x-large slds-m-vertical_x-large">
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input_send-date">
+                      Start Date <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input_start-date" name="input_start-date" class="slds-input" />
+                    </div>
+                  </div>
+                </div>
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input_send-date">
+                      End Date <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input_end-date" name="input_end-date" class="slds-input" />
+                    </div>
+                  </div>
+                </div> 
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input_send-date">
+                      Campaign Name <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input_send-date" name="input_send-date" class="slds-input" />
+                    </div>
+                  </div>
+                </div>  
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input_send-date">
+                      Description <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <textarea id="input_description" name="input_description" class="slds-textarea" rows="10" placeholder="Please provide a short description of the campaign"></textarea>
+                    </div>
+                  </div>
+                </div>     
+              </div>
+            </div>
+            <footer class="slds-docked-composer__footer slds-shrink-none">
+              <div class="slds-col_bump-left slds-text-align_right">
+                <button class="slds-button slds-button_brand">Submit</button>
+              </div>
+            </footer>
+          </section>
+        </div>
+      </form>
+
+      <!-- Docked Composer: New Daily Plan -->
+      <form id="panel__new-daily-plan" class="cs-composer-planner">
+        <div class="slds-docked_container slds-hide">
+          <section class="slds-docked-composer cs-composer__x-large slds-grid slds-grid_vertical slds-is-open" role="dialog" aria-labelledby="dialog-heading-id-1" aria-describedby="dialog-content-id-1">
+            <header class="slds-docked-composer__header slds-grid slds-shrink-none" aria-live="assertive">
+              <div class="slds-media slds-media_center slds-no-space">
+                <div class="slds-media__figure slds-m-right_x-small">
+                  <span class="slds-icon_container">
+                    <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#dayview" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h2 class="slds-truncate" id="dialog-heading-id-1" title="Add new campaign">Add New Daily Campaign Plan</h2>
+                </div>
+              </div>
+              <div class="slds-col_bump-left slds-shrink-none">
+                <a class="slds-button slds-button_icon slds-button_icon minimize" title="Minimize window">
+                  <svg class="slds-button__icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#minimize_window" />
+                  </svg>
+                  <span class="slds-assistive-text">Minimize Composer Panel</span>
+                </a>
+                <a class="slds-button slds-button_icon slds-button_icon close" title="Close">
+                  <svg class="slds-button__icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#close" />
+                  </svg>
+                  <span class="slds-assistive-text">Close Composer Panel</span>
+                </a>
+              </div>
+            </header>
+            <div class="slds-docked-composer__body" id="dialog-content-id-1">
+              <div class="slds-m-around_x-large slds-m-bottom_x-large slds-form" role="list">
+                <div class="slds-form__row slds-p-bottom_large">
+                  <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-2" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input_send-date">
+                        Campaign Date <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <input type="text" id="input_campaign-date" name="input_campaign-date" class="slds-input" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slds-form__row slds-m-bottom_medium">
+                  <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input_campaign-1">
+                        Campaign 1 Name <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input_send-date">
+                        Description <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <textarea id="input_description-1" name="input_description" class="slds-textarea"></textarea>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+                <div class="slds-form__row slds-m-bottom_medium">
+                  <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input_campaign-1">
+                        Campaign 2 Name <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input_send-date">
+                        Description <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <textarea id="input_description-1" name="input_description" class="slds-textarea"></textarea>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+                <div class="slds-form__row slds-m-bottom_medium">
+                  <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input_campaign-1">
+                        Campaign 3 Name <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input_send-date">
+                        Description <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <textarea id="input_description-1" name="input_description" class="slds-textarea"></textarea>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+                <div class="slds-form__row slds-m-vertical_medium">
+                  <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input_campaign-1">
+                        Incremental Campaign<abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input_send-date">
+                        Description
+                      </label>
+                      <div class="slds-form-element__control">
+                        <textarea id="input_description-1" name="input_description" class="slds-textarea"></textarea>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+                <div class="slds-form__row slds-m-vertical_medium">
+                  <div class="slds-form__item slds-size_1-of-2" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input_campaign-1">
+                        Campaign Banner <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <textarea id="input_description-1" name="input_description" class="slds-textarea"></textarea>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <footer class="slds-docked-composer__footer slds-shrink-none">
+              <div class="slds-col_bump-left slds-text-align_right">
+                <button class="slds-button slds-button_brand">Submit</button>
+              </div>
+            </footer>
+          </section>
+        </div>
+      </form>
+
+      <!-- Docked Composer: New Testing Plan -->
+      <form id="panel__new-testing-plan" class="cs-composer-planner">
+        <div class="slds-docked_container slds-hide">
+          <section class="slds-docked-composer cs-composer__x-large slds-grid slds-grid_vertical slds-is-open" role="dialog" aria-labelledby="dialog-heading-id-1" aria-describedby="dialog-content-id-1">
+            <header class="slds-docked-composer__header slds-grid slds-shrink-none" aria-live="assertive">
+              <div class="slds-media slds-media_center slds-no-space">
+                <div class="slds-media__figure slds-m-right_x-small">
+                  <span class="slds-icon_container">
+                    <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#light_bulb" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h2 class="slds-truncate" id="dialog-heading-id-1" title="Add new campaign">Add New Testing Plan</h2>
+                </div>
+              </div>
+              <div class="slds-col_bump-left slds-shrink-none">
+                <a class="slds-button slds-button_icon slds-button_icon minimize" title="Minimize window">
+                  <svg class="slds-button__icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#minimize_window" />
+                  </svg>
+                  <span class="slds-assistive-text">Minimize Composer Panel</span>
+                </a>
+                <a class="slds-button slds-button_icon slds-button_icon close" title="Close">
+                  <svg class="slds-button__icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#close" />
+                  </svg>
+                  <span class="slds-assistive-text">Close Composer Panel</span>
+                </a>
+              </div>
+            </header>
+            <div class="slds-docked-composer__body" id="dialog-content-id-1">
+                <div class="slds-m-around_x-large slds-m-bottom_x-large slds-form" role="list">
+                  <div class="slds-form__row slds-p-bottom_large">
+                    <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-2" role="listitem">
+                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                        <label class="slds-form-element__label" for="input_start-test">
+                          Start Date <abbr class="slds-required" title="Required">* </abbr>
+                        </label>
+                        <div class="slds-form-element__control">
+                          <input type="text" id="input_start-test" name="input_start-test" class="slds-input" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-2" role="listitem">
+                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                        <label class="slds-form-element__label" for="input_end-test">
+                          End Date <abbr class="slds-required" title="Required">* </abbr>
+                        </label>
+                        <div class="slds-form-element__control">
+                          <input type="text" id="input_end-test" name="input_end-test" class="slds-input" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-form__row slds-m-bottom_x-large">
+                    <div class="slds-form__item slds-size_1-of-2" role="listitem">
+                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                        <label class="slds-form-element__label" for="input_campaign-1">
+                          Test Name <abbr class="slds-required" title="Required">* </abbr>
+                        </label>
+                        <div class="slds-form-element__control">
+                          <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="slds-form__row slds-m-bottom_medium">
+                    <div class="slds-form__item" role="listitem">
+                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                        <label class="slds-form-element__label" for="input_campaign-1">
+                          Variation 1 <abbr class="slds-required" title="Required">* </abbr>
+                        </label>
+                        <div class="slds-form-element__control">
+                          <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
+                        </div>
+                      </div>
+                    </div>  
+                    <div class="slds-form__item" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input_campaign-1">
+                            Variation 2 <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
+                          </div>
+                        </div>
+                      </div>  
+                  </div>
+                  <div class="slds-form__row slds-m-bottom_x-large">
+                    <div class="slds-form__item" role="listitem">
+                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                        <label class="slds-form-element__label" for="input_campaign-1">
+                            Variation 3 <abbr class="slds-required" title="Required">* </abbr>
+                        </label>
+                        <div class="slds-form-element__control">
+                          <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
+                        </div>
+                      </div>
+                    </div>  
+                    <div class="slds-form__item" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input_campaign-1">
+                              Variation 4 <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <input type="text" id="input_campaign-1" name="input_campaign-1" class="slds-input" />
+                          </div>
+                        </div>
+                      </div>  
+                  </div>
+                  <div class="slds-form__row slds-m-vertical_medium">
+                    <div class="slds-form__item slds-size_1-of-2" role="listitem">
+                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                        <label class="slds-form-element__label" for="input_campaign-1">
+                          Description <abbr class="slds-required" title="Required">* </abbr>
+                        </label>
+                        <div class="slds-form-element__control">
+                          <textarea id="input_description-1" name="input_description" class="slds-textarea"></textarea>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+            <footer class="slds-docked-composer__footer slds-shrink-none">
+              <div class="slds-col_bump-left slds-text-align_right">
+                <button class="slds-button slds-button_brand">Submit</button>
+              </div>
+            </footer>
+          </section>
+        </div>
+      </form>
+
+      <!-- Docked Composer: New BAnner -->
+      <form id="panel__new-banner" class="cs-composer-planner" method="post" action="#">
+        <div class="slds-docked_container slds-hide">
+          <section class="slds-docked-composer cs-composer__large slds-grid slds-grid_vertical slds-is-open" role="dialog" aria-labelledby="dialog-heading-id-1" aria-describedby="dialog-content-id-1">
+            <header class="slds-docked-composer__header slds-grid slds-shrink-none" aria-live="assertive">
+              <div class="slds-media slds-media_center slds-no-space">
+                <div class="slds-media__figure slds-m-right_x-small">
+                  <span class="slds-icon_container">
+                    <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#image" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h2 class="slds-truncate" id="dialog-heading-id-1" title="Add new campaign">Add New Banner Schedule</h2>
+                </div>
+              </div>
+              <div class="slds-col_bump-left slds-shrink-none">
+                <a class="slds-button slds-button_icon slds-button_icon minimize" title="Minimize window">
+                  <svg class="slds-button__icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#minimize_window" />
+                  </svg>
+                  <span class="slds-assistive-text">Minimize Composer Panel</span>
+                </a>
+                <a class="slds-button slds-button_icon slds-button_icon close" title="Close">
+                  <svg class="slds-button__icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#close" />
+                  </svg>
+                  <span class="slds-assistive-text">Close Composer Panel</span>
+                </a>
+              </div>
+            </header>
+            <div class="slds-docked-composer__body" id="dialog-content-id-1">
+              <div class="slds-m-around_x-large slds-m-vertical_x-large">
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input_start-banner">
+                      Start Date <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input_start-banner" name="input_start-banner" class="slds-input" />
+                    </div>
+                  </div>
+                </div>
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input_end-banner">
+                      End Date <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input_end-banner" name="input_end-banner" class="slds-input" />
+                    </div>
+                  </div>
+                </div> 
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input_send-date">
+                      Banner Name <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input_send-date" name="input_send-date" class="slds-input" />
+                    </div>
+                  </div>
+                </div>  
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input_send-date">
+                      Description <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <textarea id="input_description" name="input_description" class="slds-textarea" rows="10" placeholder="Please provide a short description of the banner"></textarea>
+                    </div>
+                  </div>
+                </div>     
+              </div>
+            </div>
+            <footer class="slds-docked-composer__footer slds-shrink-none">
+              <div class="slds-col_bump-left slds-text-align_right">
+                <button class="slds-button slds-button_brand">Submit</button>
+              </div>
+            </footer>
+          </section>
+        </div>
+      </form>
+      
+      <div class="slds-col slds-size_1-of-1">
+        <article class="slds-card">
+          <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+              <div class="slds-no-flex" style="width:150px;">
+                <div class="slds-form-element pad-bot-1rem">
+                  <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                      <select class="slds-select" id="input-territory">
+                        <option value="AT">AT</option>
+                        <option value="BE">BE</option>
+                        <option value="CH">CH</option>
+                        <option value="CZ">CZ</option>
+                        <option value="DE">DE</option>
+                        <option value="DK">DK</option>
+                        <option value="ES">ES</option>
+                        <option value="FR">FR</option>
+                        <option value="HG">HG</option>
+                        <option value="HK">HK</option>
+                        <option value="ID">ID</option>
+                        <option value="IT">IT</option>
+                        <option value="MY">MY</option>
+                        <option value="NL">NL</option>
+                        <option value="NO">NO</option>
+                        <option value="PH">PH</option>
+                        <option value="PL">PL</option>
+                        <option value="SE">SE</option>
+                        <option value="SG">SG</option>
+                        <option value="SK">SK</option>
+                        <option value="UK" selected="">UK</option>
+                        <option value="US">US</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+          </div>
+          <div class="slds-card__body slds-card__body_inner">
+            <div role="status" class="slds-spinner slds-spinner_brand slds-spinner_large slds-hide">
+              <span class="slds-assistive-text">Loading</span>
+              <div class="slds-spinner__dot-a"></div>
+              <div class="slds-spinner__dot-b"></div>
+            </div>
+            <div id="calendar"></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../scripts/slds.js"></script>
+    <script type="text/javascript" src="../scripts/utilities.js"></script>
+    <script type="text/javascript" src="../scripts/moment.min.js"></script>
+    <script type="text/javascript" src="../scripts/fullcalendar.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#calendar').fullCalendar({
+          header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,basicWeek,basicDay,listWeek'
+          },
+          defaultDate: new Date(),
+          navLinks: true, // can click day/week names to navigate views
+          editable: false,
+          defaultView: 'month',
+          firstDay: 1,
+          eventLimit: true, // allow "more" link when too many events
+          events: 'https://pages.email.secretescapes.com/calendar-test?territory=UK',
+          loading: function( isLoading, view ) {$(".slds-spinner").toggleClass('slds-hide')}
+        });
+      });
+      
+      $( "#input-territory" ).change(function() {
+        $('#calendar').fullCalendar('removeEventSources');
+        var newEventSource = 'https://pages.email.secretescapes.com/calendar-test?territory=' + this.value
+        $('#calendar').fullCalendar('addEventSource', newEventSource);
+      });
+    </script>
+    <script>
+    function newCampaign(){
+      $("#panel__new-campaign").find(".slds-docked_container").removeClass('slds-hide');
+    }
+    function newDailyPlan(){
+      $("#panel__new-daily-plan").find(".slds-docked_container").removeClass('slds-hide');
+    }
+    function newBanner(){
+      $("#panel__new-banner").find(".slds-docked_container").removeClass('slds-hide');
+    }
+    function newTestPlan(){
+      $("#panel__new-testing-plan").find(".slds-docked_container").removeClass('slds-hide');
+    }
+    </script>
+    <script>
+      $('#input_start-date').datepicker({
+        dateFormat: "yy-mm-dd",
+        setDate: '+1d',
+        firstDay:1
+      }).datepicker( "setDate", '+1d');
+
+      $('#input_end-date').datepicker({
+        dateFormat: "yy-mm-dd",
+        setDate: '+1d',
+        firstDay:1
+      }).datepicker( "setDate", '+1d');
+
+      $('#input_campaign-date').datepicker({
+        dateFormat: "yy-mm-dd",
+        setDate: '+1d',
+        firstDay:1
+      }).datepicker( "setDate", '+1d');
+
+      $('#input_start-test').datepicker({
+        dateFormat: "yy-mm-dd",
+        setDate: '+1d',
+        firstDay:1
+      }).datepicker( "setDate", '+1d');
+
+      $('#input_end-test').datepicker({
+        dateFormat: "yy-mm-dd",
+        setDate: '+1d',
+        firstDay:1
+      }).datepicker( "setDate", '+1d');
+
+      $('#input_start-banner').datepicker({
+        dateFormat: "yy-mm-dd",
+        setDate: '+1d',
+        firstDay:1
+      }).datepicker( "setDate", '+1d');
+
+      $('#input_end-banner').datepicker({
+        dateFormat: "yy-mm-dd",
+        setDate: '+1d',
+        firstDay:1
+      }).datepicker( "setDate", '+1d');
+      $('#ui-datepicker-div').css('display','none');
+    </script>
+  </body>
+</html>

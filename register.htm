@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Welcome to Aurora</title>
+    <link href="../styles/salesforce-lightning-design-system.min.css" rel="stylesheet"/>
+    <link href="../styles/custom-styles.css" rel="stylesheet"/>
+    <link href="../images/aurora.ico" rel="icon" type="image/png">
+  </head>
+  <body class="cs-login_bg-image">
+    <div class="slds-grid slds-wrap slds-grid_align-center slds-grid_vertical-align-center slds-brand-band slds-brand-band_medium cs-wrapper">
+      <div class="slds-col slds-size_1-of-3 slds-show_medium" ></div>
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-3 slds-large-size_1-of-3">
+        <!-- Card -->
+        <article class="slds-card slds-p-bottomm_large">
+          <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate slds-grid_align-center">
+              <img src="../images/logo.png" width="200"/>
+            </header>
+          </div>
+          <div class="slds-card__body slds-card__body_inner slds-grid_align-center">
+            <form action="https://pages.email.secretescapes.com/aurora/login/register/" method="post" onsubmit="return validate()">
+              <div class="slds-form" role="list">
+                <!-- Username -->
+                <div class="slds-form-element">
+                  <label class="slds-form-element__label" for="input__email">Username</label>
+                  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#user" />
+                    </svg>
+                    <input id="input__email" name="input__email" class="slds-input slds-p-vertical_xx-small" type="text" value="" required=""/>
+                  </div>
+                  <div class="slds-form-element__help slds-hide">Email domain is invalid</div>
+                </div>
+  
+                <!-- Password -->
+                <div class="slds-form-element slds-m-vertical_medium slds-grid_align-center slds-grid_vertical-align-center">
+                  <label class="slds-form-element__label" for="input__password">Password</label>
+                  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#password" />
+                    </svg>
+                    <input id="input__password" name="input__password" class="slds-input slds-p-vertical_xx-small" type="password" value="" required/>
+                  </div>
+                </div>
+
+                <!-- Repeat Password -->
+                <div class="slds-form-element slds-m-vertical_medium slds-grid_align-center slds-grid_vertical-align-center">
+                  <label class="slds-form-element__label" for="input__password-repeat">Repeat Password</label>
+                  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#password" />
+                    </svg>
+                    <input id="input__password-repeat" name="input__password-repeat" class="slds-input slds-p-vertical_xx-small" type="password" value="" required/>
+                  </div>
+                  <div class="slds-form-element__help slds-hide">Passwords do not match</div>
+                </div> 
+
+                <!-- Firstname -->
+                <div class="slds-form-element slds-m-vertical_medium slds-grid_align-center slds-grid_vertical-align-center">
+                  <label class="slds-form-element__label" for="input__fname">Firstname</label>
+                  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#identity" />
+                    </svg>
+                    <input id="input__fname" name="input__fname" class="slds-input slds-p-vertical_xx-small" type="text" value="" required/>
+                  </div>
+                </div>
+  
+                <!-- Surname -->
+                <div class="slds-form-element slds-m-vertical_medium slds-grid_align-center slds-grid_vertical-align-center">
+                  <label class="slds-form-element__label" for="input__lname">Surname</label>
+                  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#identity" />
+                    </svg>
+                    <input id="input__lname" name="input__lname" class="slds-input slds-p-vertical_xx-small" type="text" value="" required/>
+                  </div>
+                </div>
+  
+                <!-- Territory Field -->
+                <div class="slds-form-element slds-m-vertical_medium slds-grid_align-center slds-grid_vertical-align-center">
+                  <label class="slds-form-element__label" for="input__territory">Territory</label>
+                  <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                      <select class="slds-select" id="input__territory" name="input__territory">
+                        <option value="AT">AT</option>
+                        <option value="BE">BE</option>
+                        <option value="CH">CH</option>
+                        <option value="CZ">CZ</option>
+                        <option value="DE">DE</option>
+                        <option value="DK">DK</option>
+                        <option value="ES">ES</option>
+                        <option value="FR">FR</option>
+                        <option value="HG">HG</option>
+                        <option value="HK">HK</option>
+                        <option value="ID">ID</option>
+                        <option value="IT">IT</option>
+                        <option value="MY">MY</option>
+                        <option value="NL">NL</option>
+                        <option value="NO">NO</option>
+                        <option value="PH">PH</option>
+                        <option value="PL">PL</option>
+                        <option value="SE">SE</option>
+                        <option value="SG">SG</option>
+                        <option value="SK">SK</option>
+                        <option value="UK" selected="">UK</option>
+                        <option value="US">US</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Avatar -->
+                <div class="slds-form-element slds-m-top_medium slds-m-bottom_large slds-grid_align-center slds-grid_vertical-align-center">
+                  <label class="slds-form-element__label" for="input__avatar">Custom Avatar</label>
+                  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#user" />
+                    </svg>
+                    <input id="input__avatar" name="input__avatar" class="slds-input slds-p-vertical_xx-small" type="text" value="" required=""/>
+                  </div>
+                  <div class="slds-form-element__help">Provide a custom URL or <a class="cs__pick">pick one here</a></div>
+                </div>
+              </div>
+              <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small">Create Account</button>
+            </form>
+          </div>
+        </article>
+      </div>
+      <div class="slds-col slds-size_1-of-3 slds-show_medium" ></div>
+    </div>
+    <!-- Modals -->
+    <div class="demo-only slds-hide" style="height: 640px;">
+      <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+          <header class="slds-modal__header">
+            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Pick an avatar</h2>
+          </header>
+          <div class="slds-modal__content slds-grid slds-p-around_medium" id="modal-content-id-1">
+            <div class="slds-col slds-grid_align-center slds-size_1-of-4">
+              <a class="cs__avatar"><img src="../images/avatar/avatar_001.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_002.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_003.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_004.png" width="100" class="slds-p-vertical_x-small"/></a>
+            </div>
+            <div class="slds-col slds-size_1-of-4">
+              <a class="cs__avatar"><img src="../images/avatar/avatar_005.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_006.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_007.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_008.png" width="100" class="slds-p-vertical_x-small"/></a>
+            </div>
+            <div class="slds-col slds-size_1-of-4">
+              <a class="cs__avatar"><img src="../images/avatar/avatar_009.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_010.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_011.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_012.png" width="100" class="slds-p-vertical_x-small"/></a>
+            </div>
+            <div class="slds-col slds-size_1-of-4">
+              <a class="cs__avatar"><img src="../images/avatar/avatar_013.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_014.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_015.png" width="100" class="slds-p-vertical_x-small"/></a>
+              <a class="cs__avatar"><img src="../images/avatar/avatar_016.png" width="100" class="slds-p-vertical_x-small"/></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../scripts/slds.min.js"></script>
+    <script type="text/javascript" src="../scripts/utilities.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.base64.min.js"></script>
+    <script>
+      function validate(){
+        var email = $("#input__email").val();
+        var password = $("#input__password").val();
+        var passwordCheck = $("#input__password-repeat").val();
+        $(".slds-has-error").removeClass('slds-has-error');
+        $(".slds-form-element__help").addClass('slds-hide');
+        if(password!=passwordCheck){
+          $("#input__password-repeat").closest(".slds-form-element").addClass('slds-has-error');
+          $("#input__password-repeat").closest(".slds-form-element").find(".slds-form-element__help").removeClass('slds-hide');
+          return false
+        }
+        if(email.indexOf('@secretescapes.com')==-1){
+          $("#input__email").closest(".slds-form-element").addClass('slds-has-error');
+          $("#input__email").closest(".slds-form-element").find(".slds-form-element__help").removeClass('slds-hide');
+          return false
+        }
+        var blobFile = $('#file-upload-input-01').files[0];
+        window.alert(blobFile)
+      };
+
+      $(document).on('click', '.cs__avatar', function(event){
+        var image = $(this).find("img").attr('src');
+        $(".demo-only").addClass('slds-hide');
+        //$(".slds-backdrop").removeClass('slds-backdrop_open');
+        $("#input__avatar").val(image);
+      });
+      $(document).on('click', '.cs__pick', function(event){
+        $(".demo-only").removeClass('slds-hide');
+      });
+    </script>
+  </body>
+</html>

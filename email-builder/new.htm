@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Welcome to Aurora</title>
+    <link rel="stylesheet" href="../styles/salesforce-lightning-design-system.min.css"/>
+    <link rel="stylesheet" href="../styles/custom-styles.css"/>
+    <link rel="icon" type="image/png" href="../images/aurora.ico">
+  </head>
+  <body class="slds-brand-band slds-brand-band_medium">
+    <div id="global-header__email" aria-label="2"></div>
+    <div id="app-launcher"></div>
+    <div id="wrapper" class="slds-m-around_medium">
+      <form action="#" class="slds-grid slds-wrap" method="post">
+        <div class="slds-col slds-size_1-of-1">
+          <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-campaign" title="campaign">
+                    <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/standard-sprite/svg/symbols.svg#campaign" />
+                    </svg>
+                    <span class="slds-assistive-text">campaign</span>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                    <span class="slds-text-heading_large font_1dot5">New Campaign Workflow</span>
+                  </h2>
+                </div>
+                <!-- <div class="slds-einstein-header__astro-walk slds-size_1-of-4"></div> -->
+                <!-- Progress Bar -->
+                <div class="slds-size_1-of-4">
+                  <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small slds-text-align_right">
+                    <span aria-hidden="true">
+                    <strong>Step 1 of 3</strong>
+                    </span>
+                  </div>
+                  <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="33" aria-labelledby="progress-bar-label-id-1" role="progressbar">
+                    <span class="slds-progress-bar__value" style="width: 33%;">
+                    <span class="slds-assistive-text">Progress: 33%</span>
+                    </span>
+                  </div>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner slds-p-vertical_medium">
+              <div class="slds-grid slds-wrap slds-gutters_small">
+                <div class="slds-col slds-size_1-of-1" role="listitem">
+                  <div class="slds-form" role="list">
+                    <div class="slds-form__row slds-p-bottom_small">
+                      <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input_brand">
+                              Select Brand <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                              <select class="slds-select" id="input_brand" name="input_brand">
+                                <option value="PART_DE">Generic Partner (DE)</option>
+                                <option value="PART_ES">Generic Partner (ES)</option>
+                                <option value="PART_NL">Generic Partner (NL)</option>
+                                <option value="UK">Generic Partner (UK)</option>
+                                <option value="PART_US">Generic Partner (US)</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input_source">
+                            Email Type <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                              <select class="slds-select" id="input_source" name="input_source">
+                                <option value="_APOL">Apology</option>
+                                <option value="_BRND">Brand</option>
+                                <option value="_COMP">Competition</option>
+                                <option value="_CONT">Content Newsletter</option>
+                                <option value="_PROD">Product Launch</option>
+                                <option value="_SERV">Service Message</option>
+                                <option value="_SOLU">Solus Email</option>
+                                <option value="_NEWS" selected="">Trading Newsletter</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slds-form__row slds-p-bottom_small">
+                      <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input_send-date">
+                            Send Date <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <input type="text" id="input_send-date" name="input_send-date" class="slds-input" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input_send-time">
+                            Select Time <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                              <select class="slds-select" id="input_send-time" name="input_send-time">
+                                <option value="00:00">00:00</option>
+                                <option value="00:30">00:30</option>
+                                <option value="01:00">01:00</option>
+                                <option value="01:30">01:30</option>
+                                <option value="02:00">02:00</option>
+                                <option value="02:30">02:30</option>
+                                <option value="03:00">03:00</option>
+                                <option value="03:30">03:30</option>
+                                <option value="04:00">04:00</option>
+                                <option value="04:30">04:30</option>
+                                <option value="05:00">05:00</option>
+                                <option value="05:30">05:30</option>
+                                <option value="06:00">06:00</option>
+                                <option value="06:30">06:30</option>
+                                <option value="07:00" selected>07:00</option>
+                                <option value="07:30">07:30</option>
+                                <option value="08:00">08:00</option>
+                                <option value="08:30">08:30</option>
+                                <option value="09:00">09:00</option>
+                                <option value="09:30">09:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                                <option value="21:30">21:30</option>
+                                <option value="22:00">22:00</option>
+                                <option value="22:30">22:30</option>
+                                <option value="23:00">23:00</option>
+                                <option value="23:30">23:30</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slds-form__row slds-p-bottom_small">
+                      <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input_audience">
+                            Audience Type <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                              <select class="slds-select" id="input_audience" name="input_audience">
+                                <option value="">Active</option>
+                                <option value="INACTIVE_">Inactive</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input_offer">
+                            Campaign Type <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                              <select class="slds-select" id="input_offer" name="input_offer">
+                                <option value="">Standard</option>
+                                <option value="24HR_">24 Hour Sale</option>
+                                <option value="48HR_">48 Hour Sale</option>
+                                <option value="72HR_">72 Hour Sale</option>
+                                <option value="PRICE_DROP_">Price Drop</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slds-form__row slds-p-bottom_x-large">
+                      <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input_campaign">
+                            Custom Identifier <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <input type="text" id="input_id" name="input_id" class="slds-input" value="V1" placeholder="Unique campaign identifier" required=""/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input_description">Short Campaign Description</label>
+                          <div class="slds-form-element__control">
+                            <textarea id="input_description" name="input_description" class="slds-textarea" placeholder="Please provide a short description of the campaign"></textarea>
+                            <input type="hidden" id="input_campaign" name="input_campaign" class="slds-input" value=""/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slds-grid slds-wrap slds-gutters_small slds-m-right_xx-small">
+                <div class="slds-col slds-text-title_caps slds-size_1-of-6 slds-p-top_medium slds-text-align_center" role="listitem">
+                  CAMPAIGN NAME
+                </div>
+                <div class="slds-box slds-theme_shade slds-size_5-of-6">
+                  <p class="slds-text-color_weak"><i> Complete form to generate campaign name</i></p>
+                </div>
+              </div>
+            </div>
+            <footer class="slds-card__footer">
+              <div class="slds-no-flex">
+                <div class="slds-grid">
+                  <div class="slds-size_1-of-2 slds-text-align_left">
+                    <a class="slds-button slds-button_text-destructive" onclick="history.back()">Cancel</a>
+                  </div>
+                  <div class="slds-size_1-of-2 slds-text-align_right">
+                    <span class="slds-text-color_error slds-p-right_small slds-hide error__campaign">Campaign already exists</span>
+                    <a class="slds-button slds-button_outline-brand" onclick="move(1,2)">Next</a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </article>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-hide">
+          <article class="slds-card">
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                  <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-campaign" title="campaign">
+                      <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/standard-sprite/svg/symbols.svg#campaign" />
+                      </svg>
+                      <span class="slds-assistive-text">campaign</span>
+                    </span>
+                  </div>
+                  <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                      <span class="slds-text-heading_large font_1dot5">New Campaign Workflow</span>
+                    </h2>
+                  </div>
+                  <!-- <div class="slds-einstein-header__astro-walk slds-size_1-of-4"></div> -->
+                  <!-- Progress Bar -->
+                  <div class="slds-size_1-of-4">
+                    <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small slds-text-align_right">
+                      <span aria-hidden="true">
+                      <strong>Step 2 of 3</strong>
+                      </span>
+                    </div>
+                    <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="67" aria-labelledby="progress-bar-label-id-1" role="progressbar">
+                      <span class="slds-progress-bar__value" style="width: 67%;">
+                      <span class="slds-assistive-text">Progress: 67%</span>
+                      </span>
+                    </div>
+                  </div>
+                </header>
+              </div>
+              <div class="slds-card__body slds-card__body_inner slds-p-vertical_medium">
+                <div class="slds-grid slds-wrap slds-gutters_large">
+                  <div class="slds-col slds-size_1-of-1" role="listitem">
+                    <div id="sale-sections" class="slds-form" role="list">
+                      <div class="slds-form__row slds-p-bottom_x-large">
+                        <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                          <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                            <label class="slds-form-element__label" for="input_section-key_1">
+                              Section 1 Key <abbr class="slds-required" title="Required">* </abbr>
+                            </label>
+                            <div class="slds-form-element__control">
+                              <input type="text" id="input_section-key_1" name="input_section-key_1" class="slds-input" value="" placeholder="Unique section identifier" required=""/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                          <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                            <label class="slds-form-element__label" for="input_section-sales_1">
+                              Section 1 Sale ID(s) <abbr class="slds-required" title="Required">* </abbr>
+                            </label>
+                            <div class="slds-form-element__control">
+                              <textarea id="input_section-sales_1" name="input_section-sales_1" class="slds-textarea" rows="10" placeholder="Sale IDs"></textarea>
+                              <input type="hidden" id="input_section-count" name="input_section-count" class="slds-input" value="1"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-col slds-size_1-of-1" role="listitem">
+                    <a class="slds-button slds-button_neutral section__trigger">Add Section</a>
+                  </div>
+                </div>
+              </div>
+              <footer class="slds-card__footer">
+                <div class="slds-no-flex">
+                  <div class="slds-grid">
+                    <div class="slds-size_1-of-2 slds-text-align_left">
+                      <a class="slds-button slds-button_text-destructive" onclick="move(2,1)">Back</a>
+                    </div>
+                    <div class="slds-size_1-of-2 slds-text-align_right">
+                      <span class="slds-text-color_error slds-p-right_small slds-hide error__campaign">Campaign already exists</span>
+                      <button class="slds-button slds-button_brand">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+          </article>
+        </div>
+      </form>
+    </div>
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../scripts/slds.js"></script>
+    <script type="text/javascript" src="../scripts/utilities.js"></script>
+    <script>
+      $('#input_send-date').datepicker({
+        dateFormat: "yy-mm-dd",
+        setDate: '+1d',
+        firstDay:1
+      }).datepicker( "setDate", '+1d');
+      $('#ui-datepicker-div').css('display','none');
+    </script>
+    <script>
+      function move(a,b){
+        $("form > div:nth-child(" + a +")").addClass('slds-hide');
+        $("form > div:nth-child(" + b +")").removeClass('slds-hide');
+      }
+    </script>
+    <script>
+      $("select").change(nameCampaign);
+      $("input").change(nameCampaign);
+      $(document).ready(nameCampaign);
+    </script>
+    <script>
+      $(document).on('click', '.section__trigger', function(){
+        $.get( "../components/sale-section.htm", function(data) {
+          var html = $("#sale-sections").html();
+          var count = parseInt($("#input_section-count").val()) + 1;
+          var data = data.replace(/@/g, count);
+          var html = html + data;
+          $("#sale-sections").html(html);
+          $("#input_section-count").val(count);
+        });
+      });
+    </script>
+  </body>
+</html>

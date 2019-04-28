@@ -1,0 +1,23 @@
+body {
+  min-height:800px; !important;
+}
+#wrapper {
+  padding-top:100px;
+}
+.slds-brand-band:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/themes/oneSalesforce/banner-brand-default.png),linear-gradient(to top,rgba(221,219,218,0) 0,rgba(0, 112, 210,0.5)) !important;
+  background-repeat: repeat;
+  background-position: top left;
+  height:100% !important;
+}
+.slds-global-header__logo {
+  background-image: url(../images/logo-noname.svg);
+}
