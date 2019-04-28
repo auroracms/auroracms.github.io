@@ -57,6 +57,7 @@ $.get( "/components/global-header-email.htm", function(data) {
   $(".slds-avatar img").attr('title', obj.Username);
   $(".slds-avatar img").attr('alt', obj.Username);
   $(".slds-avatar img").attr('src', obj.Avatar);
+  $("#input__territory").val(obj.Territory);
   if(obj["AccountType"]=='Admin'){$(".slds-global-actions__setup").closest(".slds-global-actions__item").removeClass('slds-hide')}
 });
 $(document).on('keypress', '#global-header__email .slds-global-header__item_search input', function(){
