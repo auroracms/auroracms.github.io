@@ -12,81 +12,6 @@
     <div id="global-header__email" aria-label="1"></div>
     <div id="app-launcher"></div>
     <div id="wrapper" class="slds-grid slds-wrap slds-m-around_medium">
-      <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
-        <!-- Page Headers -->
-        <div class="slds-page-header">
-          <div class="slds-page-header__row">
-            <div class="slds-page-header__col-title">
-              <div class="slds-media">
-                <div class="slds-media__figure">
-                    <span class="slds-icon_container slds-icon-standard-event" title="event">
-                      <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#event" />
-                      </svg>
-                      <span class="slds-assistive-text">event</span>
-                    </span>
-                  </div>
-                  <div class="slds-media__body">
-                    <h2 class="slds-card__header-title">
-                      <span class="slds-text-heading_large font_1dot5">Planning Calendar</span>
-                    </h2>
-                  </div>
-                <div class="slds-page-header__col-actions">
-                  <div class="slds-page-header__controls">
-                    <div class="slds-page-header__control">
-                      <ul class="slds-button-group-list">
-                        <li>
-                          <button class="slds-button slds-button_neutral" onclick="newDailyPlan()">
-                            <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
-                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#dayview" />
-                            </svg>Add Daily Campaign Plan
-                          </button>
-                        </li>
-                        <li>
-                          <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
-                            <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
-                              <svg class="slds-button__icon" aria-hidden="true">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down" />
-                              </svg>
-                              <span class="slds-assistive-text">More Actions</span>
-                            </button>
-                            <div class="slds-dropdown slds-dropdown_right slds-dropdown_small">
-                                <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
-                                  <li class="slds-dropdown__item" role="presentation">
-                                    <a role="menuitem" tabindex="0" onclick="newCampaign()">
-                                      <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#campaign" />
-                                      </svg>Add New Campaign Plan</span>
-                                    </a>
-                                  </li>
-                                  <li class="slds-dropdown__item" role="presentation">
-                                    <a role="menuitem" tabindex="-1" onclick="newTestPlan()">
-                                      <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#light_bulb" />
-                                      </svg>Add New Testing Plan</span>
-                                    </a>
-                                  </li>
-                                  <li class="slds-dropdown__item" role="presentation">
-                                      <a role="menuitem" tabindex="-1" onclick="newBanner()">
-                                        <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#image" />
-                                        </svg>Add New Banner Schedule</span>
-                                      </a>
-                                    </li>
-                                </ul>
-                              </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Docked Composer: New Campaign -->
       <form id="panel__new-campaign" class="cs-composer-planner" method="post" action="#">
         <div class="slds-docked_container slds-hide">
@@ -563,7 +488,7 @@
               </div>
               <div class="slds-media__body">
                 <h2 class="slds-card__header-title">
-                  <span class="slds-text-heading_large font_1dot5">Campaign Calendar</span>
+                  <span class="slds-text-heading_large font_1dot5">Planning Calendar</span>
                 </h2>
               </div>
               <div class="slds-no-flex" style="width:150px;">
