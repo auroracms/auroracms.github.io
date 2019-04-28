@@ -608,14 +608,14 @@
           defaultView: 'month',
           firstDay: 1,
           eventLimit: true, // allow "more" link when too many events
-          events: 'https://pages.email.secretescapes.com/aurora/planner/calendar?territory=' + territory,
+          events: 'https://pages.email.secretescapes.com/aurora/planner/calendar?t=' + territory,
           loading: function( isLoading, view ) {$(".slds-spinner").toggleClass('slds-hide')}
         });
       });
       
       $( "#input__territory" ).change(function() {
         $('#calendar').fullCalendar('removeEventSources');
-        var newEventSource = 'https://pages.email.secretescapes.com/aurora/planner/calendar?territory=' + this.value
+        var newEventSource = 'https://pages.email.secretescapes.com/aurora/planner/calendar?t=' + this.value
         $('#calendar').fullCalendar('addEventSource', newEventSource);
       });
     </script>
