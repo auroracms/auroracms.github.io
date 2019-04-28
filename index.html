@@ -1,7 +1,106 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Welcome to Aurora</title>
+    <link href="../styles/salesforce-lightning-design-system.min.css" rel="stylesheet"/>
+    <link href="../styles/custom-styles.css" rel="stylesheet"/>
+    <link href="../images/aurora.ico" rel="icon" type="image/png">
+  </head>
+  <body class="cs-login_bg-image">
+    <div class="slds-grid slds-wrap cs-wrapper">
+      <div class="slds-col slds-grid slds-m-bottom_xx-large slds-size_1-of-1 slds-large-size_1-of-2 slds-brand-band slds-brand-band_medium slds-grid_align-center slds-grid_vertical-align-center cs-login_bg">
+        <div class="slds-col slds-size_1-of-12 slds-large-size_1-of-6"></div>
+        <div class="slds-col slds-size_5-of-6 slds-large-size_2-of-3">
+          <!-- Card -->
+          <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate slds-grid_align-center">
+                <img src="../images/logo.png" width="200"/>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner slds-grid_align-center">
+              <div class="slds-form" role="list">
+                <div class="slds-form-element">
+                  <label class="slds-form-element__label" for="text-input-id-1">Username</label>
+                  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#user" />
+                    </svg>
+                    <input id="input__email" name="input__email" class="slds-input slds-p-vertical_xx-small" type="text" value="" required/>
+                  </div>
+                  <div class="slds-form-element__help slds-hide">Account with this email address does not exist</div>
+                </div>
+                <div class="slds-form-element slds-m-top_medium slds-m-bottom_x-large">
+                  <label class="slds-form-element__label" for="text-input-id-1">Password</label>
+                  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                    <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#password" />
+                    </svg>
+                    <input id="input__password" name="input__password" class="slds-input slds-p-vertical_xx-small" type="password" value="" required/>
+                  </div>
+                  <div class="slds-form-element__help slds-hide">Incorrect password - please try again</div>
+                </div>
+              </div>
+              <button class="slds-button slds-button_brand slds-button_stretch slds-p-vertical_x-small" onclick="validate()">Login</button>
+            </div>
+            <footer class="slds-card__footer">
+              <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-2">
+                  <a class="slds-card__footer-action slds-text-color_error slds-text-align_left" href="javascript:void(0);">
+                    <!-- Forgot your password? -->
+                  </a>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                  <a class="slds-card__footer-action slds-text-align_right" href="register.htm">
+                    Sign Up
+                  </a>
+                </div>
+              </div>
+            </footer>
+          </article>
+        </div>
+        <div class="slds-col slds-size_1-of-12 slds-large-size_1-of-6"></div> 
+      </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../scripts/slds.min.js"></script>
+    <script type="text/javascript" src="../scripts/utilities.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.base64.min.js"></script>
+    <script>
+      function createCookie(cname,value,days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 *1000));
+            var expires = "; expires=" + date.toGMTString();
+        } else {
+            var expires = "";
+        }
+        document.cookie = cname + "=" + value + expires + "; domain=s3-eu-west-1.amazonaws.com; path=/";
+      }
+      function validate(){
+        var email = $("#input__email").val();
+        var password = $("#input__password").val();
+        var password = $.base64.encode(password).replace(/=/g,'');
+        var url = 'https://pages.email.secretescapes.com/aurora/login/authenticate?u=' + email + '&p=' + password;
+        $.getJSON(url, function(data) {
+          $(".slds-has-error").removeClass('slds-has-error');
+          $(".slds-form-element__help").addClass('slds-hide');
+          if(data.authorisation==1){
+            var auth = JSON.stringify(data.message[0]);
+            createCookie('sessionData', auth, 3)
+            window.location.replace("../email-builder/index.htm");
+          } else if (data.authorisation==-1){
+            $("#input__password").closest(".slds-form-element").addClass('slds-has-error');
+            $("#input__password").closest(".slds-form-element").find(".slds-form-element__help").removeClass('slds-hide');
+          } else {
+            $("#input__email").closest(".slds-form-element").addClass('slds-has-error');
+            $("#input__email").closest(".slds-form-element").find(".slds-form-element__help").removeClass('slds-hide');
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
