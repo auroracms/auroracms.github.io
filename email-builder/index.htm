@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8"/>
     <title>Welcome to Aurora</title>
-    <link rel="stylesheet" href="../styles/salesforce-lightning-design-system.min.css"/>
-    <link rel="stylesheet" href="../styles/custom-styles.css"/>
-    <link rel="icon" type="image/png" href="../images/aurora.ico">
-    <link rel="stylesheet" href="../styles/fullcalendar.min.css"/>
+    <link rel="stylesheet" href="/assets/styles/salesforce-lightning-design-system.min.css"/>
+    <link rel="stylesheet" href="/assets/styles/custom-styles.css"/>
+    <link rel="stylesheet" href="/assets/styles/fullcalendar.min.css"/>
+    <link rel="icon" type="image/png" href="/assets/images/aurora.ico">
   </head>
   <body class="slds-brand-band slds-brand-band_medium">
     <div id="global-header__email" aria-label="1"></div>
@@ -21,7 +21,7 @@
                 <div class="slds-media__figure">
                     <span class="slds-icon_container slds-icon-standard-event" title="event">
                       <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/standard-sprite/svg/symbols.svg#event" />
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#event" />
                       </svg>
                       <span class="slds-assistive-text">event</span>
                     </span>
@@ -38,7 +38,7 @@
                         <li>
                           <button class="slds-button slds-button_neutral" onclick="newDailyPlan()">
                             <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
-                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#dayview" />
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#dayview" />
                             </svg>Add Daily Campaign Plan
                           </button>
                         </li>
@@ -46,7 +46,7 @@
                           <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
                             <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
                               <svg class="slds-button__icon" aria-hidden="true">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#down" />
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down" />
                               </svg>
                               <span class="slds-assistive-text">More Actions</span>
                             </button>
@@ -55,21 +55,21 @@
                                   <li class="slds-dropdown__item" role="presentation">
                                     <a role="menuitem" tabindex="0" onclick="newCampaign()">
                                       <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#campaign" />
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#campaign" />
                                       </svg>Add New Campaign Plan</span>
                                     </a>
                                   </li>
                                   <li class="slds-dropdown__item" role="presentation">
                                     <a role="menuitem" tabindex="-1" onclick="newTestPlan()">
                                       <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#light_bulb" />
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#light_bulb" />
                                       </svg>Add New Testing Plan</span>
                                     </a>
                                   </li>
                                   <li class="slds-dropdown__item" role="presentation">
                                       <a role="menuitem" tabindex="-1" onclick="newBanner()">
                                         <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#image" />
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#image" />
                                         </svg>Add New Banner Schedule</span>
                                       </a>
                                     </li>
@@ -96,7 +96,7 @@
                 <div class="slds-media__figure slds-m-right_x-small">
                   <span class="slds-icon_container">
                     <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#campaign" />
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#campaign" />
                     </svg>
                   </span>
                 </div>
@@ -107,13 +107,13 @@
               <div class="slds-col_bump-left slds-shrink-none">
                 <a class="slds-button slds-button_icon slds-button_icon minimize" title="Minimize window">
                   <svg class="slds-button__icon" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#minimize_window" />
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#minimize_window" />
                   </svg>
                   <span class="slds-assistive-text">Minimize Composer Panel</span>
                 </a>
                 <a class="slds-button slds-button_icon slds-button_icon close" title="Close">
                   <svg class="slds-button__icon" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#close" />
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close" />
                   </svg>
                   <span class="slds-assistive-text">Close Composer Panel</span>
                 </a>
@@ -181,7 +181,7 @@
                 <div class="slds-media__figure slds-m-right_x-small">
                   <span class="slds-icon_container">
                     <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#dayview" />
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#dayview" />
                     </svg>
                   </span>
                 </div>
@@ -192,13 +192,13 @@
               <div class="slds-col_bump-left slds-shrink-none">
                 <a class="slds-button slds-button_icon slds-button_icon minimize" title="Minimize window">
                   <svg class="slds-button__icon" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#minimize_window" />
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#minimize_window" />
                   </svg>
                   <span class="slds-assistive-text">Minimize Composer Panel</span>
                 </a>
                 <a class="slds-button slds-button_icon slds-button_icon close" title="Close">
                   <svg class="slds-button__icon" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#close" />
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close" />
                   </svg>
                   <span class="slds-assistive-text">Close Composer Panel</span>
                 </a>
@@ -338,7 +338,7 @@
                 <div class="slds-media__figure slds-m-right_x-small">
                   <span class="slds-icon_container">
                     <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#light_bulb" />
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#light_bulb" />
                     </svg>
                   </span>
                 </div>
@@ -349,13 +349,13 @@
               <div class="slds-col_bump-left slds-shrink-none">
                 <a class="slds-button slds-button_icon slds-button_icon minimize" title="Minimize window">
                   <svg class="slds-button__icon" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#minimize_window" />
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#minimize_window" />
                   </svg>
                   <span class="slds-assistive-text">Minimize Composer Panel</span>
                 </a>
                 <a class="slds-button slds-button_icon slds-button_icon close" title="Close">
                   <svg class="slds-button__icon" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#close" />
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close" />
                   </svg>
                   <span class="slds-assistive-text">Close Composer Panel</span>
                 </a>
@@ -473,7 +473,7 @@
                 <div class="slds-media__figure slds-m-right_x-small">
                   <span class="slds-icon_container">
                     <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#image" />
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#image" />
                     </svg>
                   </span>
                 </div>
@@ -484,13 +484,13 @@
               <div class="slds-col_bump-left slds-shrink-none">
                 <a class="slds-button slds-button_icon slds-button_icon minimize" title="Minimize window">
                   <svg class="slds-button__icon" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#minimize_window" />
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#minimize_window" />
                   </svg>
                   <span class="slds-assistive-text">Minimize Composer Panel</span>
                 </a>
                 <a class="slds-button slds-button_icon slds-button_icon close" title="Close">
                   <svg class="slds-button__icon" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/utility-sprite/svg/symbols.svg#close" />
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close" />
                   </svg>
                   <span class="slds-assistive-text">Close Composer Panel</span>
                 </a>
@@ -599,12 +599,12 @@
       </div>
     </div>
     <!-- SCRIPTS -->
-    <script type="text/javascript" src="../scripts/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../scripts/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../scripts/slds.js"></script>
-    <script type="text/javascript" src="../scripts/utilities.js"></script>
-    <script type="text/javascript" src="../scripts/moment.min.js"></script>
-    <script type="text/javascript" src="../scripts/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/scripts/slds.js"></script>
+    <script type="text/javascript" src="/scripts/utilities.js"></script>
+    <script type="text/javascript" src="/scripts/moment.min.js"></script>
+    <script type="text/javascript" src="/scripts/fullcalendar.min.js"></script>
     <script>
       $(document).ready(function() {
         $('#calendar').fullCalendar({
