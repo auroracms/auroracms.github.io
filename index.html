@@ -70,10 +70,10 @@
     <script type="text/javascript" src="/scripts/utilities.min.js"></script>
     <script type="text/javascript" src="/scripts/jquery.base64.min.js"></script>
     <script>
-      function createCookie(cname,value,days) {
+      function createCookie(cname,value,hours) {
         if (days) {
             var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 *1000));
+            date.setTime(date.getTime() + (hours * 60 * 60 *1000));
             var expires = "; expires=" + date.toGMTString();
         } else {
             var expires = "";
@@ -90,8 +90,8 @@
           $(".slds-form-element__help").addClass('slds-hide');
           if(data.authorisation==1){
             var auth = JSON.stringify(data.message[0]);
-            createCookie('sessionData', auth, 3)
-            window.location.replace("../email-builder/index.htm");
+            createCookie('sessionData', auth, 12)
+            window.location.replace("../email-builder");
           } else if (data.authorisation==-1){
             $("#input__password").closest(".slds-form-element").addClass('slds-has-error');
             $("#input__password").closest(".slds-form-element").find(".slds-form-element__help").removeClass('slds-hide');
