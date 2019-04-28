@@ -49,7 +49,7 @@ function globalSearch(d,c){
 }
 
 // Load Global Header - Email Builder
-$.get( "../components/global-header-email.htm", function(data) {
+$.get( "/components/global-header-email.htm", function(data) {
   $("#global-header__email").html(data);
   $(".slds-global-header_container nav li").removeClass('slds-is-active');
   $('.slds-global-header_container nav li:nth-child(' + $("#global-header__email").attr('aria-label') + ')').addClass('slds-is-active');
@@ -65,7 +65,7 @@ $(document).on('keypress', '#global-header__email .slds-global-header__item_sear
 });
 
 // Load App Launcher 
-$.get( "../components/app-launcher.htm", function(data) {
+$.get( "/components/app-launcher.htm", function(data) {
   $("#app-launcher").html(data);
 });
 
