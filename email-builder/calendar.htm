@@ -83,6 +83,7 @@
     <script type="text/javascript" src="/scripts/fullcalendar.min.js"></script>
     <script>
     $(document).ready(function() {
+      var territory = $( "#input__territory" ).val();
       $('#calendar').fullCalendar({
         header: {
           left: 'prev,next today',
@@ -95,12 +96,12 @@
         defaultView: 'listWeek',
         firstDay: 1,
         eventLimit: true, // allow "more" link when too many events
-        events: 'https://pages.email.secretescapes.com/aurora/email/calendar?t=UK',
+        events: 'https://pages.email.secretescapes.com/aurora/email/calendar?t=' + territory,
         loading: function( isLoading, view ) {$(".slds-spinner").toggleClass('slds-hide')}
       });
     });
 
-    $( "#input-territory" ).change(function() {
+    $( "#input__territory" ).change(function() {
       $('#calendar').fullCalendar('removeEventSources');
       var newEventSource = 'https://pages.email.secretescapes.com/aurora/email/calendar?t=' + this.value
       $('#calendar').fullCalendar('addEventSource', newEventSource);
