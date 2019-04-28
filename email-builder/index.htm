@@ -48,6 +48,48 @@
               <div class="slds-m-around_x-large slds-m-vertical_x-large">
                 <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
                   <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input__campaign">
+                      Campaign Name <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input__campaign" name="input__campaign" class="slds-input" />
+                    </div>
+                  </div>
+                </div>  
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <div class="slds-form-element__control">
+                      <div class="slds-select_container">
+                        <select class="slds-select" id="input__cterritory">
+                          <option value="AT">AT</option>
+                          <option value="BE">BE</option>
+                          <option value="CH">CH</option>
+                          <option value="CZ">CZ</option>
+                          <option value="DE">DE</option>
+                          <option value="DK">DK</option>
+                          <option value="ES">ES</option>
+                          <option value="FR">FR</option>
+                          <option value="HG">HG</option>
+                          <option value="HK">HK</option>
+                          <option value="ID">ID</option>
+                          <option value="IT">IT</option>
+                          <option value="MY">MY</option>
+                          <option value="NL">NL</option>
+                          <option value="NO">NO</option>
+                          <option value="PH">PH</option>
+                          <option value="PL">PL</option>
+                          <option value="SE">SE</option>
+                          <option value="SG">SG</option>
+                          <option value="SK">SK</option>
+                          <option value="UK">UK</option>
+                          <option value="US">US</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
                     <label class="slds-form-element__label" for="input__start-date">
                       Start Date <abbr class="slds-required" title="Required">* </abbr>
                     </label>
@@ -66,16 +108,6 @@
                     </div>
                   </div>
                 </div> 
-                <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
-                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                    <label class="slds-form-element__label" for="input__campaign">
-                      Campaign Name <abbr class="slds-required" title="Required">* </abbr>
-                    </label>
-                    <div class="slds-form-element__control">
-                      <input type="text" id="input__campaign" name="input__campaign" class="slds-input" />
-                    </div>
-                  </div>
-                </div>  
                 <div class="slds-form__item slds-m-vertical_medium slds-size_1-of-1" role="listitem">
                   <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
                     <label class="slds-form-element__label" for="input__description">
@@ -492,7 +524,7 @@
                 </h2>
               </div>
               <div class="slds-no-flex slds-m-right_small" style="width:150px;">
-                <div class="slds-form-element pad-bot-1rem">
+                <div class="slds-form-element">
                   <div class="slds-form-element__control">
                     <div class="slds-select_container">
                       <select class="slds-select" id="input__territory">
