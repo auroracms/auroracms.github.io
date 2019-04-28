@@ -552,8 +552,8 @@
       <div class="slds-col slds-size_1-of-1">
         <article class="slds-card">
           <div class="slds-card__header slds-grid">
-            <header class="slds-media slds-media_center slds-has-flexi-truncate">
-            <div class="slds-media__figure">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate slds-p-bottom_medium">
+              <div class="slds-media__figure">
                 <span class="slds-icon_container slds-icon-standard-event" title="event">
                   <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#event" />
@@ -598,55 +598,53 @@
                   </div>
                 </div>
               </div>
-              <div class="slds-no-flex" style="width:150px;">
-                <div class="slds-page-header__col-actions">
-                  <div class="slds-page-header__controls">
-                    <div class="slds-page-header__control">
-                      <ul class="slds-button-group-list">
-                        <li>
-                          <button class="slds-button slds-button_neutral" onclick="newDailyPlan()">
-                            <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
-                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#dayview" />
-                            </svg>Add Daily Campaign Plan
+              <div class="slds-no-flex" style="max-width:300px;">
+                <div class="slds-page-header__controls">
+                  <div class="slds-page-header__control">
+                    <ul class="slds-button-group-list">
+                      <li>
+                        <button class="slds-button slds-button_neutral" onclick="newDailyPlan()">
+                          <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#dayview" />
+                          </svg>Add Daily Campaign Plan
+                        </button>
+                      </li>
+                      <li>
+                        <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                          <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
+                            <svg class="slds-button__icon" aria-hidden="true">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down" />
+                            </svg>
+                            <span class="slds-assistive-text">More Actions</span>
                           </button>
-                        </li>
-                        <li>
-                          <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
-                            <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
-                              <svg class="slds-button__icon" aria-hidden="true">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down" />
-                              </svg>
-                              <span class="slds-assistive-text">More Actions</span>
-                            </button>
-                            <div class="slds-dropdown slds-dropdown_right slds-dropdown_small">
-                                <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
-                                  <li class="slds-dropdown__item" role="presentation">
-                                    <a role="menuitem" tabindex="0" onclick="newCampaign()">
+                          <div class="slds-dropdown slds-dropdown_right slds-dropdown_small">
+                              <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+                                <li class="slds-dropdown__item" role="presentation">
+                                  <a role="menuitem" tabindex="0" onclick="newCampaign()">
+                                    <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#campaign" />
+                                    </svg>Add New Campaign Plan</span>
+                                  </a>
+                                </li>
+                                <li class="slds-dropdown__item" role="presentation">
+                                  <a role="menuitem" tabindex="-1" onclick="newTestPlan()">
+                                    <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#light_bulb" />
+                                    </svg>Add New Testing Plan</span>
+                                  </a>
+                                </li>
+                                <li class="slds-dropdown__item" role="presentation">
+                                    <a role="menuitem" tabindex="-1" onclick="newBanner()">
                                       <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#campaign" />
-                                      </svg>Add New Campaign Plan</span>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#image" />
+                                      </svg>Add New Banner Schedule</span>
                                     </a>
                                   </li>
-                                  <li class="slds-dropdown__item" role="presentation">
-                                    <a role="menuitem" tabindex="-1" onclick="newTestPlan()">
-                                      <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#light_bulb" />
-                                      </svg>Add New Testing Plan</span>
-                                    </a>
-                                  </li>
-                                  <li class="slds-dropdown__item" role="presentation">
-                                      <a role="menuitem" tabindex="-1" onclick="newBanner()">
-                                        <span class="slds-truncate" title="Menu Item One"><svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#image" />
-                                        </svg>Add New Banner Schedule</span>
-                                      </a>
-                                    </li>
-                                </ul>
-                              </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
+                              </ul>
+                            </div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
