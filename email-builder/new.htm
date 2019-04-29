@@ -361,7 +361,7 @@
     </script>
     <script>
       $(document).on('click', '.section__trigger', function(){
-        $.get( "/assets/components/sale-section.htm", function(data) {
+        $.get( "/components/sale-section.htm", function(data) {
           var html = $("#sale-sections").html();
           var count = parseInt($("#input_section-count").val()) + 1;
           var data = data.replace(/@/g, count);
