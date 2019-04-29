@@ -58,7 +58,7 @@
                           <div class="slds-form-element__control">
                             <div class="slds-select_container">
                               <select class="slds-select" id="input__brand-picker" name="input__brand-picker">
-                                <option value="PART_DE">Generic Partner (DE)</option>
+                                <option aria-label="UK" value="https://www.secretescapes.com">https://www.secretescapes.com</option>
                                 <option value="PART_ES">Generic Partner (ES)</option>
                                 <option value="PART_NL">Generic Partner (NL)</option>
                                 <option value="UK">Generic Partner (UK)</option>
@@ -71,19 +71,19 @@
                       <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                         <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
                           <label class="slds-form-element__label" for="input__source">
-                            Email Type <abbr class="slds-required" title="Required">* </abbr>
+                            Campaign Type <abbr class="slds-required" title="Required">* </abbr>
                           </label>
                           <div class="slds-form-element__control">
                             <div class="slds-select_container">
                               <select class="slds-select" id="input__source" name="input__source">
-                                <option value="_APOL">Apology</option>
-                                <option value="_BRND">Brand</option>
-                                <option value="_COMP">Competition</option>
-                                <option value="_CONT">Content Newsletter</option>
-                                <option value="_PROD">Product Launch</option>
-                                <option value="_SERV">Service Message</option>
-                                <option value="_SOLU">Solus Email</option>
-                                <option value="_NEWS" selected="">Trading Newsletter</option>
+                                <option aria-label="_APOL_" value="Apology">Apology</option>
+                                <option aria-label="_BRND_" value="Brand">Brand</option>
+                                <option aria-label="_COMP_" value="Competition">Competition</option>
+                                <option aria-label="_CONT_" value="Content">Content Newsletter</option>
+                                <option aria-label="_PROD_" value="Product">Product Launch</option>
+                                <option aria-label="_SERV_" value="Service">Service Message</option>
+                                <option aria-label="_SOLU_" value="Solus">Solus Email</option>
+                                <option aria-label="_NEWS_" value="Trading" selected="">Trading Newsletter</option>
                               </select>
                             </div>
                           </div>
@@ -172,8 +172,8 @@
                           <div class="slds-form-element__control">
                             <div class="slds-select_container">
                               <select class="slds-select" id="input__audience" name="input__audience">
-                                <option value="">Active</option>
-                                <option value="INACTIVE_">Inactive</option>
+                                <option aria-label="" value="Active">Active</option>
+                                <option aria-label="INACTIVE_" value="Inactive">Inactive</option>
                               </select>
                             </div>
                           </div>
@@ -187,11 +187,11 @@
                           <div class="slds-form-element__control">
                             <div class="slds-select_container">
                               <select class="slds-select" id="input__offer" name="input__offer">
-                                <option value="">Standard</option>
-                                <option value="24HR_">24 Hour Sale</option>
-                                <option value="48HR_">48 Hour Sale</option>
-                                <option value="72HR_">72 Hour Sale</option>
-                                <option value="PRICE_DROP_">Price Drop</option>
+                                <option aria-label="" value="Standard">Standard</option>
+                                <option aria-label="24HR_" value="24 Hour Sale">24 Hour Sale</option>
+                                <option aria-label="48HR_" value="48 Hour Sale">48 Hour Sale</option>
+                                <option aria-label="72HR_" value="72 Hour Sale">72 Hour Sale</option>
+                                <option aria-label="PRICE_DROP_" value="Price Drop">Price Drop</option>
                               </select>
                             </div>
                           </div>
@@ -302,6 +302,7 @@
                             <div class="slds-form-element__control">
                               <textarea id="input__sales-1" name="input__sales-1" class="slds-textarea" rows="10" placeholder="Sale IDs"></textarea>
                               <input type="hidden" id="input__count" name="input__count" class="slds-input" value="1"/>
+                              <input type="hidden" id="input__editor" name="input__editor" class="slds-input" value="1"/>
                             </div>
                           </div>
                         </div>

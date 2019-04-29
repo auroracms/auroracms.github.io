@@ -57,6 +57,7 @@ $.get( "/components/global-header-email.htm", function(data) {
     var obj = JSON.parse(getCookie('sessionData'));
     $(".slds-avatar img").attr('title', obj.Username);
     $(".slds-avatar img").attr('alt', obj.Username);
+    $("#input__editor").val(obj.Username);
     $(".slds-avatar img").attr('src', obj.Avatar);
     $("#input__territory").val(obj.Territory);
     if(obj["AccountType"]=='Admin'){$(".slds-global-actions__setup").closest(".slds-global-actions__item").removeClass('slds-hide')}
@@ -95,14 +96,14 @@ function rgb2hex(rgb) {
 
 // Function to determine campaign name
 function nameCampaign(){
-  var a = $("#input__audience").val();
+  var a = $("#input__audience").attr('aria-label');
   var d = $("#input__date").val();
   var dt = d.replace(/-/g,'');
   var day = '_' + $.datepicker.formatDate('D', new Date(d)) + '_';
-  var b = $("#input__brand-picker").val();
-  var s = $("#input__source").val() + '_';
+  var b = $("#input__brand-picker").attr('aria-label');
+  var s = $("#input__source").attr('aria-label');
   var t = $("#input__time").val();
-  var o = $("#input__offer").val();
+  var o = $("#input__offer").attr('aria-label');
   var i = $("#input__id").val();
   if(b.indexOf('_')>-1 && i!=''){
     var name = 'PARTNERS_' + a + dt + s + b + day + o + i;
