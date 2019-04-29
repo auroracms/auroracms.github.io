@@ -53,12 +53,16 @@ $.get( "/components/global-header-email.htm", function(data) {
   $("#global-header__email").html(data);
   $(".slds-global-header_container nav li").removeClass('slds-is-active');
   $('.slds-global-header_container nav li:nth-child(' + $("#global-header__email").attr('aria-label') + ')').addClass('slds-is-active');
-  var obj = JSON.parse(getCookie('sessionData'));
-  $(".slds-avatar img").attr('title', obj.Username);
-  $(".slds-avatar img").attr('alt', obj.Username);
-  $(".slds-avatar img").attr('src', obj.Avatar);
-  $("#input__territory").val(obj.Territory);
-  if(obj["AccountType"]=='Admin'){$(".slds-global-actions__setup").closest(".slds-global-actions__item").removeClass('slds-hide')}
+  if(getCookie('sessionData')!="" && getCookie('sessionData')!=NULL) {
+    var obj = JSON.parse(getCookie('sessionData'));
+    $(".slds-avatar img").attr('title', obj.Username);
+    $(".slds-avatar img").attr('alt', obj.Username);
+    $(".slds-avatar img").attr('src', obj.Avatar);
+    $("#input__territory").val(obj.Territory);
+    if(obj["AccountType"]=='Admin'){$(".slds-global-actions__setup").closest(".slds-global-actions__item").removeClass('slds-hide')}
+  } else {
+    // Redirect user back to login page
+  }
 });
 $(document).on('keypress', '#global-header__email .slds-global-header__item_search input', function(){
   var emailTags = [ "c++", "java", "Robin", "Rose"];

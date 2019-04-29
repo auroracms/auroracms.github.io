@@ -52,12 +52,12 @@
                     <div class="slds-form__row slds-p-bottom_small">
                       <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                         <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                          <label class="slds-form-element__label" for="input_brand">
+                          <label class="slds-form-element__label" for="input__brand-picker">
                               Select Brand <abbr class="slds-required" title="Required">* </abbr>
                           </label>
                           <div class="slds-form-element__control">
                             <div class="slds-select_container">
-                              <select class="slds-select" id="input__brand-picker" name="input_brand">
+                              <select class="slds-select" id="input__brand-picker" name="input__brand-picker">
                                 <option value="PART_DE">Generic Partner (DE)</option>
                                 <option value="PART_ES">Generic Partner (ES)</option>
                                 <option value="PART_NL">Generic Partner (NL)</option>
@@ -70,12 +70,12 @@
                       </div>
                       <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                         <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                          <label class="slds-form-element__label" for="input_source">
+                          <label class="slds-form-element__label" for="input__source">
                             Email Type <abbr class="slds-required" title="Required">* </abbr>
                           </label>
                           <div class="slds-form-element__control">
                             <div class="slds-select_container">
-                              <select class="slds-select" id="input_source" name="input_source">
+                              <select class="slds-select" id="input__source" name="input__source">
                                 <option value="_APOL">Apology</option>
                                 <option value="_BRND">Brand</option>
                                 <option value="_COMP">Competition</option>
@@ -93,22 +93,22 @@
                     <div class="slds-form__row slds-p-bottom_small">
                       <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                         <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                          <label class="slds-form-element__label" for="input_send-date">
+                          <label class="slds-form-element__label" for="input__date">
                             Send Date <abbr class="slds-required" title="Required">* </abbr>
                           </label>
                           <div class="slds-form-element__control">
-                            <input type="text" id="input_send-date" name="input_send-date" class="slds-input" />
+                            <input type="text" id="input__date" name="input__date" class="slds-input" />
                           </div>
                         </div>
                       </div>
                       <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                         <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                          <label class="slds-form-element__label" for="input_send-time">
+                          <label class="slds-form-element__label" for="input__time">
                             Select Time <abbr class="slds-required" title="Required">* </abbr>
                           </label>
                           <div class="slds-form-element__control">
                             <div class="slds-select_container">
-                              <select class="slds-select" id="input_send-time" name="input_send-time">
+                              <select class="slds-select" id="input__time" name="input__time">
                                 <option value="00:00">00:00</option>
                                 <option value="00:30">00:30</option>
                                 <option value="01:00">01:00</option>
@@ -166,12 +166,12 @@
                     <div class="slds-form__row slds-p-bottom_small">
                       <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                         <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                          <label class="slds-form-element__label" for="input_audience">
+                          <label class="slds-form-element__label" for="input__audience">
                             Audience Type <abbr class="slds-required" title="Required">* </abbr>
                           </label>
                           <div class="slds-form-element__control">
                             <div class="slds-select_container">
-                              <select class="slds-select" id="input_audience" name="input_audience">
+                              <select class="slds-select" id="input__audience" name="input__audience">
                                 <option value="">Active</option>
                                 <option value="INACTIVE_">Inactive</option>
                               </select>
@@ -181,12 +181,12 @@
                       </div>
                       <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                         <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                          <label class="slds-form-element__label" for="input_offer">
+                          <label class="slds-form-element__label" for="input__offer">
                             Campaign Type <abbr class="slds-required" title="Required">* </abbr>
                           </label>
                           <div class="slds-form-element__control">
                             <div class="slds-select_container">
-                              <select class="slds-select" id="input_offer" name="input_offer">
+                              <select class="slds-select" id="input__offer" name="input__offer">
                                 <option value="">Standard</option>
                                 <option value="24HR_">24 Hour Sale</option>
                                 <option value="48HR_">48 Hour Sale</option>
@@ -201,20 +201,20 @@
                     <div class="slds-form__row slds-p-bottom_x-large">
                       <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                         <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                          <label class="slds-form-element__label" for="input_campaign">
+                          <label class="slds-form-element__label" for="input__id">
                             Custom Identifier <abbr class="slds-required" title="Required">* </abbr>
                           </label>
                           <div class="slds-form-element__control">
-                            <input type="text" id="input_id" name="input_id" class="slds-input" value="V1" placeholder="Unique campaign identifier" required=""/>
+                            <input type="text" id="input__id" name="input__id" class="slds-input" value="V1" placeholder="Unique campaign identifier" required=""/>
                           </div>
                         </div>
                       </div>
                       <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                         <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                          <label class="slds-form-element__label" for="input_description">Short Campaign Description</label>
+                          <label class="slds-form-element__label" for="input__description">Short Campaign Description</label>
                           <div class="slds-form-element__control">
-                            <textarea id="input_description" name="input_description" class="slds-textarea" placeholder="Please provide a short description of the campaign"></textarea>
-                            <input type="hidden" id="input_campaign" name="input_campaign" class="slds-input" value=""/>
+                            <textarea id="input__description" name="input__description" class="slds-textarea" placeholder="Please provide a short description of the campaign"></textarea>
+                            <input type="hidden" id="input__campaign" name="input__campaign" class="slds-input" value=""/>
                           </div>
                         </div>
                       </div>
@@ -286,22 +286,22 @@
                       <div class="slds-form__row slds-p-bottom_x-large">
                         <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                           <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                            <label class="slds-form-element__label" for="input_section-key_1">
+                            <label class="slds-form-element__label" for="input__key-1">
                               Section 1 Key <abbr class="slds-required" title="Required">* </abbr>
                             </label>
                             <div class="slds-form-element__control">
-                              <input type="text" id="input_section-key_1" name="input_section-key_1" class="slds-input" value="" placeholder="Unique section identifier" required=""/>
+                              <input type="text" id="input__key-1" name="input__key-1" class="slds-input" value="" placeholder="Unique section identifier" required=""/>
                             </div>
                           </div>
                         </div>
                         <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                           <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                            <label class="slds-form-element__label" for="input_section-sales_1">
+                            <label class="slds-form-element__label" for="input__sales-1">
                               Section 1 Sale ID(s) <abbr class="slds-required" title="Required">* </abbr>
                             </label>
                             <div class="slds-form-element__control">
-                              <textarea id="input_section-sales_1" name="input_section-sales_1" class="slds-textarea" rows="10" placeholder="Sale IDs"></textarea>
-                              <input type="hidden" id="input_section-count" name="input_section-count" class="slds-input" value="1"/>
+                              <textarea id="input__sales-1" name="input__sales-1" class="slds-textarea" rows="10" placeholder="Sale IDs"></textarea>
+                              <input type="hidden" id="input__count" name="input__count" class="slds-input" value="1"/>
                             </div>
                           </div>
                         </div>
@@ -336,7 +336,7 @@
     <script type="text/javascript" src="../scripts/slds.js"></script>
     <script type="text/javascript" src="../scripts/utilities.js"></script>
     <script>
-      $('#input_send-date').datepicker({
+      $('#input__date').datepicker({
         dateFormat: "yy-mm-dd",
         setDate: '+1d',
         firstDay:1
