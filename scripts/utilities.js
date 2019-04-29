@@ -100,7 +100,7 @@ function nameCampaign(){
   var d = $("#input__date").val();
   var dt = d.replace(/-/g,'');
   var day = '_' + $.datepicker.formatDate('D', new Date(d)) + '_';
-  var b = $("#input__brand-picker").attr('aria-label');
+  var b = $('option:selected',"#input__brand-picker").attr('aria-label');
   var s = $("#input__source").attr('aria-label');
   var t = $("#input__time").val();
   var o = $("#input__offer").attr('aria-label');
