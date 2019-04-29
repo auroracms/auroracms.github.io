@@ -112,7 +112,7 @@ function nameCampaign(){
   } 
   $("#input__campaign").val(name.toUpperCase());
   $(".slds-box").html('<p>' + name.toUpperCase() + '</p>');
-  var url = "https://pages.email.secretescapes.com/emailbuilder/campaign-validation?id=" + name;
+  var url = "https://pages.email.secretescapes.com/aurora/campaign/validate?c=" + name;
   $.getJSON(url, function(data) {
     if(data.length>0){
       $(".slds-box").css('border-color','#ff0000');
