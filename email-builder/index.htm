@@ -735,22 +735,24 @@
     <script type="text/javascript" src="/scripts/fullcalendar.min.js"></script>
     <script>
       $(document).ready(function() {
-        var territory = $( "#input__territory" ).val();
-        $('#calendar').fullCalendar({
-          header: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'month,basicWeek,basicDay,listWeek'
-          },
-          defaultDate: new Date(),
-          navLinks: true, // can click day/week names to navigate views
-          editable: false,
-          defaultView: 'month',
-          firstDay: 1,
-          eventLimit: true, // allow "more" link when too many events
-          events: 'https://pages.email.secretescapes.com/aurora/planner/calendar?t=' + territory,
-          loading: function( isLoading, view ) {$(".slds-spinner").toggleClass('slds-hide')}
-        });
+        setTimeout(function(){ 
+          var territory = $( "#input__territory" ).val();
+          $('#calendar').fullCalendar({
+            header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'month,basicWeek,basicDay,listWeek'
+            },
+            defaultDate: new Date(),
+            navLinks: true, // can click day/week names to navigate views
+            editable: false,
+            defaultView: 'month',
+            firstDay: 1,
+            eventLimit: true, // allow "more" link when too many events
+            events: 'https://pages.email.secretescapes.com/aurora/planner/calendar?t=' + territory,
+            loading: function( isLoading, view ) {$(".slds-spinner").toggleClass('slds-hide')}
+          });
+        }, 2000);
       });
       
       $( "#input__territory" ).change(function() {
