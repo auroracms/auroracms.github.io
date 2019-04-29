@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8"/>
     <title>Welcome to Aurora</title>
-    <link rel="stylesheet" href="../styles/salesforce-lightning-design-system.min.css"/>
-    <link rel="stylesheet" href="../styles/custom-styles.css"/>
-    <link rel="icon" type="image/png" href="../images/aurora.ico">
+    <link rel="stylesheet" href="/assets/styles/salesforce-lightning-design-system.min.css"/>
+    <link rel="stylesheet" href="/assets/styles/custom-styles.css"/>
+    <link rel="icon" type="image/png" href="/assets/images/aurora.ico">
   </head>
   <body class="slds-brand-band slds-brand-band_medium">
     <div id="global-header__email" aria-label="2"></div>
@@ -19,7 +19,7 @@
                 <div class="slds-media__figure">
                   <span class="slds-icon_container slds-icon-standard-campaign" title="campaign">
                     <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/standard-sprite/svg/symbols.svg#campaign" />
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign" />
                     </svg>
                     <span class="slds-assistive-text">campaign</span>
                   </span>
@@ -253,7 +253,7 @@
                   <div class="slds-media__figure">
                     <span class="slds-icon_container slds-icon-standard-campaign" title="campaign">
                       <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://s3-eu-west-1.amazonaws.com/se-crm/aurora/icons/standard-sprite/svg/symbols.svg#campaign" />
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign" />
                       </svg>
                       <span class="slds-assistive-text">campaign</span>
                     </span>
@@ -331,10 +331,10 @@
       </form>
     </div>
     <!-- SCRIPTS -->
-    <script type="text/javascript" src="../scripts/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../scripts/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../scripts/slds.js"></script>
-    <script type="text/javascript" src="../scripts/utilities.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/scripts/slds.js"></script>
+    <script type="text/javascript" src="/scripts/utilities.js"></script>
     <script>
       $('#input__date').datepicker({
         dateFormat: "yy-mm-dd",
@@ -356,7 +356,7 @@
     </script>
     <script>
       $(document).on('click', '.section__trigger', function(){
-        $.get( "../components/sale-section.htm", function(data) {
+        $.get( "/assets/components/sale-section.htm", function(data) {
           var html = $("#sale-sections").html();
           var count = parseInt($("#input_section-count").val()) + 1;
           var data = data.replace(/@/g, count);
