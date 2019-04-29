@@ -95,21 +95,21 @@ function rgb2hex(rgb) {
 
 // Function to determine campaign name
 function nameCampaign(){
-  var a = $("#input_audience").val();
-  var d = $("#input_send-date").val();
+  var a = $("#input__audience").val();
+  var d = $("#input__date").val();
   var dt = d.replace(/-/g,'');
   var day = '_' + $.datepicker.formatDate('D', new Date(d)) + '_';
-  var b = $("#input_brand").val();
-  var s = $("#input_source").val() + '_';
-  var t = $("#input_send-time").val();
-  var o = $("#input_offer").val();
-  var i = $("#input_id").val();
+  var b = $("#input__brand-picker").val();
+  var s = $("#input__source").val() + '_';
+  var t = $("#input__time").val();
+  var o = $("#input__offer").val();
+  var i = $("#input__id").val();
   if(b.indexOf('_')>-1 && i!=''){
     var name = 'PARTNERS_' + a + dt + s + b + day + o + i;
   } else if (i!=''){
     var name = a + dt + s + b + day + o + i;
   } 
-  $("#input_campaign").val(name.toUpperCase());
+  $("#input__campaign").val(name.toUpperCase());
   $(".slds-box").html('<p>' + name.toUpperCase() + '</p>');
   var url = "https://pages.email.secretescapes.com/emailbuilder/campaign-validation?id=" + name;
   $.getJSON(url, function(data) {
