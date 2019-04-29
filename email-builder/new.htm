@@ -363,7 +363,7 @@
       $(document).on('click', '.section__trigger', function(){
         $.get( "/components/sale-section.htm", function(data) {
           var html = $("#sale-sections").html();
-          var count = parseInt($("#input_section-count").val()) + 1;
+          var count = parseInt($("#input__count").val()) + 1;
           var data = data.replace(/@/g, count);
           var html = html + data;
           $("#sale-sections").html(html);
