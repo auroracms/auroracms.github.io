@@ -61,7 +61,7 @@ $.get( "/components/global-header-email.htm", function(data) {
     $("#input__territory").val(obj.Territory);
     if(obj["AccountType"]=='Admin'){$(".slds-global-actions__setup").closest(".slds-global-actions__item").removeClass('slds-hide')}
   } else {
-    // Redirect user back to login page
+    window.location.replace('https://auroracms.github.io/');
   }
 });
 $(document).on('keypress', '#global-header__email .slds-global-header__item_search input', function(){
