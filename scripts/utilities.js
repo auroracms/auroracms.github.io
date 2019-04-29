@@ -53,7 +53,7 @@ $.get( "/components/global-header-email.htm", function(data) {
   $("#global-header__email").html(data);
   $(".slds-global-header_container nav li").removeClass('slds-is-active');
   $('.slds-global-header_container nav li:nth-child(' + $("#global-header__email").attr('aria-label') + ')').addClass('slds-is-active');
-  if(getCookie('sessionData')!="" && getCookie('sessionData')!=NULL) {
+  if(getCookie('sessionData')!="") {
     var obj = JSON.parse(getCookie('sessionData'));
     $(".slds-avatar img").attr('title', obj.Username);
     $(".slds-avatar img").attr('alt', obj.Username);
