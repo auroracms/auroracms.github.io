@@ -44,17 +44,7 @@
     <script type="text/javascript" src="/scripts/slds.js"></script>
     <script type="text/javascript" src="/scripts/utilities.js"></script>
     <script>
-      // Function to async load data here
-      function getUrlParameter(sParam) {
-        var sPageURL = window.location.search.substring(1), sURLVariables = sPageURL.split('&'), sParameterName, i;
-        for (i = 0; i < sURLVariables.length; i++) {
-          sParameterName = sURLVariables[i].split('=');
-          if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-          }
-        }
-      };
-      var param = getUrlParameter('u');
+      $(document).ready(getUrlParameter('u'));
       window.alert(param);
     </script>
   </body>
