@@ -60,29 +60,7 @@
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="slds-hint-parent">
-                <th data-label="Opportunity Name" scope="row">
-                  <div class="slds-truncate" title="Cloudhub + Anypoint Connectors">https://www.secretescapes.at</div>
-                </th>
-                <td data-label="Account Name">
-                  <div class="slds-truncate" title="Cloudhub">Secret Escapes</div>
-                </td>
-                <td data-label="Close Date">
-                  <div class="slds-truncate" title="4/14/2015">Core</div>
-                </td>
-                <td data-label="Prospecting">
-                  <div class="slds-truncate" title="Prospecting">Inactive</div>
-                </td>
-                <td data-label="Confidence">
-                  <div class="slds-truncate" title="20%">travelbirdfi</div>
-                </td>
-                <td data-label="Amount">
-                  <div class="slds-truncate" title="k">UK</div>
-                </td>
-              </tr>
-              
-            </tbody>
+            <tbody id="brand-list"></tbody>
           </table>
         </div>
         <footer class="slds-card__footer">
@@ -104,7 +82,28 @@
       $.getJSON(url, function(data) {
         var rows = '';
         for (i = 0; i < data.length; i++) {
-          const element = array[index];
+          var appDomain = data[i]["ApplicationName"];
+          var appName = data[i]["ApplicationName"];
+          var rows = rows + '<tr class="slds-hint-parent">';
+          var rows = rows + '  <th data-label="Application Domain" scope="row">';
+          var rows = rows + '    <div class="slds-truncate" title="' + appDomain + '">' + appDomain + '</div>';
+          var rows = rows + '  </th>';
+          var rows = rows + '  <td data-label="Application Name">';
+          var rows = rows + '    <div class="slds-truncate" title="' + appName + '">' + appName + '</div>';
+          var rows = rows + '  </td>';
+          var rows = rows + '  <td data-label="Application Type">';
+          var rows = rows + '    <div class="slds-truncate" title="4/14/2015">Core</div>';
+          var rows = rows + '  </td>';
+          var rows = rows + '  <td data-label="Application Status">';
+          var rows = rows + '    <div class="slds-truncate" title="Prospecting">Inactive</div>';
+          var rows = rows + '  </td>';
+          var rows = rows + '  <td data-label="Affiliate URL">';
+          var rows = rows + '    <div class="slds-truncate" title="20%">travelbirdfi</div>';
+          var rows = rows + '  </td>';
+          var rows = rows + '  <td data-label="Territory">';
+          var rows = rows + '    <div class="slds-truncate" title="k">UK</div>';
+          var rows = rows + '  </td>';
+          var rows = rows + '</tr>';
         }
       });
     </script>
