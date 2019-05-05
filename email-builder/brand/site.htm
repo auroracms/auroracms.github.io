@@ -81,6 +81,7 @@
       var url = "https://pages.email.secretescapes.com/aurora/brand/sites";
       $.getJSON(url, function(data) {
         var rows = '';
+        window.alert(data.length);
         for (i = 0; i < data.length; i++) {
           var appDomain = data[i]["ApplicationName"];
           var appName = data[i]["ApplicationName"];
