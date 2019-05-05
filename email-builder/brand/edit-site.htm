@@ -94,8 +94,14 @@
       </article>
       <div style="height: 180px;">
         <div class="slds-docked-form-footer">
-          <button type="button" class="slds-button slds-button_neutral">Cancel</button>
-          <button type="button" class="slds-button slds-button_brand">Save</button>
+          <div class="slds-grid">
+            <div class="slds-size_1-of-2 slds-text-align_left">
+              <a class="slds-button slds-button_text-destructive" onclick="history.back()">Back</a>
+            </div>
+            <div class="slds-size_1-of-2 slds-text-align_right">
+              <button class="slds-button slds-button_brand">Submit</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
