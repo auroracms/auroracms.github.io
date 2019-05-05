@@ -47,7 +47,8 @@
       $( document ).ready(function() {
         var url = "https://pages.email.secretescapes.com/aurora/brand/sites?u=" + getUrlParameter('u');
         $.getJSON(url, function(data) {
-          $("#test").html(data.length);
+          var data = data[0];
+          $("#test").html(data.ApplicatioName);
         });
       });
     </script>
