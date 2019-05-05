@@ -422,6 +422,7 @@
           var data = data[0];
           $(".slds-page-header__title").html(data.ApplicationDomain);
           $("#input__domain").val(data.ApplicationDomain);
+          $("#input__domain").prop('readonly', true);
           $("#input__name").val(data.ApplicationName);
           $("#input__type").val(data.ApplicationType);
           $("#input__url").val(data.AffiliateURL);
