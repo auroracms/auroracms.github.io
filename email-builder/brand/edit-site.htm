@@ -35,18 +35,52 @@
         <div class="slds-card__body slds-card__body_inner" id="test">
           <form action="https://pages.email.secretescapes.com/aurora/brand/site-edit" method="post">
             <div class="slds-form" role="list">
+              <div class="slds-text-heading_large">The quick brown fox jumps over the lazy dog.</div>
               <div class="slds-form__row">
                 <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
-                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                      <label class="slds-form-element__label" for="input__brand-picker">
-                          Select Brand <abbr class="slds-required" title="Required">* </abbr>
-                      </label>
-                      <div class="slds-form-element__control">
-                        <input type="text" id="input__domain" name="input__domain" class="slds-input" value="" placeholder="Domain of the site including https://" required=""/>
-                      </div>
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input__brand-picker">
+                        Application Domain <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input__domain" name="input__domain" class="slds-input" value="" placeholder="Domain of the site including https://" required=""/>
                     </div>
+                  </div>
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input__brand-picker">
+                        Application Name <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input__name" name="input__name" class="slds-input" value="" placeholder="Domain of the site including https://" required=""/>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div class="slds-form__row">
+                  <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input__brand-picker">
+                          Application Type <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <div class="slds-select_container">
+                          <select class="slds-select" id="input__type" name="input__type">
+                            <option value="Core">Core</option>
+                            <option value="Whitelabel">Whitelabel</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                      <label class="slds-form-element__label" for="input__brand-picker">
+                          Application Name <abbr class="slds-required" title="Required">* </abbr>
+                      </label>
+                      <div class="slds-form-element__control">
+                        <input type="text" id="input__name" name="input__name" class="slds-input" value="" placeholder="Domain of the site including https://" required=""/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
           </form>
         </div>
@@ -64,6 +98,8 @@
         $.getJSON(url, function(data) {
           var data = data[0];
           $("#input__domain").val(data.ApplicationDomain);
+          $("#input__name").val(data.ApplicationName);
+          $("#input__type").val(data.ApplicationType);
         });
       });
     </script>
