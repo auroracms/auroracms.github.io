@@ -12,7 +12,7 @@
     <div id="app-launcher"></div>
     <div id="wrapper" class="slds-m-around_medium">
       <!-- Card -->
-      <article class="slds-card">
+      <article class="slds-card slds-m-around_medium">
         <div class="slds-card__header slds-grid">
           <header class="slds-media slds-media_center slds-has-flexi-truncate">
             <div class="slds-media__figure">
@@ -47,6 +47,9 @@
                   <div class="slds-truncate" title="Application Name">Application Name</div>
                 </th>
                 <th class="" scope="col">
+                  <div class="slds-truncate" title="Territory">Territory</div>
+                </th>
+                <th class="" scope="col">
                   <div class="slds-truncate" title="Application Type">Application Type</div>
                 </th>
                 <th class="" scope="col">
@@ -55,19 +58,11 @@
                 <th class="" scope="col">
                   <div class="slds-truncate" title="AffiliateURL">Affiliate URL</div>
                 </th>
-                <th class="" scope="col">
-                  <div class="slds-truncate" title="Territory">Territory</div>
-                </th>
               </tr>
             </thead>
             <tbody id="brand-list"></tbody>
           </table>
         </div>
-        <footer class="slds-card__footer">
-          <a class="slds-card__footer-action" href="javascript:void(0);">View All
-            <span class="slds-assistive-text">Accounts</span>
-          </a>
-        </footer>
       </article>
       
     </div>
@@ -98,6 +93,9 @@
           var rows = rows + '  <td data-label="Application Name">';
           var rows = rows + '    <div class="slds-truncate" title="' + appName + '">' + appName + '</div>';
           var rows = rows + '  </td>';
+          var rows = rows + '  <td data-label="Territory">';
+          var rows = rows + '    <div class="slds-truncate" title="' + territory + '">' + territory + '</div>';
+          var rows = rows + '  </td>';
           var rows = rows + '  <td data-label="Application Type">';
           var rows = rows + '    <div class="slds-truncate" title="' + appType + '">' + appType + '</div>';
           var rows = rows + '  </td>';
@@ -106,9 +104,6 @@
           var rows = rows + '  </td>';
           var rows = rows + '  <td data-label="Affiliate URL">';
           var rows = rows + '    <div class="slds-truncate" title="' + appURL + '">' + appURL + '</div>';
-          var rows = rows + '  </td>';
-          var rows = rows + '  <td data-label="Territory">';
-          var rows = rows + '    <div class="slds-truncate" title="' + territory + '">' + territory + '</div>';
           var rows = rows + '  </td>';
           var rows = rows + '</tr>';
         }
