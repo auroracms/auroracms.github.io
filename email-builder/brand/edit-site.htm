@@ -45,10 +45,10 @@
     <script type="text/javascript" src="/scripts/utilities.js"></script>
     <script>
       $( document ).ready(function() {
-      var url = "https://pages.email.secretescapes.com/aurora/brand/sites?u=" + getUrlParameter('u');
-      $.getJSON(url, function(data) {
-        $("#test").html(data);
-      });
+        var url = "https://pages.email.secretescapes.com/aurora/brand/sites?u=" + getUrlParameter('u');
+        $.getJSON(url, function(data) {
+          $("#test").html(data.length);
+        });
       });
     </script>
   </body>
