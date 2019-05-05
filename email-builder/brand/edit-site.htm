@@ -430,7 +430,7 @@
     <script>
       $( document ).ready(function() {
         var status = getUrlParameter('status');
-        if(status=='true'){$("#message-success").removeClass('slds-hide')};
+        if(status=='success'){$("#message-success").removeClass('slds-hide')};
         var url = "https://pages.email.secretescapes.com/aurora/brand/sites?u=" + getUrlParameter('u');
         $.getJSON(url, function(data) {
           var data = data[0];
