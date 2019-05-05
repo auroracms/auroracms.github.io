@@ -73,6 +73,8 @@
     <script type="text/javascript" src="/scripts/utilities.js"></script>
     <script>
       // Function to async load data here
+      var test = getUrlParameter('t');
+      winow.alert(test);
       var url = "https://pages.email.secretescapes.com/aurora/brand/sites";
       $.getJSON(url, function(data) {
         var rows = '';
