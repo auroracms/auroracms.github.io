@@ -44,8 +44,10 @@
     <script type="text/javascript" src="/scripts/slds.js"></script>
     <script type="text/javascript" src="/scripts/utilities.js"></script>
     <script>
-      $(document).ready(getUrlParameter('u'));
-      window.alert(param);
+      $( document ).ready(function() {
+        var param = getUrlParameter('u') + '\\';
+        window.alert(param);
+      });
     </script>
   </body>
 </html>
