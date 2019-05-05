@@ -32,7 +32,7 @@
             </div>
           </header>
         </div>
-        <div class="slds-card__body slds-card__body_inner">
+        <div class="slds-card__body slds-card__body_inner" id="test">
 
         </div>
       </article>
@@ -45,8 +45,10 @@
     <script type="text/javascript" src="/scripts/utilities.js"></script>
     <script>
       $( document ).ready(function() {
-        var param = getUrlParameter('u') + '\\';
-        window.alert(param);
+      var url = "https://pages.email.secretescapes.com/aurora/brand/sites?u=" + getUrlParameter('u');
+      $.getJSON(url, function(data) {
+        $("#test").html(data);
+      });
       });
     </script>
   </body>
