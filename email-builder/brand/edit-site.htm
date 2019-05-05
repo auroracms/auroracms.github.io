@@ -72,7 +72,7 @@
                         Application Domain <abbr class="slds-required" title="Required">* </abbr>
                         </label>
                         <div class="slds-form-element__control">
-                          <input type="text" id="input__domain" name="input__domain" class="slds-input" value="" placeholder="Domain of the site including https://" required=""/>
+                          <input type="text" id="input__domain" name="input__domain" class="slds-input" value="" placeholder="Must include https://" required=""/>
                         </div>
                       </div>
                     </div>
@@ -82,7 +82,7 @@
                         Application Name <abbr class="slds-required" title="Required">* </abbr>
                         </label>
                         <div class="slds-form-element__control">
-                          <input type="text" id="input__name" name="input__name" class="slds-input" value="" placeholder="Domain of the site including https://" required=""/>
+                          <input type="text" id="input__name" name="input__name" class="slds-input" value="" required=""/>
                         </div>
                       </div>
                     </div>
@@ -109,7 +109,7 @@
                         Affiliate URL <abbr class="slds-required" title="Required">* </abbr>
                         </label>
                         <div class="slds-form-element__control">
-                          <input type="text" id="input__url" name="input__url" class="slds-input" value="" placeholder="Domain of the site including https://" required=""/>
+                          <input type="text" id="input__url" name="input__url" class="slds-input" value="" required=""/>
                         </div>
                       </div>
                     </div>
@@ -361,7 +361,7 @@
                           Jetlore Feed
                           </label>
                           <div class="slds-form-element__control">
-                            <input type="text" id="input__jfeed" name="input__jfeed" class="slds-input" value="" placeholder="Domain of the site including https://" required=""/>
+                            <input type="text" id="input__jfeed" name="input__jfeed" class="slds-input" value=""/>
                           </div>
                         </div>
                       </div>
@@ -383,7 +383,7 @@
                             TrustPilot Link
                           </label>
                           <div class="slds-form-element__control">
-                            <input type="text" id="input__tplink" name="input__tplink" class="slds-input" value="" placeholder="Domain of the site including https://" required=""/>
+                            <input type="text" id="input__tplink" name="input__tplink" class="slds-input" value="" />
                           </div>
                         </div>
                       </div>
@@ -435,6 +435,10 @@
           $("#input__legal").val(data.LegalName);
           $("#input__signoff").val(data.SignOffName);
           $("#input__terms").val(data.TermsConditions);
+          $("#input__jid").val(data.JetloreID);
+          $("#input__jfeed").val(data.JetloreFeed);
+          $("#input__trustpilot").val(data.TrustPilotID);
+          $("#input__tplink").val(data.TrustPilotLink);
         });
       });
     </script>
