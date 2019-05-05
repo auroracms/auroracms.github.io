@@ -17,22 +17,22 @@
           <div class="slds-page-header__col-title">
             <div class="slds-media">
               <div class="slds-media__figure">
-                <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
-                  <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                <span class="slds-icon_container slds-icon-standard-trailhead" title="Site Settings">
+                  <svg class="slds-icon slds-icon_large slds-page-header__icon" aria-hidden="true">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#system_and_global_variable" />
                   </svg>
-                  <span class="slds-assistive-text">opportunity</span>
+                  <span class="slds-assistive-text">Site Settings</span>
                 </span>
               </div>
               <div class="slds-media__body">
                 <div class="slds-page-header__name">
                   <div class="slds-page-header__name-title">
                     <h1>
-                      <span class="slds-page-header__title slds-truncate" title="Rohde Corp - 80,000 Widgets">Rohde Corp - 80,000 Widgets</span>
+                      <span class="slds-page-header__title slds-truncate" title="Site Settings">New Site</span>
                     </h1>
                   </div>
                 </div>
-                <p class="slds-page-header__name-meta">Mark Jaeckal • Unlimited Customer • 11/13/15</p>
+                <p class="slds-page-header__name-meta">Update site and brand settings</p>
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@
           <header class="slds-media slds-media_center slds-has-flexi-truncate">
             <div class="slds-media__figure">
               <span class="slds-icon_container slds-icon-standard-account" title="Site Settings">
-                <svg class="slds-icon slds-icon" aria-hidden="true">
+                <svg class="slds-icon" aria-hidden="true">
                   <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#skill_requirement"></use>
                 </svg>
                 <span class="slds-assistive-text">Site Settings</span>
@@ -228,6 +228,7 @@
         var url = "https://pages.email.secretescapes.com/aurora/brand/sites?u=" + getUrlParameter('u');
         $.getJSON(url, function(data) {
           var data = data[0];
+          $(".slds-page-header__title").html(data.ApplicationDomain);
           $("#input__domain").val(data.ApplicationDomain);
           $("#input__name").val(data.ApplicationName);
           $("#input__type").val(data.ApplicationType);
