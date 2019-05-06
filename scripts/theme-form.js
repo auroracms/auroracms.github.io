@@ -47,7 +47,7 @@ function loadForm() {
     $("#input__footerfontcolor1").val(data.FooterFontColor1);
     $("#input__footerfontcolor2").val(data.FooterFontColor2);
   });
-  updatePreviews();
+  setTimeout(updatePreviews(),300)
 }
 
 function updatePreviews() {
