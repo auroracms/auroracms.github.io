@@ -10,7 +10,7 @@ function loadForm() {
     $("#input__icon").val(data.LogoIcon);
     $("#input__font").val(data.FontFamily);
     $("#input__title").val(data.FontFamilyTitle);
-    $("#input__font_family").val(data.FontFamilyContent);
+    $("#input__font_content").val(data.FontFamilyContent);
 
     $("#input__headercolour").val(data.HeaderColor);
     $("#input__headerfontcolor1").val(data.HeaderFontColor1);
