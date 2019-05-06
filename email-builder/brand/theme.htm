@@ -69,10 +69,10 @@
                   <div class="slds-truncate" title="Theme Name">Theme Name</div>
                 </th>
                 <th class="" scope="col">
-                  <div class="slds-truncate" title="Logo">Logo</div>
+                  <div class="slds-truncate" title="Font Family">Font Family</div>
                 </th>
                 <th class="" scope="col">
-                  <div class="slds-truncate" title="Font Family">Font Family</div>
+                  <div class="slds-truncate" title="Modified Date">Modified Date</div>
                 </th>
               </tr>
             </thead>
@@ -101,7 +101,7 @@
         for (i = 0; i < data.length; i++) {
           var id = data[i]["ThemeID"];
           var name = data[i]["ThemeName"];
-          var logo = data[i]["Logo"];
+          var date = data[i]["ModifiedDate"];
           var font = data[i]["FontFamily"];
 
           var rows = rows + '<tr class="slds-hint-parent">';
@@ -113,11 +113,11 @@
           var rows = rows + '  <td data-label="Theme Name">';
           var rows = rows + '    <div class="slds-truncate" title="' + name + '">' + name + '</div>';
           var rows = rows + '  </td>';
-          var rows = rows + '  <td data-label="Logo">';
-          var rows = rows + '    <div class="slds-truncate" title="' + logo + '">' + logo + '</div>';
-          var rows = rows + '  </td>';
           var rows = rows + '  <td data-label="Font Family">';
           var rows = rows + '    <div class="slds-truncate" title="' + font + '">' + font + '</div>';
+          var rows = rows + '  </td>';
+          var rows = rows + '  <td data-label="Modified Date">';
+          var rows = rows + '    <div class="slds-truncate" title="' + date + '">' + date + '</div>';
           var rows = rows + '  </td>';
           var rows = rows + '</tr>';
         }
