@@ -55,5 +55,4 @@ function updatePreviews() {
   var bg = $("#input__headercolour").val();
   $("#ColorsHeader > div:nth-child(1)").css( "background-color", bg);
   $("#ColorsHeader > div:nth-child(1)").css( "color", 'red');
-  window.alert(bg);
 }
