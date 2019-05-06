@@ -56,5 +56,18 @@ function updatePreviews() {
   $("#ColorsHeader > div:nth-child(1)").css("color", $("#input__headerfontcolor1").val());
   $("#ColorsHeader > div:nth-child(2)").css("background-color", $("#input__headercolour").val());
   $("#ColorsHeader > div:nth-child(2)").css("color", $("#input__headerfontcolor2").val());
+  // Body Colors
+  $("#ColorsBody > div:nth-child(1)").css("background-color", $("#input__bodycolor").val());
+  $("#ColorsBody > div:nth-child(1)").css("color", $("#input__bodyfontcolor1").val());
+  $("#ColorsBody > div:nth-child(2)").css("background-color", $("#input__bodycolor").val());
+  $("#ColorsBody > div:nth-child(2)").css("color", $("#input__bodyfontcolor2").val());
+  $("#ColorsBody > div:nth-child(3)").css("background-color", $("#input__bodycolor").val());
+  $("#ColorsBody > div:nth-child(3)").css("color", $("#input__bodyfontcolor3").val());
+  // Button Colors
+  $("#ColorsHeader > div:nth-child(1)").css("background-color", $("#input__buttoncolor").val());
+  $("#ColorsHeader > div:nth-child(1)").css("color", $("#input__buttonfontcolor").val());
+  $("#ColorsHeader > div:nth-child(2)").css("background-color", $("#input__secondcolor").val());
+  $("#ColorsHeader > div:nth-child(2)").css("color", $("#input__secondfontcolor").val());
+  
   $(".demo-only").hide();
 }
