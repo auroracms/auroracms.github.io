@@ -121,7 +121,7 @@
           var rows = rows + '  </td>';
           var rows = rows + '</tr>';
         }
-        var newid = id + 1;
+        var newid = parseInt(id) + 1;
         $("#create").attr('href', '/email-builder/brand/edit-theme.htm?id=' + newid);
         $("#theme-list").html(rows);
       });
