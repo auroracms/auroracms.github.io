@@ -39,7 +39,7 @@
         </div>
       </div>
       <form action="https://pages.email.secretescapes.com/aurora/brand/site-edit" method="post">
-        <!-- Application Settings -->
+        <!-- Core Settings -->
         <article class="slds-card slds-m-bottom_x-large">
           <div class="slds-card__header slds-grid">
             <header class="slds-media slds-media_center slds-has-flexi-truncate">
@@ -65,17 +65,7 @@
               <div class="slds-col slds-size_1-of-1" role="listitem">
                 <div class="slds-form" role="list">
                   <div class="slds-form__row slds-p-vertical_x-small">
-                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__id">
-                          Theme ID <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <input type="number" id="input__id" name="input__id" class="slds-input" value="" required=""/>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_2-of-3" role="listitem">
                       <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
                         <label class="slds-form-element__label" for="input__name">
                           Theme Name <abbr class="slds-required" title="Required">* </abbr>
@@ -85,115 +75,47 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="slds-form__row slds-p-vertical_x-small">
-                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-3" role="listitem">
                       <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__type">
-                        Application Type <abbr class="slds-required" title="Required">* </abbr>
+                        <label class="slds-form-element__label" for="input__id">
+                          Theme ID <abbr class="slds-required" title="Required">* </abbr>
                         </label>
                         <div class="slds-form-element__control">
-                          <div class="slds-select_container">
-                            <select class="slds-select" id="input__type" name="input__type">
-                              <option value="Core">Core</option>
-                              <option value="Whitelabel">Whitelabel</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__url">
-                        Affiliate URL <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <input type="text" id="input__url" name="input__url" class="slds-input" value="" required=""/>
+                          <input type="number" id="input__id" name="input__id" class="slds-input" value="" required="" readonly/>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="slds-form__row slds-p-vertical_x-small">
-                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_2-of-3" role="listitem">
                       <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__appterritory">
-                        Territory <abbr class="slds-required" title="Required">* </abbr>
+                        <label class="slds-form-element__label" for="input__logo">
+                          Logo <abbr class="slds-required" title="Required">* </abbr>
                         </label>
                         <div class="slds-form-element__control">
-                          <div class="slds-select_container">
-                            <select class="slds-select" id="input__appterritory" name="input__appterritory">
-                              <option value="AT">AT</option>
-                              <option value="BE">BE</option>
-                              <option value="CH">CH</option>
-                              <option value="CZ">CZ</option>
-                              <option value="DE">DE</option>
-                              <option value="DK">DK</option>
-                              <option value="ES">ES</option>
-                              <option value="FR">FR</option>
-                              <option value="HG">HG</option>
-                              <option value="HK">HK</option>
-                              <option value="ID">ID</option>
-                              <option value="IT">IT</option>
-                              <option value="MY">MY</option>
-                              <option value="NL">NL</option>
-                              <option value="NO">NO</option>
-                              <option value="PH">PH</option>
-                              <option value="PL">PL</option>
-                              <option value="SE">SE</option>
-                              <option value="SG">SG</option>
-                              <option value="SK">SK</option>
-                              <option value="UK">UK</option>
-                              <option value="US">US</option>
-                              <option value="TB-BE_NL">TravelBird BE</option>
-                              <option value="TB-BE_FR">TravelBird BE-FR</option>
-                              <option value="TB-NL">TravelBird NL</option>
-                            </select>
-                          </div>
+                          <input type="text" id="input__logo" name="input__logo" class="slds-input" value="" required=""/>
                         </div>
                       </div>
                     </div>
-                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-3" role="listitem">
                       <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__locale">
-                        Locale <abbr class="slds-required" title="Required">* </abbr>
+                        <label class="slds-form-element__label" for="input__width">
+                          Logo Width <abbr class="slds-required" title="Required">* </abbr>
                         </label>
                         <div class="slds-form-element__control">
-                          <div class="slds-select_container">
-                            <select class="slds-select" id="input__locale" name="input__locale">
-                              <option value="cs_CZ">cs_CZ</option>
-                              <option value="da_DK">da_DK</option>
-                              <option value="de_DE">de_DE</option>
-                              <option value="en_GB">en_GB</option>
-                              <option value="en_GB">en_IE</option>
-                              <option value="en_US">en_US</option>
-                              <option value="es_ES">es_ES</option>
-                              <option value="fr_FR">fr_FR</option>
-                              <option value="hu_HU">hu_HU</option>
-                              <option value="it_IT">it_IT</option>
-                              <option value="nl_BE">nl_BE</option>
-                              <option value="nl_NL">nl_NL</option>
-                              <option value="no_NO">no_NO</option>
-                              <option value="pl_PL">pl_PL</option>
-                              <option value="sv">sv_SE</option>
-                            </select>
-                          </div>
+                          <input type="number" id="input__width" name="input__width" class="slds-input" value="" required=""/>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="slds-form__row slds-p-vertical_x-small">
-                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                    <div class="slds-form__item slds-size_1-of-1 slds-medium-size_2-of-3" role="listitem">
                       <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__brand-picker">
-                        Application Status <abbr class="slds-required" title="Required">* </abbr>
+                        <label class="slds-form-element__label" for="input__logo">
+                          Logo <abbr class="slds-required" title="Required">* </abbr>
                         </label>
                         <div class="slds-form-element__control">
-                          <div class="slds-select_container">
-                            <select class="slds-select" id="input__status" name="input__status">
-                              <option value="Active">Active</option>
-                              <option value="Inactive">Inactive</option>
-                            </select>
-                          </div>
+                          <input type="text" id="input__logo" name="input__logo" class="slds-input" value="" required=""/>
                         </div>
                       </div>
                     </div>
@@ -203,6 +125,7 @@
             </div>
           </div>
         </article>
+
         <!-- Email Settings -->
         <article class="slds-card slds-m-bottom_x-large">
           <div class="slds-card__header slds-grid">
