@@ -214,10 +214,20 @@
           <div class="slds-card__body slds-card__body_inner">
             <div class="slds-grid slds-wrap slds-gutters_small">
               <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
-                FORM
+                <div class="slds-form__item slds-size_1-of-1 role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input__font_content">
+                      Header Color <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input__font_content" name="input__font_content" class="slds-input" value="" required=""/>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
-                BUILD
+              <div class="slds-col slds-size_1-of-2 slds-align_absolute-center slds-show_medium" role="listitem">
+                <div id="HeaderFontColor1" style="background-color:#1a1a1a; color:#ffffff">Header Font Color 1</div>
+                <div id="HeaderFontColor2" style="background-color:#1a1a1a; color:#ffffff">Header Font Color 2</div>
               </div>
             </div>
           </div>
