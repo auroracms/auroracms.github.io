@@ -111,11 +111,11 @@
                   <div class="slds-form__row slds-p-vertical_x-small">
                     <div class="slds-form__item slds-size_1-of-1 slds-medium-size_2-of-3" role="listitem">
                       <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__logo">
-                          Logo <abbr class="slds-required" title="Required">* </abbr>
+                        <label class="slds-form-element__label" for="input__icon">
+                          Icon <abbr class="slds-required" title="Required">* </abbr>
                         </label>
                         <div class="slds-form-element__control">
-                          <input type="text" id="input__logo" name="input__logo" class="slds-input" value="" required=""/>
+                          <input type="text" id="input__icon" name="input__icon" class="slds-input" value="" required=""/>
                         </div>
                       </div>
                     </div>
@@ -336,6 +336,9 @@
           var data = data[0];
           $(".slds-page-header__title").html(data.ThemeName);
           $("#input__name").val(data.ThemeName);
+          $("#input__logo").val(data.Logo);
+          $("#input__width").val(data.LogoWidth);
+          $("#input__icon").val(data.LogoIcon);
         });
       });
     </script>
