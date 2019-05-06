@@ -66,8 +66,33 @@ function updatePreviews() {
   // Button Colors
   $("#ColorsButton > div:nth-child(1)").css("background-color", $("#input__buttoncolor").val());
   $("#ColorsButton > div:nth-child(1)").css("color", $("#input__buttonfontcolor").val());
-  $("#ColorsButton > div:nth-child(2)").css("background-color", $("#input__secondcolor").val());
-  $("#ColorsButton > div:nth-child(2)").css("color", $("#input__secondfontcolor").val());
-  
+  $("#ColorsButton > div:nth-child(4)").css("background-color", $("#input__secondcolor").val());
+  $("#ColorsButton > div:nth-child(4)").css("color", $("#input__secondfontcolor").val());
+  // Sale Card Colors
+  $("#ColorsSale > div:nth-child(1)").css("background-color", $("#input__cardcolor").val());
+  $("#ColorsSale > div:nth-child(1)").css("color", $("#input__cardfontcolor1").val());
+  $("#ColorsSale > div:nth-child(2)").css("background-color", $("#input__cardcolor").val());
+  $("#ColorsSale > div:nth-child(2)").css("color", $("#input__cardfontcolor2").val());
+  $("#ColorsSale > div:nth-child(3)").css("background-color", $("#input__cardcolor").val());
+  $("#ColorsSale > div:nth-child(3)").css("color", $("#input__cardfontcolor3").val());
+  $("#ColorsSale > div:nth-child(4)").css("background-color", $("#input__cardcolor").val());
+  $("#ColorsSale > div:nth-child(4)").css("color", $("#input__cardfontcolor4").val());
+  // Article Colors
+  $("#ColorsArticle > div:nth-child(1)").css("background-color", $("#input__articlecolor").val());
+  $("#ColorsArticle > div:nth-child(1)").css("color", $("#input__articlefontcolor1").val());
+  $("#ColorsArticle > div:nth-child(2)").css("background-color", $("#input__articlecolor").val());
+  $("#ColorsArticle > div:nth-child(2)").css("color", $("#input__articlefontcolor2").val());
+  $("#ColorsArticle > div:nth-child(3)").css("background-color", $("#input__articlecolor").val());
+  $("#ColorsArticle > div:nth-child(3)").css("color", $("#input__articlefontcolor3").val());
+  // Sign Off Colors
+  $("#ColorsSignOff > div:nth-child(1)").css("background-color", $("#input__signcolor").val());
+  $("#ColorsSignOff > div:nth-child(1)").css("color", $("#input__signfontcolor1").val());
+  $("#ColorsSignOff > div:nth-child(2)").css("background-color", $("#input__signcolor").val());
+  $("#ColorsSignOff > div:nth-child(2)").css("color", $("#input__signfontcolor2").val());
+  // Footer Colors
+  $("#ColorsFooter > div:nth-child(1)").css("background-color", $("#input__footercolor").val());
+  $("#ColorsFooter > div:nth-child(1)").css("color", $("#input__footerfontcolor1").val());
+  $("#ColorsFooter > div:nth-child(2)").css("background-color", $("#input__footercolor").val());
+  $("#ColorsFooter > div:nth-child(2)").css("color", $("#input__footerfontcolor1").val());
   $(".demo-only").hide();
 }
