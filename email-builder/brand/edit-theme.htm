@@ -375,49 +375,60 @@
               <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
                 <div class="slds-form__item slds-size_1-of-1 role="listitem">
                   <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                    <label class="slds-form-element__label" for="input__bodycolor">
-                      Body Color <abbr class="slds-required" title="Required">* </abbr>
+                    <label class="slds-form-element__label" for="input__cardcolor">
+                      Sale Card Background <abbr class="slds-required" title="Required">* </abbr>
                     </label>
                     <div class="slds-form-element__control">
-                      <input type="text" id="input__bodycolor" name="input__bodycolor" class="slds-input" value="" required=""/>
+                      <input type="text" id="input__cardcolor" name="input__cardcolor" class="slds-input" value="" required=""/>
                     </div>
                   </div>
                 </div>
                 <div class="slds-form__item slds-size_1-of-1 role="listitem">
                   <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                    <label class="slds-form-element__label" for="input__bodyfontcolor1">
-                      Body Font Color <abbr class="slds-required" title="Required">* </abbr>
+                    <label class="slds-form-element__label" for="input__cardfontcolor1">
+                      Sale Primary Font <abbr class="slds-required" title="Required">* </abbr>
                     </label>
                     <div class="slds-form-element__control">
-                      <input type="text" id="input__bodyfontcolor1" name="input__bodyfontcolor1" class="slds-input" value="" required=""/>
+                      <input type="text" id="input__cardfontcolor1" name="input__cardfontcolor1" class="slds-input" value="" required=""/>
                     </div>
                   </div>
                 </div>
                 <div class="slds-form__item slds-size_1-of-1 role="listitem">
                   <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                    <label class="slds-form-element__label" for="input__bodyfontcolor2">
-                      Body Secondary Font Color <abbr class="slds-required" title="Required">* </abbr>
+                    <label class="slds-form-element__label" for="input__cardfontcolor2">
+                      Sale Secondary Font <abbr class="slds-required" title="Required">* </abbr>
                     </label>
                     <div class="slds-form-element__control">
-                      <input type="text" id="input__bodyfontcolor2" name="input__bodyfontcolor2" class="slds-input" value="" required=""/>
+                      <input type="text" id="input__cardfontcolor2" name="input__cardfontcolor2" class="slds-input" value="" required=""/>
                     </div>
                   </div>
                 </div>
                 <div class="slds-form__item slds-size_1-of-1 role="listitem">
                   <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                    <label class="slds-form-element__label" for="input__bodyfontcolor3">
-                      Body Tertiary Font Color <abbr class="slds-required" title="Required">* </abbr>
+                    <label class="slds-form-element__label" for="input__cardfontcolor3">
+                      Sale Tertiary Font <abbr class="slds-required" title="Required">* </abbr>
                     </label>
                     <div class="slds-form-element__control">
-                      <input type="text" id="input__bodyfontcolor3" name="input__bodyfontcolor3" class="slds-input" value="" required=""/>
+                      <input type="text" id="input__cardfontcolor3" name="input__cardfontcolor3" class="slds-input" value="" required=""/>
+                    </div>
+                  </div>
+                </div>
+                <div class="slds-form__item slds-size_1-of-1 role="listitem">
+                  <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <label class="slds-form-element__label" for="input__cardfontcolor4">
+                      Sale Brand Font <abbr class="slds-required" title="Required">* </abbr>
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input__cardfontcolor4" name="input__cardfontcolor4" class="slds-input" value="" required=""/>
                     </div>
                   </div>
                 </div>
               </div>
-              <div id="BodyColor" class="slds-col slds-size_1-of-2 slds-text-align_center slds-show_medium slds-p-around_small" role="listitem">
-                <div id="BodyFontColor1" class="slds-p-vertical_small" style="background-color:#1a1a1a; color:#ffffff">Body Font Color 1</div>
-                <div id="BodyFontColor2" class="slds-p-vertical_small" style="background-color:#1a1a1a; color:#ffffff">Body Font Color 2</div>
-                <div id="BodyFontColor3" class="slds-p-vertical_small" style="background-color:#1a1a1a; color:#ffffff">Body Font Color 3</div>
+              <div id="SaleCard" class="slds-col slds-size_1-of-2 slds-text-align_center slds-show_medium slds-p-around_small" role="listitem">
+                <div class="slds-p-vertical_small">Sale Card Font Color 1</div>
+                <div class="slds-p-vertical_small">Sale Card Font Color 2</div>
+                <div class="slds-p-vertical_small">Sale Card Font Color 3</div>
+                <div class="slds-p-vertical_small">Sale Card Font Color 4</div>
               </div>
             </div>
             <!-- Article Colours -->
@@ -595,11 +606,7 @@
     <script type="text/javascript" src="/scripts/theme-form.js"></script>
     <script>
       $(document).ready(loadForm());
-    </script>
-    <script>
-      function updatePreviews() {
-
-      }
+      $(document).ready(updatePreviews());
     </script>
   </body>
 </html>
