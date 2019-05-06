@@ -51,7 +51,8 @@ function loadForm() {
 
 function updatePreviews() {
   // Header Colors
-  $("#ColorsHeader > div:nth-child(1)").css( "background-color", $("#input__headercolour").val());
+  var bg = $("#input__headercolour").val();
+  $("#ColorsHeader > div:nth-child(1)").css( "background-color", bg);
   $("#ColorsHeader > div:nth-child(1)").css( "color", 'red');
   
 }
