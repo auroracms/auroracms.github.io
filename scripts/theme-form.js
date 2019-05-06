@@ -49,4 +49,9 @@ function loadForm() {
   });
 }
 
-function updatePreviews() {}
+function updatePreviews() {
+  // Header Colors
+  $("#ColorsHeader > div:nth-child(1)").css( "background-color", $("#input__headercolour").val());
+  $("#ColorsHeader > div:nth-child(1)").css( "color", $("#input__headerfontcolor1").val());
+  
+}
