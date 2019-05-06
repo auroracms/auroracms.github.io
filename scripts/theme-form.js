@@ -48,3 +48,5 @@ function loadForm() {
     $("#input__footerfontcolor2").val(data.FooterFontColor2);
   });
 }
+
+function updatePreviews() {}
