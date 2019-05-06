@@ -52,8 +52,9 @@ function loadForm() {
 
 function updatePreviews() {
   // Header Colors
-  var bg = $("#input__headercolour").val();
-  $("#ColorsHeader > div:nth-child(1)").css( "background-color", bg);
-  $("#ColorsHeader > div:nth-child(1)").css( "color", 'red');
+  $("#ColorsHeader > div:nth-child(1)").css("background-color", $("#input__headercolour").val());
+  $("#ColorsHeader > div:nth-child(1)").css("color", $("#input__headerfontcolor1").val());
+  $("#ColorsHeader > div:nth-child(2)").css("background-color", $("#input__headercolour").val());
+  $("#ColorsHeader > div:nth-child(2)").css("color", $("#input__headerfontcolor2").val());
   $(".demo-only").hide();
 }
