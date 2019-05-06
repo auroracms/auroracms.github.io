@@ -53,7 +53,7 @@
               </h2>
             </div>
             <div class="slds-no-flex">
-              <a href="/email-builder/brand/edit-theme.htm" class="slds-button slds-button_neutral">New</a>
+              <a id="create" href="/email-builder/brand/edit-theme.htm" class="slds-button slds-button_neutral">New</a>
             </div>
           </header>
         </div>
@@ -121,6 +121,7 @@
           var rows = rows + '  </td>';
           var rows = rows + '</tr>';
         }
+        $("#create").attr('href', id);
         $("#theme-list").html(rows);
       });
     </script>
