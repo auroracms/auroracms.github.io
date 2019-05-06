@@ -64,10 +64,10 @@ function updatePreviews() {
   $("#ColorsBody > div:nth-child(3)").css("background-color", $("#input__bodycolor").val());
   $("#ColorsBody > div:nth-child(3)").css("color", $("#input__bodyfontcolor3").val());
   // Button Colors
-  $("#ColorsHeader > div:nth-child(1)").css("background-color", $("#input__buttoncolor").val());
-  $("#ColorsHeader > div:nth-child(1)").css("color", $("#input__buttonfontcolor").val());
-  $("#ColorsHeader > div:nth-child(2)").css("background-color", $("#input__secondcolor").val());
-  $("#ColorsHeader > div:nth-child(2)").css("color", $("#input__secondfontcolor").val());
+  $("#ColorsButton > div:nth-child(1)").css("background-color", $("#input__buttoncolor").val());
+  $("#ColorsButton > div:nth-child(1)").css("color", $("#input__buttonfontcolor").val());
+  $("#ColorsButton > div:nth-child(2)").css("background-color", $("#input__secondcolor").val());
+  $("#ColorsButton > div:nth-child(2)").css("color", $("#input__secondfontcolor").val());
   
   $(".demo-only").hide();
 }
