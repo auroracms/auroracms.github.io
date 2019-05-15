@@ -187,7 +187,7 @@
     <script type="text/javascript" src="/scripts/slds.js"></script>
     <script type="text/javascript" src="/scripts/utilities.js"></script>
     <script>
-      function generateHTML {
+      function generateHTML() {
         var endpoint = $("#input__template").val();
         $.get(endpoint, function(data) {
           $("#holding-screen").val(data);
