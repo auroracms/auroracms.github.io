@@ -11,28 +11,140 @@
     <div id="global-header__email" aria-label="4"></div>
     <div id="app-launcher"></div>
     <div id="wrapper" class="slds-m-around_medium">
-      <!-- Toast -->
-      <div class="slds-notify_container slds-is-relative slds-hide" id="message-success">
-        <div class="slds-notify slds-notify_toast slds-theme_success slds-size_1-of-1 slds-m-horizontal_none" role="status">
-          <span class="slds-assistive-text">info</span>
-          <span class="slds-icon_container slds-icon-utility-info slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
-            <svg class="slds-icon slds-icon_small" aria-hidden="true">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success" />
-            </svg>
-          </span>
-          <div class="slds-notify__content slds-align_absolute-center">
-            <h2 class="slds-text-heading_small">Site settings updated successfully</h2>
+        <div style="position:relative;height:100px">
+            <div class="slds-builder-header_container">
+              <header class="slds-builder-header">
+                <div class="slds-builder-header__item">
+                  <div class="slds-builder-header__item-label slds-media slds-media_center">
+                    <div class="slds-media__figure">
+                      <span class="slds-icon_container slds-icon-utility-builder slds-current-color">
+                        <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#builder"></use>
+                        </svg>
+                      </span>
+                    </div>
+                    <div class="slds-media__body">App Name</div>
+                  </div>
+                </div>
+                <nav class="slds-builder-header__item slds-builder-header__nav">
+                  <ul class="slds-builder-header__nav-list">
+                    <li class="slds-builder-header__nav-item">
+                      <a href="javascript:void(0);" class="slds-builder-header__item-action slds-media slds-media_center">
+                        <span class="slds-media__figure">
+                          <span class="slds-icon_container slds-icon-utility-settings slds-current-color">
+                            <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#settings"></use>
+                            </svg>
+                          </span>
+                        </span>
+                        <span class="slds-media__body">
+                          <span class="slds-truncate" title="Link">Link</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="slds-builder-header__nav-item">
+                      <button class="slds-button slds-builder-header__item-action slds-media slds-media_center" aria-haspopup="true" title="Click to open menu">
+                        <span class="slds-media__figure">
+                          <span class="slds-icon_container slds-icon-utility-page slds-current-color">
+                            <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#page"></use>
+                            </svg>
+                          </span>
+                        </span>
+                        <span class="slds-media__body">
+                          <span class="slds-truncate" title="Dropdown">Dropdown</span>
+                          <span class="slds-icon_container slds-icon-utility-chevrondown slds-current-color slds-m-left_small">
+                            <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
+                            </svg>
+                          </span>
+                        </span>
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="slds-builder-header__item slds-has-flexi-truncate">
+                  <h1 class="slds-builder-header__item-label">
+                    <span class="slds-truncate" title="Page Type">Page Type</span>
+                  </h1>
+                </div>
+                <div class="slds-builder-header__item slds-builder-header__utilities">
+                  <div class="slds-builder-header__utilities-item">
+                    <a href="javascript:void(0);" class="slds-builder-header__item-action slds-media slds-media_center">
+                      <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-utility-back slds-current-color">
+                          <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#back"></use>
+                          </svg>
+                        </span>
+                      </div>
+                      <div class="slds-media__body">Back</div>
+                    </a>
+                  </div>
+                  <div class="slds-builder-header__utilities-item">
+                    <a href="javascript:void(0);" class="slds-builder-header__item-action slds-media slds-media_center">
+                      <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-utility-help slds-current-color">
+                          <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#help"></use>
+                          </svg>
+                        </span>
+                      </div>
+                      <div class="slds-media__body">Help</div>
+                    </a>
+                  </div>
+                </div>
+              </header>
+              <div class="slds-builder-toolbar" role="toolbar">
+                <div class="slds-builder-toolbar__item-group" aria-label="Canvas Actions">
+                  <div class="slds-button-group">
+                    <button class="slds-button slds-button_icon slds-button_icon-border" title="Undo" tabindex="0">
+                      <svg class="slds-button__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#undo"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Undo</span>
+                    </button>
+                    <button class="slds-button slds-button_icon slds-button_icon-border" title="Redo" tabindex="-1">
+                      <svg class="slds-button__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#redo"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Redo</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="slds-builder-toolbar__item-group" aria-label="Edit actions">
+                  <div class="slds-button-group">
+                    <button class="slds-button slds-button_icon slds-button_icon-border" title="Cut" tabindex="-1">
+                      <svg class="slds-button__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#cut"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Cut</span>
+                    </button>
+                    <button class="slds-button slds-button_icon slds-button_icon-border" title="Copy" tabindex="-1">
+                      <svg class="slds-button__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#copy"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Copy</span>
+                    </button>
+                    <button class="slds-button slds-button_icon slds-button_icon-border" title="Paste" tabindex="-1">
+                      <svg class="slds-button__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#paste"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Paste</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="slds-builder-toolbar__actions" aria-label="Document actions">
+                  <button class="slds-button slds-button_neutral">
+                    <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#right"></use>
+                    </svg> Run</button>
+                  <button class="slds-button slds-button_neutral">Save As</button>
+                  <button class="slds-button slds-button_brand">Save</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="slds-notify__close">
-            <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Close">
-              <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close" />
-              </svg>
-              <span class="slds-assistive-text">Close</span>
-            </button>
-          </div>
-        </div>
-      </div>
       <!-- Card -->
       <article class="slds-card slds-m-bottom_x-large">
         <div class="slds-card__header slds-grid">
@@ -53,7 +165,7 @@
               </h2>
             </div>
             <div class="slds-no-flex">
-              <a href="/email-builder/brand/edit-site.htm" class="slds-button slds-button_neutral">New</a>
+              <a href="/email-builder/brand/edit-site.htm" class="slds-button slds-button_neutral" disabled>New</a>
             </div>
           </header>
         </div>
@@ -63,26 +175,17 @@
             <thead>
               <tr class="slds-line-height_reset">
                 <th class="" scope="col">
-                  <div class="slds-truncate" title="Application Domain">Application Domain</div>
+                  <div class="slds-truncate" title="Template Name">Template Name</div>
                 </th>
                 <th class="" scope="col">
-                  <div class="slds-truncate" title="Application Name">Application Name</div>
+                  <div class="slds-truncate" title="Description">Description</div>
                 </th>
                 <th class="" scope="col">
-                  <div class="slds-truncate" title="Territory">Territory</div>
-                </th>
-                <th class="" scope="col">
-                  <div class="slds-truncate" title="Application Type">Application Type</div>
-                </th>
-                <th class="" scope="col">
-                  <div class="slds-truncate" title="Application Status">Application Status</div>
-                </th>
-                <th class="" scope="col">
-                  <div class="slds-truncate" title="AffiliateURL">Affiliate URL</div>
+                  <div class="slds-truncate" title="Preview">Preview</div>
                 </th>
               </tr>
             </thead>
-            <tbody id="brand-list"></tbody>
+            <tbody id="template_list"></tbody>
           </table>
         </div>
       </article>
@@ -101,41 +204,30 @@
     </script>
     <script>
       // Function to async load data here
-      var url = "https://pages.email.secretescapes.com/aurora/brand/sites";
+      var url = "https://pages.email.secretescapes.com/aurora/templates/list";
       $.getJSON(url, function(data) {
         var rows = '';
         for (i = 0; i < data.length; i++) {
-          var appDomain = data[i]["ApplicationDomain"];
-          var appName = data[i]["ApplicationName"];
-          var appType = data[i]["ApplicationType"];
-          var appStatus = data[i]["ApplicationStatus"];
-          var appURL = data[i]["AffiliateURL"];
-          var territory = data[i]["Territory"];
+          var templateId = data[i]["TemplateID"];
+          var templateName = data[i]["TemplateName"];
+          var templateLocation = data[i]["TemplateLocation"];
+          var templateDescription = data[i]["TemplateDescription"];
 
           var rows = rows + '<tr class="slds-hint-parent">';
-          var rows = rows + '  <th data-label="Application Domain" scope="row">';
-          var rows = rows + '    <div class="slds-truncate" title="' + appDomain + '">';
-          var rows = rows + '      <a href="edit-site.htm?u=' + appDomain + '" >' + appDomain + '</a>';
+          var rows = rows + '  <th data-label="Template Name" scope="row">';
+          var rows = rows + '    <div class="slds-truncate" title="' + templateName + '">';
+          var rows = rows + '      <a href="edit-site.htm?tid=' + templateId + '" >' + templateName + '</a>';
           var rows = rows + '    </div>';
           var rows = rows + '  </th>';
-          var rows = rows + '  <td data-label="Application Name">';
-          var rows = rows + '    <div class="slds-truncate" title="' + appName + '">' + appName + '</div>';
+          var rows = rows + '  <td data-label="Description">';
+          var rows = rows + '    <div class="slds-truncate" title="' + templateDescription + '">' + templateDescription + '</div>';
           var rows = rows + '  </td>';
-          var rows = rows + '  <td data-label="Territory">';
-          var rows = rows + '    <div class="slds-truncate" title="' + territory + '">' + territory + '</div>';
-          var rows = rows + '  </td>';
-          var rows = rows + '  <td data-label="Application Type">';
-          var rows = rows + '    <div class="slds-truncate" title="' + appType + '">' + appType + '</div>';
-          var rows = rows + '  </td>';
-          var rows = rows + '  <td data-label="Application Status">';
-          var rows = rows + '    <div class="slds-truncate" title="' + appStatus + '">' + appStatus + '</div>';
-          var rows = rows + '  </td>';
-          var rows = rows + '  <td data-label="Affiliate URL">';
-          var rows = rows + '    <div class="slds-truncate" title="' + appURL + '">' + appURL + '</div>';
+          var rows = rows + '  <td data-label="Preview">';
+          var rows = rows + '    <div class="slds-truncate" title="' + templateLocation + '">' + templateLocation + '</div>';
           var rows = rows + '  </td>';
           var rows = rows + '</tr>';
         }
-        $("#brand-list").html(rows);
+        $("#template_list").html(rows);
       });
     </script>
   </body>
