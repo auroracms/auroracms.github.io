@@ -37,8 +37,8 @@
                     <div class="slds-form-element__control">
                       <div class="slds-select_container">
                         <select class="slds-select" id="input__template">
-                          <option value="">Please select template</option>
-                          <option>Option One</option>
+                          <option value="https://s3-eu-west-1.amazonaws.com/se-crm/previews/skiset/Skiset+-+FR.htm">Please select template</option>
+                          <option value="">Option One</option>
                           <option>Option Two</option>
                           <option>Option Three</option>
                         </select>
@@ -53,9 +53,16 @@
                       <div class="slds-select_container">
                         <select class="slds-select" id="input__brand">
                           <option value="">Please select your brand</option>
-                          <option>Option One</option>
-                          <option>Option Two</option>
-                          <option>Option Three</option>
+                          <option aria-label="AT" value="https://at.secretescapes.com">https://at.secretescapes.com</option>
+                          <option aria-label="BE" value="https://be.secretescapes.com">https://be.secretescapes.com</option>
+                          <option aria-label="CH" value="https://ch.secretescapes.com">https://ch.secretescapes.com</option>
+                          <option aria-label="DE" value="https://www.secretescapes.de">https://www.secretescapes.de</option>
+                          <option aria-label="DK" value="https://dk.secretescapes.com">https://dk.secretescapes.com</option>
+                          <option aria-label="ES" value="https://es.secretescapes.com">https://es.secretescapes.com</option>
+                          <option aria-label="FR" value="https://www.evasionssecretes.fr">https://www.evasionssecretes.fr</option>
+                          <option aria-label="UK" value="https://www.secretescapes.com">https://www.secretescapes.com</option>
+                          <option aria-label="US" value="https://us.secretescapes.com">https://us.secretescapes.com</option>
+                          <option aria-label="BEFR_TBRD" value="https://fr.travelbird.be">https://fr.travelbird.be</option>
                         </select>
                       </div>
                     </div>
@@ -65,7 +72,7 @@
             </div>
           </div>
           <div class="slds-builder-toolbar__actions" aria-label="Document actions">
-            <button class="slds-button slds-button_neutral">
+            <button class="slds-button slds-button_neutral" onclick="generateHTML()">
               <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
                 <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#right"></use>
               </svg>
@@ -180,38 +187,12 @@
     <script type="text/javascript" src="/scripts/slds.js"></script>
     <script type="text/javascript" src="/scripts/utilities.js"></script>
     <script>
-      $( document ).ready(function() {
-        var status = getUrlParameter('status');
-        if(status=='success'){$("#message-success").removeClass('slds-hide')};
-      });
-    </script>
-    <script>
-      // Function to async load data here
-      var url = "https://pages.email.secretescapes.com/aurora/templates/list";
-      $.getJSON(url, function(data) {
-        var rows = '';
-        for (i = 0; i < data.length; i++) {
-          var templateId = data[i]["TemplateID"];
-          var templateName = data[i]["TemplateName"];
-          var templateLocation = data[i]["TemplateLocation"];
-          var templateDescription = data[i]["TemplateDescription"];
-      
-          var rows = rows + '<tr class="slds-hint-parent">';
-          var rows = rows + '  <th data-label="Template Name" scope="row">';
-          var rows = rows + '    <div class="slds-truncate" title="' + templateName + '">';
-          var rows = rows + '      <a href="edit-site.htm?tid=' + templateId + '" >' + templateName + '</a>';
-          var rows = rows + '    </div>';
-          var rows = rows + '  </th>';
-          var rows = rows + '  <td data-label="Description">';
-          var rows = rows + '    <div class="slds-truncate" title="' + templateDescription + '">' + templateDescription + '</div>';
-          var rows = rows + '  </td>';
-          var rows = rows + '  <td data-label="Preview">';
-          var rows = rows + '    <div class="slds-truncate" title="' + templateLocation + '">' + templateLocation + '</div>';
-          var rows = rows + '  </td>';
-          var rows = rows + '</tr>';
-        }
-        $("#template_list").html(rows);
-      });
+      function generateHTML {
+        var endpoint = $("#input__template").val();
+        $.get(endpoint, function(data) {
+          $("#holding-screen").val(data);
+        });
+      }
     </script>
   </body>
 </html>
