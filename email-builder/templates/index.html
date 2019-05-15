@@ -189,6 +189,7 @@
     <script>
       function generateHTML() {
         var endpoint = $("#input__template").val();
+        window.alert(endpoint);
         $.get(endpoint, function(data) {
           $("#holding-screen").val(data);
         });
