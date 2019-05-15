@@ -190,6 +190,7 @@
       function generateHTML() {
         var endpoint = $("#input__template").val();
         $.get(endpoint, function(data) {
+          var data = '<pre><code>' + data + '</code></pre>';
           $("#holding-screen").html(data);
         });
       }
