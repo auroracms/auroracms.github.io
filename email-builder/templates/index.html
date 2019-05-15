@@ -64,10 +64,7 @@
                 </button>
               </li>
               <li class="slds-builder-header__nav-item">
-                  <button class="slds-button slds-button_neutral">
-                      <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
-                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#right"></use>
-                      </svg> Run</button>
+                  
                 </li>
 
 
@@ -77,9 +74,26 @@
             </ul>
           </nav>
           <div class="slds-builder-header__item slds-has-flexi-truncate">
-            <h1 class="slds-builder-header__item-label">
-              <span class="slds-truncate" title="Page Type">Page Type</span>
-            </h1>
+                <!-- Select -->
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="select-01">Select Label</label>
+                    <div class="slds-form-element__control">
+                      <div class="slds-select_container">
+                        <select class="slds-select" id="select-01">
+                          <option value="">Please select</option>
+                          <option>Option One</option>
+                          <option>Option Two</option>
+                          <option>Option Three</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+          <div class="slds-builder-header__item slds-has-flexi-truncate">
+              <button class="slds-button slds-button_neutral">
+                  <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#right"></use>
+                  </svg> Run</button>
           </div>
         </header>
         <div class="slds-builder-toolbar" role="toolbar">
