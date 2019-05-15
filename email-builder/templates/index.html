@@ -5,6 +5,7 @@
     <title>Welcome to Aurora</title>
     <link rel="stylesheet" href="/assets/styles/salesforce-lightning-design-system.min.css"/>
     <link rel="stylesheet" href="/assets/styles/custom-styles.css"/>
+    <link rel="stylesheet" href="/assets/styles/jquery.highlight.css"/>
     <link rel="icon" type="image/png" href="/assets/images/aurora.ico">
   </head>
   <body class="slds-brand-band slds-brand-band_medium">
@@ -186,14 +187,17 @@
     <script type="text/javascript" src="/scripts/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/scripts/slds.js"></script>
     <script type="text/javascript" src="/scripts/utilities.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.highlight.js"></script>
     <script>
       function generateHTML() {
         var endpoint = $("#input__template").val();
         $.get(endpoint, function(data) {
           var data = data.replace(/</g, '&lt;');
           var data = data.replace(/&/g, '&amp;');
-          var data = '<pre><code>' + data + '</code></pre>';
+          var data = '<pre class="code" lang="html">' + data + '</pre>';
           $("#holding-screen").html(data);
+          $('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol'});
+		});
         }); 
       }
     </script>
