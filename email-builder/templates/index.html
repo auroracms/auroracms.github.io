@@ -54,16 +54,16 @@
                       <div class="slds-select_container">
                         <select class="slds-select" id="input__brand">
                           <option value="">Please select your brand</option>
-                          <option aria-label="AT" value="https://at.secretescapes.com">https://at.secretescapes.com</option>
-                          <option aria-label="BE" value="https://be.secretescapes.com">https://be.secretescapes.com</option>
-                          <option aria-label="CH" value="https://ch.secretescapes.com">https://ch.secretescapes.com</option>
-                          <option aria-label="DE" value="https://www.secretescapes.de">https://www.secretescapes.de</option>
-                          <option aria-label="DK" value="https://dk.secretescapes.com">https://dk.secretescapes.com</option>
-                          <option aria-label="ES" value="https://es.secretescapes.com">https://es.secretescapes.com</option>
-                          <option aria-label="FR" value="https://www.evasionssecretes.fr">https://www.evasionssecretes.fr</option>
-                          <option aria-label="UK" value="https://www.secretescapes.com">https://www.secretescapes.com</option>
-                          <option aria-label="US" value="https://us.secretescapes.com">https://us.secretescapes.com</option>
-                          <option aria-label="BEFR_TBRD" value="https://fr.travelbird.be">https://fr.travelbird.be</option>
+                          <option value="https://at.secretescapes.com">https://at.secretescapes.com</option>
+                          <option value="https://be.secretescapes.com">https://be.secretescapes.com</option>
+                          <option value="https://ch.secretescapes.com">https://ch.secretescapes.com</option>
+                          <option value="https://www.secretescapes.de">https://www.secretescapes.de</option>
+                          <option value="https://dk.secretescapes.com">https://dk.secretescapes.com</option>
+                          <option value="https://es.secretescapes.com">https://es.secretescapes.com</option>
+                          <option value="https://www.evasionssecretes.fr">https://www.evasionssecretes.fr</option>
+                          <option value="0">https://www.secretescapes.com</option>
+                          <option value="https://us.secretescapes.com">https://us.secretescapes.com</option>
+                          <option value="https://fr.travelbird.be">https://fr.travelbird.be</option>
                         </select>
                       </div>
                     </div>
@@ -189,15 +189,26 @@
     <script type="text/javascript" src="/scripts/utilities.js"></script>
     <script type="text/javascript" src="/scripts/jquery.highlight.js"></script>
     <script>
+      function loadBrand(brnd) {
+        $("#input__id").val(getUrlParameter('id'));
+        var url = "https://pages.email.secretescapes.com/aurora/brand/theme?id=" + brnd;
+        $.getJSON(url, function(data) {
+          var data = data[0];
+
       function generateHTML() {
         var endpoint = $("#input__template").val();
-        $.get(endpoint, function(data) {
-          var data = data.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-          var data = '<pre class="code" lang="html">' + data + '</pre>';
-          $("#holding-screen").html(data);
-          $('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol'});
+        var brand = $("#input__brand").val();
+        $.getJSON(url, function(jsondata) {
+          $.get(endpoint, function(data) {
+            var data = data.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+            var data = data.replace(/%%=RedirectTo(@TrustPilotLink)=%%/g, jsondata.Logo)
+            var data = '<pre class="code" lang="html">' + data + '</pre>';
+            $("#holding-screen").html(data);
+            $('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol'});
+          });
         });
       }
+
     </script>
   </body>
 </html>
