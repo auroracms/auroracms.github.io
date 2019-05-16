@@ -240,9 +240,9 @@
             var data = data.replace(/%%=v\(@FooterColor\)=%%/g, jsondata.FooterColor);
             var data = data.replace(/%%=v\(@FooterFontColor1\)=%%/g, jsondata.FooterFontColor1);
             var data = data.replace(/%%=v\(@FooterFontColor2\)=%%/g, jsondata.FooterFontColor2);
-            var data = '<pre class="code" lang="html">' + data + '</pre>';
+            var data = '<pre class="code" data-language="html">' + data + '</pre>';
             $("#holding-screen").html(data);
-            $('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol'});
+            $('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol', attribute: 'data-language'});
           });
         });
       }
