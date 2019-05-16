@@ -200,10 +200,9 @@
         var endpoint = $("#input__template").val();
         var brand = $("#input__brand").val();
         var url = "https://pages.email.secretescapes.com/aurora/brand/theme?id=" + brand;
-        window.alert(url);
         $.getJSON(url, function(jsondata) {
           $.get(endpoint, function(data) {
-            
+            var jsondata = jsondata[0];
             var data = data.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
             var data = data.replace(/%%=RedirectTo(@TrustPilotLink)=%%/g, jsondata.Logo);
             var data = '<pre class="code" lang="html">' + data + '</pre>';
