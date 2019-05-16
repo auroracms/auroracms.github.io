@@ -84,6 +84,12 @@
       </div>
       <!-- Card -->
       <article class="slds-card slds-m-bottom_x-large slds-p-around_x-large" id="holding-screen">
+        <!-- Spinners -->
+        <div role="status" class="slds-spinner slds-spinner_medium slds-hide">
+          <span class="slds-assistive-text">Loading</span>
+          <div class="slds-spinner__dot-a"></div>
+          <div class="slds-spinner__dot-b"></div>
+        </div>
         <div class="slds-illustration slds-illustration_large slds-p-around_x-large"">
           <svg class="slds-illustration__svg" viewBox="0 0 454 182" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -190,11 +196,13 @@
     <script type="text/javascript" src="/scripts/jquery.highlight.js"></script>
     <script>
       function generateHTML() {
+        $("slds-spinner").removeclass('slds-hide');
         var endpoint = $("#input__template").val();
         var brand = $("#input__brand").val();
         var url = "https://pages.email.secretescapes.com/aurora/brand/theme?id=" + brand;
         $.getJSON(url, function(jsondata) {
           $.get(endpoint, function(data) {
+            window.alert(jsondata.Logo);
             var data = data.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
             var data = data.replace(/%%=RedirectTo(@TrustPilotLink)=%%/g, jsondata.Logo);
             var data = '<pre class="code" lang="html">' + data + '</pre>';
