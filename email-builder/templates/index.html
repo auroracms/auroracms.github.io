@@ -204,6 +204,7 @@
           console.log(jsondata)
           var jsondata = jsondata[0];
           $.get(endpoint, function(data) {
+            console.log(jsondata.Logo)
             var data = data.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
             var data = data.replace(/%%=RedirectTo(@TrustPilotLink)=%%/g, jsondata.Logo);
             var data = '<pre class="code" lang="html">' + data + '</pre>';
