@@ -8,6 +8,6 @@
     <link rel="icon" type="image/png" href="/assets/images/aurora.ico">
   </head>
   <body>
-    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">Hello world</canvas>
   </body>
 </html>
