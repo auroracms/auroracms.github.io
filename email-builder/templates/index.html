@@ -206,7 +206,7 @@
           $.get(endpoint, function(data) {
             console.log(jsondata.Logo)
             var data = data.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-            var data = data.replace(/@TrustPilotLink=/g, jsondata.Logo);
+            var data = data.replace(/@TrustPilotLink)=/g, jsondata.Logo);
             var data = '<pre class="code" lang="html">' + data + '</pre>';
             $("#holding-screen").html(data);
             $('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol'});
