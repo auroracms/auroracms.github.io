@@ -193,7 +193,7 @@
         var endpoint = $("#input__template").val();
         $.get(endpoint, function(data) {
           window.alert(data);
-          var data = '<pre class="code" lang="html">' + data + '</pre>';
+          var data = '<pre class="code" lang="html"><code>' + data + '</code></pre>';
           $("#holding-screen").html(data);
           $('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol'});
         });
