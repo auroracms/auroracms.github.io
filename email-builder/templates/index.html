@@ -192,8 +192,8 @@
       function generateHTML() {
         var endpoint = $("#input__template").val();
         $.get(endpoint, function(data) {
-          window.alert(data);
-          var data = '<pre class="code" lang="html"><code>' + data + '</code></pre>';
+          var data = data.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+          var data = '<pre class="code" lang="html">' + data + '</pre>';
           $("#holding-screen").html(data);
           $('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol'});
         });
