@@ -38,8 +38,8 @@
                     <div class="slds-form-element__control">
                       <div class="slds-select_container">
                         <select class="slds-select" id="input__template">
-                          <option value="https://raw.githubusercontent.com/robin-mead-se/crm-code-library/master/Emails/Event%20Based%20Mailings/Abandoned%20Basket/Abandoned%20Basket%20-%20Alert/abandoned_basket_alert.htm">Please select template</option>
-                          <option value="">Option One</option>
+                          <option value="">Please select template</option>
+                          <option value="https://raw.githubusercontent.com/robin-mead-se/crm-code-library/master/Emails/Master%20Template/se_mastertemplate_ampscript.html">Master Template</option>
                           <option>Option Two</option>
                           <option>Option Three</option>
                         </select>
@@ -206,7 +206,40 @@
           $.get(endpoint, function(data) {
             console.log(jsondata.Logo)
             var data = data.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-            var data = data.replace(/%%=RedirectTo\(@TrustPilotLink\)=%%/g, jsondata.Logo);
+            var data = data.replace(/%%=v\(@Logo\)=%%/g, jsondata.Logo);
+            var data = data.replace(/%%=v\(@LogoIcon\)=%%/g, jsondata.LogoIcon);
+            var data = data.replace(/%%=v\(@LogoWidth\)=%%/g, jsondata.LogoWidth);
+            var data = data.replace(/%%=v\(@FontFamily\)=%%/g, jsondata.FontFamily);
+            var data = data.replace(/%%=v\(@FontFamilyTitle \)=%%/g, jsondata.FontFamilyTitle);
+            var data = data.replace(/%%=v\(@FontLink\)=%%/g, jsondata.FontLink);
+            var data = data.replace(/%%=v\(@HeaderColor\)=%%/g, jsondata.HeaderColor);
+            var data = data.replace(/%%=v\(@HeaderFontColor1\)=%%/g, jsondata.HeaderFontColor1);
+            var data = data.replace(/%%=v\(@HeaderFontColor2\)=%%/g, jsondata.HeaderFontColor2);
+            var data = data.replace(/%%=v\(@BodyColor\)=%%/g, jsondata.BodyColor);
+            var data = data.replace(/%%=v\(@BodyFontColor1\)=%%/g, jsondata.BodyFontColor1);
+            var data = data.replace(/%%=v\(@BodyFontColor2\)=%%/g, jsondata.BodyFontColor2);
+            var data = data.replace(/%%=v\(@BodyFontColor3\)=%%/g, jsondata.BodyFontColor3);
+            var data = data.replace(/%%=v\(@PrimaryButtonColor\)=%%/g, jsondata.PrimaryButtonColor);
+            var data = data.replace(/%%=v\(@PrimaryButtonHover\)=%%/g, jsondata.PrimaryButtonHoverColor);
+            var data = data.replace(/%%=v\(@PrimaryButtonFont\)=%%/g, jsondata.PrimaryButtonFontColor1);
+            var data = data.replace(/%%=v\(@SecondButtonColor\)=%%/g, jsondata.SecondButtonColor);
+            var data = data.replace(/%%=v\(@SecondButtonHover\)=%%/g, jsondata.SecondButtonHoverColor);
+            var data = data.replace(/%%=v\(@SecondButtonFont\)=%%/g, jsondata.SecondButtonFontColor1);
+            var data = data.replace(/%%=v\(@ArticleColor\)=%%/g, jsondata.ArticleColor);
+            var data = data.replace(/%%=v\(@ArticleFontColor1\)=%%/g, jsondata.ArticleFontColor1);
+            var data = data.replace(/%%=v\(@ArticleFontColor2\)=%%/g, jsondata.ArticleFontColor2);
+            var data = data.replace(/%%=v\(@ArticleFontColor3\)=%%/g, jsondata.ArticleFontColor3);
+            var data = data.replace(/%%=v\(@SaleCardColor\)=%%/g, jsondata.SaleCardColor);
+            var data = data.replace(/%%=v\(@SaleCardFontColor1\)=%%/g, jsondata.SaleCardFontColor1);
+            var data = data.replace(/%%=v\(@SaleCardFontColor2\)=%%/g, jsondata.SaleCardFontColor2);
+            var data = data.replace(/%%=v\(@SaleCardFontColor3\)=%%/g, jsondata.SaleCardFontColor3);
+            var data = data.replace(/%%=v\(@SaleCardFontColor4\)=%%/g, jsondata.SaleCardFontColor4);
+            var data = data.replace(/%%=v\(@SignOffColor\)=%%/g, jsondata.SignOffColor);
+            var data = data.replace(/%%=v\(@SignOffFontColor1\)=%%/g, jsondata.SignOffFontColor1);
+            var data = data.replace(/%%=v\(@SignOffFontColor2\)=%%/g, jsondata.SignOffFontColor2);
+            var data = data.replace(/%%=v\(@FooterColor\)=%%/g, jsondata.FooterColor);
+            var data = data.replace(/%%=v\(@FooterFontColor1\)=%%/g, jsondata.FooterFontColor1);
+            var data = data.replace(/%%=v\(@FooterFontColor2\)=%%/g, jsondata.FooterFontColor2);
             var data = '<pre class="code" lang="html">' + data + '</pre>';
             $("#holding-screen").html(data);
             $('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol'});
