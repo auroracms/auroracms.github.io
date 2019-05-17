@@ -114,3 +114,7 @@ pre {
 .slds-builder-header nav {
   background-color: #0070d2 !important;
 }
+
+.slds-builder-header nav:hover {
+  background-color: #005fb2 !important;
+}
