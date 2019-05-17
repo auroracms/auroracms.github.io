@@ -290,7 +290,7 @@
           $.get(endpoint, function(data) {
             // replace html entities
             var data = data.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-            // replace html entities
+            // replace input variables
             var data = data.replace(/#HeroBackgroundImage#/g, $("#input__background").val());
             // replace brand variables
             var data = data.replace(/%%=v\(@Logo\)=%%/g, jsondata.Logo);
