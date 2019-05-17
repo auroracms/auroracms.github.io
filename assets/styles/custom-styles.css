@@ -106,3 +106,7 @@ pre {
 .slds-builder-header .slds-breadcrumb__item a {
   color:#fff !important;
 }
+
+.slds-builder-header .slds-breadcrumb__item a:hover {
+  border-bottom:1px solid #fff !important;
+}
