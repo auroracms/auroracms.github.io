@@ -86,7 +86,7 @@
               </div>
               <div class="slds-form__row">
                 <div class="slds-form__item slds-m-bottom_small" role="listitem">
-                  <!-- #HeroBackgroundImage# -->
+                  <!-- #HeroBackground# -->
                   <div class="slds-form-element slds-size_1-of-1">
                     <div class="slds-form-element__control">
                       <input id="input__background" placeholder="Background image (where applicable)" class="slds-input" type="text" value="" />
@@ -292,6 +292,14 @@
             var data = data.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
             // replace input variables
             var data = data.replace(/#HeroBackground#/g, $("#input__background").val());
+            var data = data.replace(/#HeroImage#/g, $("#input__image").val());
+            var data = data.replace(/#HeroAlt#/g, $("#input__alt").val());
+            var data = data.replace(/#HeroTitle#/g, $("#input__title").val());
+            var data = data.replace(/#HeroBody#/g, $("#input__body").val());
+            var data = data.replace(/#HeroTextColour#/g, $("#input__color").val());
+            var data = data.replace(/#HeroLink#/g, $("#input__link").val());
+            var data = data.replace(/#HeroCallToAction#/g, $("#input__action").val());
+
             // replace brand variables
             var data = data.replace(/%%=v\(@Logo\)=%%/g, jsondata.Logo);
             var data = data.replace(/%%=v\(@LogoIcon\)=%%/g, jsondata.LogoIcon);
