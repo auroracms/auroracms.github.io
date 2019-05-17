@@ -281,7 +281,7 @@
     <script>
       function generateHTML() {
         $(".slds-spinner").removeClass('slds-hide');
-        var endpoint = 'https://github.com/robin-mead-se/crm-code-library/blob/master/Content%20Blocks/' + $("#input__template").val();
+        var endpoint = 'https://raw.githubusercontent.com/robin-mead-se/crm-code-library/master/Content%20Blocks/' + $("#input__template").val();
         var brand = $("#input__brand").val();
         var url = "https://pages.email.secretescapes.com/aurora/brand/theme?id=" + brand;
         $.getJSON(url, function(jsondata) {
