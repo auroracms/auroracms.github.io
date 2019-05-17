@@ -115,6 +115,11 @@ pre {
   background-color: #0070d2 !important;
 }
 
-.slds-builder-header nav:hover, .slds-builder-header nav:hover button {
+.slds-builder-header nav:hover, {
   background-color: #005fb2 !important;
+}
+
+.slds-builder-header nav:hover button {
+  background-color: #005fb2 !important;
+  border-color: #005fb2 !important;
 }
