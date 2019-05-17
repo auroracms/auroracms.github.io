@@ -103,3 +103,6 @@ pre {
 .fc-day-grid-event .fc-content {
   padding: 3px 2px;
 }
+.slds-builder-header .slds-breadcrumb__item a {
+  color:#fff !important;
+}
