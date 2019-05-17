@@ -281,15 +281,18 @@
     <script>
       function generateHTML() {
         $(".slds-spinner").removeClass('slds-hide');
-        var endpoint = 'https://raw.githubusercontent.com/robin-mead-se/crm-code-library/master/' + $("#input__template").val();
+        var endpoint = 'https://github.com/robin-mead-se/crm-code-library/blob/master/Content%20Blocks/' + $("#input__template").val();
         var brand = $("#input__brand").val();
         var url = "https://pages.email.secretescapes.com/aurora/brand/theme?id=" + brand;
         $.getJSON(url, function(jsondata) {
           console.log(jsondata)
           var jsondata = jsondata[0];
           $.get(endpoint, function(data) {
-            console.log(jsondata.Logo)
+            // replace html entities
             var data = data.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+            // replace html entities
+            var data = data.replace(/#HeroBackgroundImage#/g, $("#input__background").val(););
+            // replace brand variables
             var data = data.replace(/%%=v\(@Logo\)=%%/g, jsondata.Logo);
             var data = data.replace(/%%=v\(@LogoIcon\)=%%/g, jsondata.LogoIcon);
             var data = data.replace(/%%=v\(@LogoWidth\)=%%/g, jsondata.LogoWidth);
