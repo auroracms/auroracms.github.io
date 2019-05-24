@@ -380,6 +380,87 @@
               </footer>
           </article>
         </div>
+        <div class="slds-col slds-size_1-of-1 slds-hide">
+          <article class="slds-card">
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                  <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-campaign" title="campaign">
+                      <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign" />
+                      </svg>
+                      <span class="slds-assistive-text">campaign</span>
+                    </span> 
+                  </div>
+                  <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                      <span class="slds-text-heading_large">New Campaign Workflow</span>
+                    </h2>
+                  </div>
+                  <!-- <div class="slds-einstein-header__astro-walk slds-size_1-of-4"></div> -->
+                  <!-- Progress Bar -->
+                  <div class="slds-size_1-of-4">
+                    <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small slds-text-align_right">
+                      <span aria-hidden="true">
+                      <strong>Step 2 of 3</strong>
+                      </span>
+                    </div>
+                    <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="67" aria-labelledby="progress-bar-label-id-1" role="progressbar">
+                      <span class="slds-progress-bar__value" style="width: 67%;">
+                      <span class="slds-assistive-text">Progress: 67%</span>
+                      </span>
+                    </div>
+                  </div>
+                </header>
+              </div>
+              <div class="slds-card__body slds-card__body_inner slds-p-vertical_medium">
+                <div class="slds-grid slds-wrap slds-gutters_large">
+                  <div class="slds-col slds-size_1-of-1" role="listitem">
+                    <div id="jetlore-sale-sections" class="slds-form" role="list">
+                      <div class="slds-form__row slds-p-bottom_x-large">
+                        <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                          <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                            <label class="slds-form-element__label" for="input__count-1">
+                              Section 1 Count <abbr class="slds-required" title="Required">* </abbr>
+                            </label>
+                            <div class="slds-form-element__control">
+                              <input type="text" id="input__count-1" name="input__count-1" class="slds-input" value="" placeholder="Unique section identifier" required=""/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                          <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                            <label class="slds-form-element__label" for="input__tag-1">
+                              Section 1 Description <abbr class="slds-required" title="Required">* </abbr>
+                            </label>
+                            <div class="slds-form-element__control">
+                              <input type="text" id="input__tag-1" name="input__tag-1" class="slds-input" value="" placeholder="Unique section identifier" required=""/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-col slds-size_1-of-1" role="listitem">
+                    <a class="slds-button slds-button_neutral jetlore_section__trigger">Add Section</a>
+                  </div>
+                </div>
+              </div>
+              <footer class="slds-card__footer">
+                <div class="slds-no-flex">
+                  <div class="slds-grid">
+                    <div class="slds-size_1-of-2 slds-text-align_left">
+                      <a class="slds-button slds-button_text-destructive" onclick="move(2,1)">Back</a>
+                    </div>
+                    <div class="slds-size_1-of-2 slds-text-align_right">
+                      <span class="slds-text-color_error slds-p-right_small slds-hide error__campaign">Campaign already exists</span>
+                      <button class="slds-button slds-button_brand">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+          </article>
+        </div>
       </form>
     </div>
     <!-- SCRIPTS -->
@@ -397,8 +478,13 @@
     </script>
     <script>
       function move(a,b){
-        $("form > div:nth-child(" + a +")").addClass('slds-hide');
-        $("form > div:nth-child(" + b +")").removeClass('slds-hide');
+        if($('input__campaign_zero').val()=='Jetlore'){
+          $("form > div:nth-child(" + a +")").addClass('slds-hide');
+          $("form > div:nth-child(" + (b+1) +")").removeClass('slds-hide');
+        } else {
+          $("form > div:nth-child(" + a +")").addClass('slds-hide');
+          $("form > div:nth-child(" + b +")").removeClass('slds-hide');
+        }
       }
     </script>
     <script>
@@ -414,6 +500,16 @@
           var data = data.replace(/@/g, count);
           var html = html + data;
           $("#sale-sections").html(html);
+          $("#input_section-count").val(count);
+        });
+      });
+      $(document).on('click', '.jetlore_section__trigger', function(){
+        $.get( "/components/jetlore-sale-section.htm", function(data) {
+          var html = $("#jetlore-sale-sections").html();
+          var count = parseInt($("#input__count").val()) + 1;
+          var data = data.replace(/@/g, count);
+          var html = html + data;
+          $("#jetlore-sale-sections").html(html);
           $("#input_section-count").val(count);
         });
       });
