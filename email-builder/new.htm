@@ -450,7 +450,7 @@
                 <div class="slds-no-flex">
                   <div class="slds-grid">
                     <div class="slds-size_1-of-2 slds-text-align_left">
-                      <a class="slds-button slds-button_text-destructive" onclick="move(2,1)">Back</a>
+                      <a class="slds-button slds-button_text-destructive" onclick="move(3,1)">Back</a>
                     </div>
                     <div class="slds-size_1-of-2 slds-text-align_right">
                       <span class="slds-text-color_error slds-p-right_small slds-hide error__campaign">Campaign already exists</span>
@@ -478,7 +478,7 @@
     </script>
     <script>
       function move(a,b){
-        if($('#input__campaign_zero').val()=='Jetlore'){
+        if($('#input__campaign_zero').val()=='Jetlore' && b!=1){
           $("form > div:nth-child(" + a +")").addClass('slds-hide');
           $("form > div:nth-child(" + (b+1) +")").removeClass('slds-hide');
         } else {
