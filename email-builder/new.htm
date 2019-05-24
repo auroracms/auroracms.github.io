@@ -340,6 +340,15 @@
                             <label class="slds-form-element__label" for="input__key-1">
                               Section 1 Key <abbr class="slds-required" title="Required">* </abbr>
                             </label>
+                            <a class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="help" aria-disabled="true" title="Help">
+                              <svg class="slds-button__icon" aria-hidden="true">
+                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
+                              </svg>
+                              <span class="slds-assistive-text">Help</span>
+                            </a>
+                            <div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left" role="tooltip" id="help" style="position:absolute;top:-4px;left:15px">
+                              <div class="slds-popover__body">Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.</div>
+                            </div>
                             <div class="slds-form-element__control">
                               <input type="text" id="input__key-1" name="input__key-1" class="slds-input" value="" placeholder="Unique section identifier" required=""/>
                             </div>
@@ -351,7 +360,7 @@
                               Section 1 Sale ID(s) <abbr class="slds-required" title="Required">* </abbr>
                             </label>
                             <div class="slds-form-element__control">
-                              <textarea id="input__sales-1" name="input__sales-1" class="slds-textarea" rows="10" placeholder="Sale IDs"></textarea>
+                              <textarea id="input__sales-1" name="input__sales-1" class="slds-textarea" rows="10" placeholder="Sale IDs or number of sales"></textarea>
                               <input type="hidden" id="input__count" name="input__count" class="slds-input" value="1"/>
                               <input type="hidden" id="input__editor" name="input__editor" class="slds-input" value="1"/>
                             </div>
