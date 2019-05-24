@@ -97,9 +97,9 @@ function rgb2hex(rgb) {
 // Function to determine campaign name
 function nameCampaign(){
 
-  var inputBrand = '_' + $('option:selected', "#input__brand").attr('aria-label');
+  var inputBrand = '_' + $('option:selected', "#input__brand-picker").attr('aria-label');
   var inputDate = $("#input__date").val();
-  var inputID = $("#input__id").val();
+  var inputID = '_' + $("#input__id").val();
 
   var inputZero = $("#input__campaign_zero").val();
   var inputOne = $('option:selected', "#input__campaign_one").attr('aria-label');
