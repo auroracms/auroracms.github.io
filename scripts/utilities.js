@@ -96,20 +96,21 @@ function rgb2hex(rgb) {
 
 // Function to determine campaign name
 function nameCampaign(){
-  var a = $('option:selected', "#input__audience").attr('aria-label');
-  var d = $("#input__date").val();
-  var dt = d.replace(/-/g,'');
-  var day = '_' + $.datepicker.formatDate('D', new Date(d)) + '_';
-  var b = $('option:selected',"#input__brand-picker").attr('aria-label');
-  var s = $('option:selected',"#input__source").attr('aria-label');
-  var t = $("#input__time").val();
-  var o = $('option:selected',"#input__offer").attr('aria-label');
-  var i = $("#input__id").val();
-  if(b.indexOf('_')>-1 && i!=''){
-    var name = 'PARTNERS_' + a + dt + s + b + day + o + i;
-  } else if (i!=''){
-    var name = a + dt + s + b + day + o + i;
-  } 
+
+  var inputBrand = '_' + $('option:selected', "#input__brand").attr('aria-label');
+  var inputDate = $("#input__date").val();
+  var inputID = $("#input__id").val();
+
+  var inputZero = $("#input__campaign_zero").val();
+  var inputOne = $('option:selected', "#input__campaign_one").attr('aria-label');
+  var inputTwo = $('option:selected', "#input__campaign_two").attr('aria-label');
+  var inputThree = $('option:selected', "#input__campaign_three").attr('aria-label');
+
+  var dt = inputDate.replace(/-/g,'');
+  var day = '_' + $.datepicker.formatDate('D', new Date(inputDate));
+  var name = inputOne + dt + inputTwo + inputBrand + day + inputThree + inputID;
+
+
   $("#input__campaign").val(name.toUpperCase());
   $(".slds-box").html('<p>' + name.toUpperCase() + '</p>');
   var url = "https://pages.email.secretescapes.com/aurora/campaign/validate?c=" + name;
