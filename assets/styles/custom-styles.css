@@ -126,3 +126,6 @@ pre {
 .slds-builder-header nav:hover button {
   background-color: #005fb2 !important;
 }
+.welcome-mat__tile {
+  margin: 0.5rem 0;
+}
