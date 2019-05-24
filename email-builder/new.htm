@@ -499,7 +499,7 @@
           var count = parseInt($("#input__count").val()) + 1;
           var data = data.replace(/@/g, count);
           $("#sale-sections").append(data);
-          $("#input_section-count").val(count);
+          $("#input__count").val(count);
         });
       });
       $(document).on('click', '.jetlore_section__trigger', function(){
@@ -507,7 +507,7 @@
           var count = parseInt($("#input__count").val()) + 1;
           var data = data.replace(/@/g, count);
           $("#jetlore-sale-sections").append(data);
-          $("#input_section-count").val(count);
+          $("#input__count").val(count);
         });
       });
     </script>
