@@ -127,5 +127,5 @@ pre {
   background-color: #005fb2 !important;
 }
 .welcome-mat__tile {
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 !important;
 }
