@@ -281,7 +281,13 @@
             var html = html + '    <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">';
             var html = html + '      <div class="slds-welcome-mat__tile-figure">';
             var html = html + '        <div class="slds-welcome-mat__tile-icon-container">';
-            var html = html + '          <img src="' + sales[j]["LeadImage1"] + '" width="80"/>';
+            var html = html + '          <div class="slds-welcome-mat__tile-icon-container">';
+            var html = html + '            <span class="slds-icon_container slds-icon-utility-animal_and_nature">';
+            var html = html + '              <svg class="slds-icon slds-icon-text-default" aria-hidden="true">';
+            var html = html + '                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>';
+            var html = html + '              </svg>';
+            var html = html + '            </span>';
+            var html = html + '          </div>';
             var html = html + '        </div>';
             var html = html + '      </div>';
             var html = html + '    </div>';
