@@ -82,14 +82,14 @@
             var id = sales[j]["ProductID"];
 
             var html = html + '<li class="slds-welcome-mat__tile">';
+            var html = html + '  <div class="slds-box slds-box_link slds-media">';
             var html = html + '  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">' + sales[j]["Position"] + '</div>';
             var html = html + '  <div class="slds-media__body">';
             var html = html + '    <div class="slds-welcome-mat__tile-body">';
             var html = html + '      <fieldset class="slds-form-element slds-form-element_compound">';
-            var html = html + '        <legend class="slds-form-element__legend slds-form-element__label">Location</legend>';
             var html = html + '        <div class="slds-form-element__control">';
             var html = html + '          <div class="slds-form-element__row">';
-            var html = html + '            <div class="slds-size_1-of-3">';
+            var html = html + '            <div class="slds-size_1-of-6">';
             var html = html + '              <div class="slds-form-element">';
             var html = html + '                <label class="slds-form-element__label" for="input-01">Sale ID</label>';
             var html = html + '                <div class="slds-form-element__control">';
@@ -97,7 +97,7 @@
             var html = html + '                </div>';
             var html = html + '              </div>';
             var html = html + '            </div>';
-            var html = html + '            <div class="slds-size_1-of-3">';
+            var html = html + '            <div class="slds-size_1-of-2">';
             var html = html + '              <div class="slds-form-element">';
             var html = html + '                <label class="slds-form-element__label" for="title__' + id + '">Sale Title</label>';
             var html = html + '                <div class="slds-form-element__control">';
@@ -117,6 +117,7 @@
             var html = html + '        </div>';
             var html = html + '      </fieldset>';
             var html = html + '    </div>';
+            var html = html + '  </div>';
             var html = html + '  </div>';
             var html = html + '</li>';
           }
