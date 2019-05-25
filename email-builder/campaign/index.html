@@ -241,10 +241,10 @@
 
       $.getJSON(url, function(data) {
         var sections = data[0]["Sections"];
+        var applicationName = data[0]["ApplicationDomain"];
         var html = '';
         for (i = 0; i < sections.length; i++) {
           var sectionName = sections[i]["SectionName"];
-          var applicationName = sections[i]["ApplicationDomain"];
           var sales = sections[i]["Sales"];
 
           var html = html + '<div class="slds-section slds-p-top_xxx-small slds-p-bottom_x-large slds-is-open">';
