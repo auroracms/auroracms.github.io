@@ -214,7 +214,7 @@
                   </div>
                 </div>
                 <div class="slds-no-flex">
-                  <button class="slds-button">View Raw Data</button>
+                  <a id="raw-data" href="#" class="slds-button">View Raw Data</a>
                 </div>
               </header>
             </div>
@@ -245,6 +245,7 @@
       $("#smart-order > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/smart-order.html?c=' + campaignName);
       $("#copy > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/copy.html?c=' + campaignName);
       $("#delete > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/delete.html?c=' + campaignName);
+      $("#raw-data").attr('href', 'https://auroracms.github.io/email-builder/campaign/data.html?c=' + campaignName);
 
       $.getJSON(url, function(data) {
         var sections = data[0]["Sections"];
