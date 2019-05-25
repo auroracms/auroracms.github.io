@@ -256,7 +256,7 @@
       $("#campaign-name").attr('title', campaignName);
 
       $.getJSON(url, function(data) {
-        var sections = data.Sections
+        var sections = data[0]["Sections"];
         var html = '';
         for (i = 0; i < sections.length; i++) {
           var sectionName = sections[i]["SectionName"];
