@@ -208,7 +208,7 @@
                   <div class="slds-page-header__name">
                     <div class="slds-page-header__name-title">
                       <h1>
-                        <span class="slds-page-header__title slds-hyphenate" title="Burlington Textile Weaving Plant Generator">
+                        <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title="Burlington Textile Weaving Plant Generator">
                           Burlington Textile Weaving Plant Generator</span>
                       </h1>
                     </div>
@@ -247,7 +247,36 @@
     <script type="text/javascript" src="/scripts/slds.js"></script>
     <script type="text/javascript" src="/scripts/utilities.js"></script>
     <script>
-    
+      // Function to async load data here
+      var campaignName = getUrlParameter('c');
+      var url = "https://pages.email.secretescapes.com/aurora/campaign/details?c=" + campaignName;
+      
+      // Update campaign name 
+      $("#campaign-name").html(campaignName);
+      $("#campaign-name").attr('title', campaignName);
+
+      $.getJSON(url, function(data) {
+        var sections = data.Sections
+        var html = '';
+        for (i = 0; i < sections.length; i++) {
+          var sectionName = sections[i]["SectionName"];
+
+          var html = html + '<div class="slds-section slds-p-top_xxx-small slds-is-open">';
+          var html = html + '  <h3 class="slds-section__title">';
+          var html = html + '    <button aria-controls="expando-unique-id" aria-expanded="true" class="slds-button slds-section__title-action">';
+          var html = html + '      <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">';
+          var html = html + '        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>';
+          var html = html + '      </svg>';
+          var html = html + '      <span class="slds-truncate" title="' + sectionName + '">' + sectionName + '</span>';
+          var html = html + '    </button>';
+          var html = html + '  </h3>';
+          var html = html + '  <div aria-hidden="false" class="slds-section__content" id="expando-unique-id">';
+          var html = html + '    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus</p>';
+          var html = html + '  </div>';
+          var html = html + '</div>';
+        }
+        $(".slds-card__body").html(html);
+      });
     </script>
   </body>
 </html>
