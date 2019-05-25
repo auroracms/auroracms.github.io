@@ -15,40 +15,42 @@
         <div class="slds-col slds-size_1-of-1">
           <!-- Card -->
           <article class="slds-card">
-            <div class="slds-card__header slds-grid">
-              <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                <div class="slds-media__figure">
-                  <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
-                    <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                      <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
-                    </svg>
-                    <span class="slds-assistive-text">campaign</span>
-                  </span>
-                </div>
-                <div class="slds-media__body">
-                  <div class="slds-page-header__name">
-                    <div class="slds-page-header__name-title">
-                      <h1>
-                        <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
-                      </h1>
+            <form id="sale-form" action="https://pages.email.secretescapes.com/aurora/brand/theme-edit" method="post"><
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                  <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
+                      <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
+                      </svg>
+                      <span class="slds-assistive-text">campaign</span>
+                    </span>
+                  </div>
+                  <div class="slds-media__body">
+                    <div class="slds-page-header__name">
+                      <div class="slds-page-header__name-title">
+                        <h1>
+                          <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
+                        </h1>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </header>
-            </div>
-            <div class="slds-card__body slds-card__body_inner">
-              <form id="sale-form" action="https://pages.email.secretescapes.com/aurora/brand/theme-edit" method="post"></form>
-            </div>
-            <footer class="slds-card__footer slds-align_absolute-center">
-              <div class="slds-grid slds-size_11-of-12" >
-                <div class="slds-size_1-of-2 slds-text-align_left">
-                  <a class="slds-button slds-button_text-destructive" onclick="history.back()">Back</a>
-                </div>
-                <div class="slds-size_1-of-2 slds-text-align_right">
-                  <button type="submit" class="slds-button slds-button_brand">Submit</button>
-                </div>
+                </header>
               </div>
-            </footer>
+              <div class="slds-card__body slds-card__body_inner">
+                <div id="sale-form"></div>
+              </div>
+              <footer class="slds-card__footer slds-align_absolute-center">
+                <div class="slds-grid slds-size_11-of-12" >
+                  <div class="slds-size_1-of-2 slds-text-align_left">
+                    <a class="slds-button slds-button_text-destructive" onclick="history.back()">Back</a>
+                  </div>
+                  <div class="slds-size_1-of-2 slds-text-align_right">
+                    <button type="submit" class="slds-button slds-button_brand">Submit</button>
+                  </div>
+                </div>
+              </footer>
+            </form>
           </article>
         </div>
       </div>
@@ -77,12 +79,12 @@
 
           var html = html + '<div class="slds-section slds-p-top_xxx-small slds-p-bottom_x-large slds-is-open">';
           var html = html + '  <h3 class="slds-section__title" style="background-color:#0070d2; color:#fff">';
-          var html = html + '    <button style="background-color:#0070d2; color:#fff" class="slds-button slds-section__title-action">';
+          var html = html + '    <a style="background-color:#0070d2; color:#fff" class="slds-button slds-section__title-action">';
           var html = html + '      <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">';
           var html = html + '        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>';
           var html = html + '      </svg>';
           var html = html + '      <span class="slds-truncate" title="' + sectionName + '">' + sectionName + '</span>';
-          var html = html + '    </button>';
+          var html = html + '    </a>';
           var html = html + '  </h3>';
           var html = html + '  <div aria-hidden="false" class="slds-section__content" id="expando-unique-id">';
           var html = html + '    <ul class="slds-welcome-mat__tiles">';
