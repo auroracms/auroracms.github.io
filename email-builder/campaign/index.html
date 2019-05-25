@@ -244,6 +244,7 @@
         var html = '';
         for (i = 0; i < sections.length; i++) {
           var sectionName = sections[i]["SectionName"];
+          var applicationName = sections[i]["ApplicationDomain"];
           var sales = sections[i]["Sales"];
 
           var html = html + '<div class="slds-section slds-p-top_xxx-small slds-p-bottom_x-large slds-is-open">';
@@ -258,6 +259,8 @@
           var html = html + '  <div aria-hidden="false" class="slds-section__content" id="expando-unique-id">';
           var html = html + '    <ul class="slds-welcome-mat__tiles">';
           for (j = 0; j < sales.length; j++) {
+            var saleURL = sales[j]["SaleURL"];
+            var saleURL = saleURL.replace(applicationName,'');
             var html = html + '<li class="slds-welcome-mat__tile">';
             var html = html + '  <a href="' + sales[j]["SaleURL"] + '" class="slds-box slds-box_link slds-media">';
             var html = html + '    <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">' + sales[j]["Position"] + '</div>';
@@ -270,7 +273,7 @@
             var html = html + '    </div>';
             var html = html + '    <div class="slds-media__body">';
             var html = html + '      <div class="slds-welcome-mat__tile-body">';
-            var html = html + '        <h3 class="slds-welcome-mat__tile-title slds-p-bottom_xx-small">' + sales[j]["ProductID"] + '  •  <span style="color:blue;">' + sales[j]["SaleURL"] + '</span></h3>';
+            var html = html + '        <h3 class="slds-welcome-mat__tile-title slds-p-bottom_xx-small">' + sales[j]["ProductID"] + '  •  <span style="color:blue;">' + saleURL + '</span></h3>';
             var html = html + '        <p class="slds-welcome-mat__tile-description slds-text-title_caps">' + sales[j]["Title"] + '</p>';
             var html = html + '        <p class="slds-welcome-mat__tile-description">' + sales[j]["DestinationName"] + '</p>';
             var html = html + '      </div>';
