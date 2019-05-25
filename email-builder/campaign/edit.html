@@ -37,7 +37,7 @@
               </header>
             </div>
             <div class="slds-card__body slds-card__body_inner">
-              <form id="sale-form" action="#" method="post"></form>
+              <form id="sale-form" action="https://pages.email.secretescapes.com/aurora/brand/theme-edit" method="post"></form>
             </div>
             <footer class="slds-card__footer slds-align_absolute-center">
               <div class="slds-grid slds-size_11-of-12" >
@@ -148,6 +148,8 @@
             var html = html + '</li>';
           }
           var html = html + '    </ul>';
+          var html = html + '<input type="hidden" id="input__campaign" name="input__campaign" class="slds-input" value="' + campaignName + ''"/>';
+          var html = html + '<input type="hidden" id="input__editor" name="input__editor" class="slds-input" value=""/>';
           var html = html + '  </div>';
           var html = html + '</div>';
         }
