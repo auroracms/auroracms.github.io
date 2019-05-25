@@ -244,6 +244,7 @@
         var html = '';
         for (i = 0; i < sections.length; i++) {
           var sectionName = sections[i]["SectionName"];
+          var sales = sections[i]["SectionName"]["Sales"];
 
           var html = html + '<div class="slds-section slds-p-top_xxx-small slds-p-bottom_x-large slds-is-open">';
           var html = html + '  <h3 class="slds-section__title">';
@@ -255,7 +256,27 @@
           var html = html + '    </button>';
           var html = html + '  </h3>';
           var html = html + '  <div aria-hidden="false" class="slds-section__content" id="expando-unique-id">';
-          var html = html + '    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus</p>';
+          var html = html + '    <ul class="slds-welcome-mat__tiles">';
+          for (j = 0; j < sales.length; j++) {
+            var html = html + '<li class="slds-welcome-mat__tile">';
+            var html = html + '  <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">';
+            var html = html + '    <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">';
+            var html = html + '      <div class="slds-welcome-mat__tile-figure">';
+            var html = html + '        <div class="slds-welcome-mat__tile-icon-container">';
+            var html = html + '          <img src="' + sales[j]["LeadImage1"] + '" width="40"/>';
+            var html = html + '        </div>';
+            var html = html + '      </div>';
+            var html = html + '    </div>';
+            var html = html + '    <div class="slds-media__body">';
+            var html = html + '      <div class="slds-welcome-mat__tile-body">';
+            var html = html + '        <h3 class="slds-welcome-mat__tile-title">Delete Sales</h3>';
+            var html = html + '        <p class="slds-welcome-mat__tile-description">Delete the sales or campaign</p>';
+            var html = html + '      </div>';
+            var html = html + '    </div>';
+            var html = html + '  </a>';
+            var html = html + '</li>';
+          }
+          var html = html + '    </ul>';
           var html = html + '  </div>';
           var html = html + '</div>';
         }
