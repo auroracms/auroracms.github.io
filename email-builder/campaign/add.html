@@ -13,37 +13,41 @@
     <div id="wrapper" class="slds-m-around_medium">
       <div class="slds-grid slds-wrap slds-gutters">
         <div class="slds-col slds-size_1-of-3">
-          <div class="slds-page-header slds-page-header_vertical">
-            <div class="slds-media slds-p-bottom_medium">
-              <div class="slds-media__figure">
-                <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
-                  <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                    <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
-                  </svg>
-                  <span class="slds-assistive-text">campaign</span>
-                </span>
-              </div>
-              <div class="slds-media__body">
-                <div class="slds-page-header__name">
-                  <div class="slds-page-header__name-title">
-                    <h1>
-                      <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
-                    </h1>
+          <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
+                    <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                      <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
+                    </svg>
+                    <span class="slds-assistive-text">campaign</span>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <div class="slds-page-header__name">
+                    <div class="slds-page-header__name-title">
+                      <h1>
+                        <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
+                      </h1>
+                    </div>
                   </div>
                 </div>
+                <div class="slds-no-flex">
+                  <a id="raw-data" href="#" class="slds-button">View Raw Data</a>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner" style="min-height:200px;">
+              <!-- Spinners -->
+              <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
               </div>
             </div>
-            <ul class="slds-welcome-mat__tiles">
-              <li>
-                <!-- Spinners -->
-                <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
-                  <span class="slds-assistive-text">Loading</span>
-                  <div class="slds-spinner__dot-a"></div>
-                  <div class="slds-spinner__dot-b"></div>
-                </div>
-              </li>
-            </ul>
-          </div>
+            <footer class="slds-card__footer"></footer>
+          </article>
         </div>
         <div class="slds-col slds-size_2-of-3">
           <!-- Card -->
