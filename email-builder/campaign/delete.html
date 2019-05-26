@@ -113,10 +113,11 @@
             var html = html + '        <h3 class="slds-welcome-mat__tile-title slds-p-bottom_xx-small">' + sales[j]["ProductID"] + '  •  <span style="color:blue;">' + saleURL + '</span></h3>';
             var html = html + '        <p class="slds-welcome-mat__tile-description slds-text-title_caps">' + sales[j]["Title"] + '</p>';
             var html = html + '        <p class="slds-welcome-mat__tile-description">' + sales[j]["DestinationName"] + '</p>';
+            var html = html + '        <p class="slds-welcome-mat__tile-description">' + sales[j]["DestinationName"] + '</p>';
             var html = html + '      </div>';
             var html = html + '    </div>';
             var html = html + '    <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">';
-            var html = html + '      <div class="slds-welcome-mat__tile-figure slds-hide">';
+            var html = html + '      <div class="slds-welcome-mat__tile-figure slds-welcome-mat__tile-delete slds-hide">';
             var html = html + '        <div class="slds-welcome-mat__tile-icon-container">';
             var html = html + '          <div class="slds-welcome-mat__tile-icon-container">';
             var html = html + '            <span class="slds-icon_container slds-icon-utility-animal_and_nature">';
@@ -142,7 +143,8 @@
     </script>
     <script>
       function deleteSale(elem){
-        $(elem).hide()
+        $(elem).closest('.slds-welcome-mat__tile').toggleClass('slds-welcome-mat__tile_complete');
+        $(elem).find('.slds-welcome-mat__tile-delete').toggleClass('slds-hide');
       }
     </script>
   </body>
