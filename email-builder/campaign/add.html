@@ -49,36 +49,47 @@
         <div class="slds-col slds-size_2-of-3">
           <!-- Card -->
           <article class="slds-card">
-            <div class="slds-card__header slds-grid">
-              <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                <div class="slds-media__figure">
-                  <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
-                    <svg class="slds-icon slds-page-header__icon slds-icon_small" aria-hidden="true">
-                      <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#orders"></use>
-                    </svg>
-                    <span class="slds-assistive-text">Add New Sales</span>
-                  </span>
-                </div>
-                <div class="slds-media__body">
-                  <div class="slds-page-header__name">
-                    <div class="slds-page-header__name-title">
-                      <h1>
-                        <span class="slds-page-header__title slds-hyphenate" title="Add New Sales">Add New Sales</span>
-                      </h1>
+            <form action="https://pages.email.secretescapes.com/aurora/campaign/add" method="post">
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                  <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
+                      <svg class="slds-icon slds-page-header__icon slds-icon_small" aria-hidden="true">
+                        <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#orders"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Add New Sales</span>
+                    </span>
+                  </div>
+                  <div class="slds-media__body">
+                    <div class="slds-page-header__name">
+                      <div class="slds-page-header__name-title">
+                        <h1>
+                          <span class="slds-page-header__title slds-hyphenate" title="Add New Sales">Add New Sales</span>
+                        </h1>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </header>
-            </div>
-            <div id="new-sales" class="slds-card__body slds-card__body_inner" style="min-height:200px;">
-              <!-- Spinners -->
-              <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
-                <span class="slds-assistive-text">Loading</span>
-                <div class="slds-spinner__dot-a"></div>
-                <div class="slds-spinner__dot-b"></div>
+                </header>
               </div>
-            </div>
-            <footer class="slds-card__footer"></footer>
+              <div id="new-sales" class="slds-card__body slds-card__body_inner" style="min-height:200px;">
+                <!-- Spinners -->
+                <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+                  <span class="slds-assistive-text">Loading</span>
+                  <div class="slds-spinner__dot-a"></div>
+                  <div class="slds-spinner__dot-b"></div>
+                </div>
+              </div>
+              <footer class="slds-card__footer slds-align_absolute-center">
+                <div class="slds-grid slds-size_11-of-12" >
+                  <div class="slds-size_1-of-2 slds-text-align_left">
+                    <a class="slds-button slds-button_text-destructive" onclick="history.back()">Back</a>
+                  </div>
+                  <div class="slds-size_1-of-2 slds-text-align_right">
+                    <button type="submit" class="slds-button slds-button_brand">Submit</button>
+                  </div>
+                </div>
+              </footer>
+            </form>
           </article>
           
         </div>
@@ -110,7 +121,7 @@
         var sections = data[0]["Sections"];
         var applicationName = data[0]["ApplicationDomain"];
         var html = '';
-        var form = '<form action="https://pages.email.secretescapes.com/aurora/campaign/add" method="post">';
+        var form = '';
         for (i = 0; i < sections.length; i++) {
           var sectionName = sections[i]["SectionName"];
           var sales = sections[i]["Sales"];
@@ -134,7 +145,6 @@
           var form = form + '  </div>';
           var form = form + '</div>';
         }
-        var form = form + '</form>';
         $("#current-sales").html(html);
         $("#new-sales").html(form);
       });
