@@ -145,7 +145,7 @@
       function reorderSales(){
         var string = '';
         $('.sortable_section').each(function(index, element){
-          $(element).each(function(index, element){
+          $(element).find('li').each(function(index, element){
             console.log(element.id);
           });
         });
