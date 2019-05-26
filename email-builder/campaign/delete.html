@@ -99,8 +99,7 @@
           var html = html + '  <div aria-hidden="false" class="slds-section__content" id="expando-unique-id">';
           var html = html + '    <ul class="slds-welcome-mat__tiles">';
           for (j = 0; j < sales.length; j++) {
-            var saleURL = sales[j]["SaleURL"];
-            var saleURL = saleURL.replace(applicationName,'');
+            var id = sales[j]["ProductID"];
             var html = html + '<li class="slds-welcome-mat__tile">';
             var html = html + '  <a onclick="deleteSale(this)" class="slds-box slds-box_link slds-media" target="_blank">';
             var html = html + '    <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">' + sales[j]["Position"] + '</div>';
@@ -116,7 +115,7 @@
             var html = html + '        <h3 class="slds-welcome-mat__tile-title slds-p-bottom_xx-small">' + sales[j]["ProductID"] + '  •  <span style="color:blue;">' + saleURL + '</span></h3>';
             var html = html + '        <p class="slds-welcome-mat__tile-description slds-text-title_caps">' + sales[j]["Title"] + '</p>';
             var html = html + '        <p class="slds-welcome-mat__tile-description">' + sales[j]["DestinationName"] + '</p>';
-            var html = html + '        <p class="slds-welcome-mat__tile-description">' + sales[j]["DestinationName"] + '</p>';
+            var html = html + '        <input type="hidden" id="delete__' + id + '"  name="delete__' + id + '" class="slds-input" value="false"/>';
             var html = html + '      </div>';
             var html = html + '    </div>';
             var html = html + '    <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">';
@@ -148,6 +147,11 @@
       function deleteSale(elem){
         //$(elem).closest('.slds-welcome-mat__tile').toggleClass('slds-welcome-mat__tile_complete');
         $(elem).find('.slds-welcome-mat__tile-delete').toggleClass('slds-hide');
+        if($(elem).find('input').val()=='false'){
+          $(elem).find('input').val('true');
+        } else {
+          $(elem).find('input').val('false');
+        }
         $(elem).toggleClass('border-delete');
       }
     </script>
