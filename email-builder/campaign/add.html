@@ -33,12 +33,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="slds-no-flex">
-                  <a id="raw-data" href="#" class="slds-button">View Raw Data</a>
-                </div>
               </header>
             </div>
-            <div class="slds-card__body slds-card__body_inner" style="min-height:200px;">
+            <div id="current-sales" class="slds-card__body slds-card__body_inner" style="min-height:200px;">
               <!-- Spinners -->
               <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
                 <span class="slds-assistive-text">Loading</span>
@@ -76,7 +73,7 @@
                 </div>
               </header>
             </div>
-            <div class="slds-card__body slds-card__body_inner" style="min-height:200px;">
+            <div id="new-sales" class="slds-card__body slds-card__body_inner" style="min-height:200px;">
               <!-- Spinners -->
               <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
                 <span class="slds-assistive-text">Loading</span>
@@ -173,7 +170,7 @@
           var html = html + '  </div>';
           var html = html + '</div>';
         }
-        $(".slds-card__body").html(html);
+        $("#current-sales").html(html);
       });
     </script>
   </body>
