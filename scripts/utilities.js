@@ -97,7 +97,8 @@ function rgb2hex(rgb) {
 // Function to determine campaign name
 function nameCampaign(){
 
-  var inputBrand = '_' + $('option:selected', "#input__brand-picker").attr('aria-label');
+  var inputBrand = '_' + $('option:selected', "#input__brand-picker").attr('data-brand');
+  var inputTerritory = '_' + $('option:selected', "#input__brand-picker").attr('data-territory');
   var inputDate = $("#input__date").val();
   var inputID = '_' + $("#input__id").val();
 
@@ -112,6 +113,7 @@ function nameCampaign(){
 
 
   $("#input__campaign").val(name.toUpperCase());
+  $("#input__territory").val(inputTerritory);
   $(".slds-box").html('<p>' + name.toUpperCase() + '</p>');
   var url = "https://pages.email.secretescapes.com/aurora/campaign/validate?c=" + name;
   $.getJSON(url, function(data) {
