@@ -178,11 +178,12 @@
         if($(elem).find('input[type=hidden]').val()=='false'){
           $(elem).find('svg').css('fill', '#c23934');
           $(elem).find('input[type=hidden]').val('true');
+          $(elem).closest('li').find('slds-box').toggleClass('border-delete');
         } else {
           $(elem).find('svg').css('fill', 'none');
           $(elem).find('input[type=hidden]').val('false');
+          $(elem).closest('li').find('slds-box').toggleClass('border-delete');
         }
-        $(elem).toggleClass('border-delete');
       }
     </script>
   </body>
