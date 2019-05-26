@@ -16,178 +16,30 @@
           <div class="slds-page-header slds-page-header_vertical">
             <div class="slds-media slds-p-bottom_medium">
               <div class="slds-media__figure">
-                <span class="slds-icon_container slds-icon-standard-data-integration-hub" title="Campaign Actions">
+                <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
                   <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                    <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#data_integration_hub"></use>
+                    <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
                   </svg>
-                  <span class="slds-assistive-text">Campaign Actions</span>
+                  <span class="slds-assistive-text">campaign</span>
                 </span>
               </div>
               <div class="slds-media__body">
                 <div class="slds-page-header__name">
-                  <div class="slds-page-header__name-title slds-p-top_xx-small">
+                  <div class="slds-page-header__name-title">
                     <h1>
-                      <span class="slds-page-header__title slds-hyphenate" title="Campaign Actions">Campaign Actions</span>
+                      <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
                     </h1>
                   </div>
                 </div>
               </div>
             </div>
             <ul class="slds-welcome-mat__tiles">
-              <!-- Edit Sales -->
-              <li id="edit" class="slds-welcome-mat__tile">
-                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
-                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
-                    <div class="slds-welcome-mat__tile-figure">
-                      <div class="slds-welcome-mat__tile-icon-container">
-                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
-                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
-                            <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#add_relationship"></use>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slds-media__body">
-                    <div class="slds-welcome-mat__tile-body">
-                      <h3 class="slds-welcome-mat__tile-title">Edit Sales</h3>
-                      <p class="slds-welcome-mat__tile-description">Customise the sale for the email</p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <!-- Add Sales -->
-              <li id="add" class="slds-welcome-mat__tile">
-                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
-                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
-                    <div class="slds-welcome-mat__tile-figure">
-                      <div class="slds-welcome-mat__tile-icon-container">
-                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
-                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
-                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slds-media__body">
-                    <div class="slds-welcome-mat__tile-body">
-                      <h3 class="slds-welcome-mat__tile-title">Add Sales</h3>
-                      <p class="slds-welcome-mat__tile-description">Add new sales to the campaign</p>
-                    </div>
-                  </div>
-                </a>
-              </li>   
-              <!-- Edit Order -->
-              <li id="order" class="slds-welcome-mat__tile">
-                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
-                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
-                    <div class="slds-welcome-mat__tile-figure">
-                      <div class="slds-welcome-mat__tile-icon-container">
-                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
-                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
-                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#change_record_type"></use>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slds-media__body">
-                    <div class="slds-welcome-mat__tile-body">
-                      <h3 class="slds-welcome-mat__tile-title">Edit Order</h3>
-                      <p class="slds-welcome-mat__tile-description">Reorder the sales in the email or apply </p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <!-- Edit Section -->
-              <li id="section" class="slds-welcome-mat__tile">
-                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
-                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
-                    <div class="slds-welcome-mat__tile-figure">
-                      <div class="slds-welcome-mat__tile-icon-container">
-                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
-                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
-                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#ad_set"></use>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slds-media__body">
-                    <div class="slds-welcome-mat__tile-body">
-                      <h3 class="slds-welcome-mat__tile-title">Edit Section</h3>
-                      <p class="slds-welcome-mat__tile-description">Add, rename or delete sections</p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <!-- Smart Order -->
-              <li id="smart-order" class="slds-welcome-mat__tile">
-                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
-                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
-                    <div class="slds-welcome-mat__tile-figure">
-                      <div class="slds-welcome-mat__tile-icon-container">
-                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
-                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
-                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#einstein"></use>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slds-media__body">
-                    <div class="slds-welcome-mat__tile-body">
-                      <h3 class="slds-welcome-mat__tile-title">Smart Order</h3>
-                      <p class="slds-welcome-mat__tile-description">Apply saved sort method</p>
-                    </div>
-                  </div>
-                </a>
-              </li>  
-              <!-- Duplicate -->
-              <li id="copy" class="slds-welcome-mat__tile">
-                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
-                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
-                    <div class="slds-welcome-mat__tile-figure">
-                      <div class="slds-welcome-mat__tile-icon-container">
-                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
-                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
-                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#standard_objects"></use>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slds-media__body">
-                    <div class="slds-welcome-mat__tile-body">
-                      <h3 class="slds-welcome-mat__tile-title">Duplicate</h3>
-                      <p class="slds-welcome-mat__tile-description">Copy the campaign</p>
-                    </div>
-                  </div>
-                </a>
-              </li>  
-              <!-- Delete -->
-              <li id="delete" class="slds-welcome-mat__tile">
-                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
-                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
-                    <div class="slds-welcome-mat__tile-figure">
-                      <div class="slds-welcome-mat__tile-icon-container">
-                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
-                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
-                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete"></use>
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slds-media__body">
-                    <div class="slds-welcome-mat__tile-body">
-                      <h3 class="slds-welcome-mat__tile-title">Delete Sales</h3>
-                      <p class="slds-welcome-mat__tile-description">Delete the sales or campaign</p>
-                    </div>
-                  </div>
-                </a>
-              </li>     
+              <!-- Spinners -->
+              <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+              </div>    
             </ul>
           </div>
         </div>
