@@ -157,7 +157,7 @@
           var html = html + '            <div class="slds-welcome-mat__tile-icon-container">';
           var html = html + '              <span class="slds-icon_container slds-icon-utility-animal_and_nature">';
           var html = html + '                <a href="#" onclick="deleteSale(this)">';
-          var html = html + '                  <svg class="slds-icon slds-icon-text-default" aria-hidden="true" style="fill:#c23934;">';
+          var html = html + '                  <svg class="slds-icon slds-icon-text-default" aria-hidden="true">';
           var html = html + '                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete"></use>';
           var html = html + '                  </svg>';
           var html = html + '                </a>';       
@@ -176,7 +176,7 @@
     <script>
       function deleteSale(elem){
         //$(elem).closest('.slds-welcome-mat__tile').toggleClass('slds-welcome-mat__tile_complete');
-        $(elem).find('.slds-welcome-mat__tile-delete').toggleClass('slds-hide');
+        $(elem).find('svg').css('fill', '#c23934');
         if($(elem).find('input[type=hidden]').val()=='false'){
           $(elem).find('input[type=hidden]').val('true');
         } else {
