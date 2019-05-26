@@ -143,12 +143,12 @@
     </script>
     <script>
       function reorderSales(){
-        var string = '';
         $('.sortable_section').each(function(index, element){
+          var arr = [];
           $(element).find('li').each(function(index, element){
-            var string = string + element.id;
-            console.log(string);
+            arr.push(element.id)
           });
+          console.log(arr.join());
         });
       }
     </script>
