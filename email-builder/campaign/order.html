@@ -146,7 +146,7 @@
         var string = '';
         $('.sortable_section').each(function(index, element){
           $(element).find('li').each(function(index, element){
-            var string = string + element.attr('data-id');
+            var string = string + element.data-id;
             console.log(string);
           });
         });
