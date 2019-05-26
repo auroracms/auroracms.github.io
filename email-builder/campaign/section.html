@@ -175,10 +175,10 @@
       function deleteSale(elem){
         //$(elem).closest('.slds-welcome-mat__tile').toggleClass('slds-welcome-mat__tile_complete');
         $(elem).find('.slds-welcome-mat__tile-delete').toggleClass('slds-hide');
-        if($(elem).find('input').val()=='false'){
-          $(elem).find('input').val('true');
+        if($(elem).find('input[type=hidden]').val()=='false'){
+          $(elem).find('input[type=hidden]').val('true');
         } else {
-          $(elem).find('input').val('false');
+          $(elem).find('input[type=hidden]').val('false');
         }
         $(elem).toggleClass('border-delete');
       }
