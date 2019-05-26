@@ -98,7 +98,7 @@ function rgb2hex(rgb) {
 function nameCampaign(){
 
   var inputBrand = '_' + $('option:selected', "#input__brand-picker").attr('data-brand');
-  var inputTerritory = '_' + $('option:selected', "#input__brand-picker").attr('data-territory');
+  var inputTerritory = $('option:selected', "#input__brand-picker").attr('data-territory');
   var inputDate = $("#input__date").val();
   var inputID = '_' + $("#input__id").val();
 
