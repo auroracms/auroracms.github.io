@@ -113,6 +113,7 @@
         var sections = data[0]["Sections"];
         var applicationName = data[0]["ApplicationDomain"];
         var html = '';
+        var form = '<form action="https://pages.email.secretescapes.com/aurora/campaign/add" method="post">';
         for (i = 0; i < sections.length; i++) {
           var sectionName = sections[i]["SectionName"];
           var sales = sections[i]["Sales"];
@@ -126,7 +127,19 @@
           }
           var html = html + '</ul>';
         }
+
+        for (i = 0; i < sections.length; i++) {
+          var sectionName = sections[i]["SectionName"];
+          var form = form + '<div class="slds-form-element">';
+          var form = form + '  <label class="slds-form-element__label" for="textarea-' + i + '">Add sales to ' + sectionName + '</label>';
+          var form = form + '  <div class="slds-form-element__control">';
+          var form = form + '    <textarea id="textarea-' + i + '" name="textarea-' + i + '" class="slds-textarea" placeholder="Add sales"></textarea>';
+          var form = form + '  </div>';
+          var form = form + '</div>';
+        }
+        var form = form + '</form>';
         $("#current-sales").html(html);
+        $("#new-sales").html(form);
       });
     </script>
   </body>
