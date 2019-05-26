@@ -102,7 +102,7 @@
       // Update campaign name 
       $("#campaign-name").html(campaignName);
       $("#campaign-name").attr('title', campaignName);
-      $(".slds-notify_container > a").attr('href', 'https://pages.email.secretescapes.com/aurora/campaign/delete-campaign?c=' + campaignName);
+      $(".slds-notify_container a").attr('href', 'https://pages.email.secretescapes.com/aurora/campaign/delete-campaign?c=' + campaignName);
 
       $.getJSON(url, function(data) {
         var sections = data[0]["Sections"];
