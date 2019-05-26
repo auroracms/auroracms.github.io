@@ -130,8 +130,8 @@
 
         for (i = 0; i < sections.length; i++) {
           var sectionName = sections[i]["SectionName"];
-          var form = form + '<div class="slds-form-element slds-p-vertical_small">';
-          var form = form + '  <label class="slds-form-element__label slds-text-heading_medium" for="textarea-' + i + '">Add sales to ' + sectionName + '</label>';
+          var form = form + '<div class="slds-form-element">';
+          var form = form + '  <label class="slds-form-element__label slds-p-vertical_small slds-text-heading_medium" for="textarea-' + i + '">Add sales to ' + sectionName + '</label>';
           var form = form + '  <div class="slds-form-element__control">';
           var form = form + '    <textarea id="textarea-' + i + '" name="textarea-' + i + '" class="slds-textarea" placeholder="Add sales"></textarea>';
           var form = form + '  </div>';
