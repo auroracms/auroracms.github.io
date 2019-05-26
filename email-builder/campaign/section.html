@@ -141,7 +141,7 @@
           var html = html + '                  <div class="slds-form-element">';
           var html = html + '                    <label class="slds-form-element__label" for="input-01">Modified Date</label>';
           var html = html + '                    <div class="slds-form-element__control">';
-          var html = html + '                      <input type="text" id="date__' + id + '" name="date__' + id + '" class="slds-input" value="' + sections[i]["ModifiedTimestamp"] + '" readonly/>';
+          var html = html + '                      <input type="text" id="date__' + id + '" name="date__' + id + '" class="slds-input" value="' + $.date(sections[i]["ModifiedTimestamp"]) + '" readonly/>';
           var html = html + '                    </div>';
           var html = html + '                  </div>';
           var html = html + '                </div>';
