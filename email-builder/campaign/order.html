@@ -143,13 +143,15 @@
     </script>
     <script>
       function reorderSales(){
+        var sectionArr = [];
         $('.sortable_section').each(function(index, element){
           var arr = [];
           $(element).find('li').each(function(index, element){
             arr.push(element.id)
           });
-          console.log(arr.join());
+          sectionArr.push(arr.join('-'));
         });
+        console.log(sectionArr.join('|'));
       }
     </script>
   </body>
