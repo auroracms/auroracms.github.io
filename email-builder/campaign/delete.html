@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="/assets/styles/salesforce-lightning-design-system.min.css"/>
     <link rel="stylesheet" href="/assets/styles/custom-styles.css"/>
     <link rel="icon" type="image/png" href="/assets/images/aurora.ico">
+    <style>
+    .border-delete {border-color:#c23934;}
+    </style>
   </head>
   <body class="slds-brand-band slds-brand-band_medium">
     <div id="global-header__email" aria-label="2"></div>
@@ -121,7 +124,7 @@
             var html = html + '        <div class="slds-welcome-mat__tile-icon-container">';
             var html = html + '          <div class="slds-welcome-mat__tile-icon-container">';
             var html = html + '            <span class="slds-icon_container slds-icon-utility-animal_and_nature">';
-            var html = html + '              <svg class="slds-icon slds-icon-text-default" aria-hidden="true">';
+            var html = html + '              <svg class="slds-icon slds-icon-text-default" aria-hidden="true" style="fill:#c23934;">';
             var html = html + '                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete"></use>';
             var html = html + '              </svg>';
             var html = html + '            </span>';
@@ -145,6 +148,7 @@
       function deleteSale(elem){
         $(elem).closest('.slds-welcome-mat__tile').toggleClass('slds-welcome-mat__tile_complete');
         $(elem).find('.slds-welcome-mat__tile-delete').toggleClass('slds-hide');
+        $(elem).toggleClass('border-delete');
       }
     </script>
   </body>
