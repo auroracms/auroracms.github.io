@@ -114,7 +114,7 @@
           var id = sections[i]["SectionID"];
           var html = html + '<ul class="slds-welcome-mat__tiles">';
           var html = html + '  <li class="slds-welcome-mat__tile">';
-          var html = html + '    <a onclick="deleteSale(this)" class="slds-box slds-box_link slds-media" target="_blank">';
+          var html = html + '    <a href="javascript:void(0);"  class="slds-box slds-box_link slds-media" target="_blank">';
           var html = html + '      <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">' + id + '</div>';
           var html = html + '      <div class="slds-media__body">';
           var html = html + '        <div class="slds-welcome-mat__tile-body">';
@@ -152,13 +152,15 @@
           var html = html + '        </div>';
           var html = html + '      </div>';
           var html = html + '      <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">';
-          var html = html + '        <div class="slds-welcome-mat__tile-figure slds-welcome-mat__tile-delete slds-hide">';
+          var html = html + '        <div class="slds-welcome-mat__tile-figure slds-welcome-mat__tile-delete">';
           var html = html + '          <div class="slds-welcome-mat__tile-icon-container">';
           var html = html + '            <div class="slds-welcome-mat__tile-icon-container">';
           var html = html + '              <span class="slds-icon_container slds-icon-utility-animal_and_nature">';
-          var html = html + '                <svg class="slds-icon slds-icon-text-default" aria-hidden="true" style="fill:#c23934;">';
-          var html = html + '                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete"></use>';
-          var html = html + '                </svg>';
+          var html = html + '                <a href="#" onclick="deleteSale(this)">';
+          var html = html + '                  <svg class="slds-icon slds-icon-text-default" aria-hidden="true" style="fill:#c23934;">';
+          var html = html + '                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete"></use>';
+          var html = html + '                  </svg>';
+          var html = html + '                </a>';       
           var html = html + '              </span>';
           var html = html + '            </div>';
           var html = html + '          </div>';
