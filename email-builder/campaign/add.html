@@ -117,8 +117,8 @@
           var sectionName = sections[i]["SectionName"];
           var sales = sections[i]["Sales"];
 
-          var html = html + '<h3 class="slds-text-heading_small">' + sectionName + '</h3>';
-          var html = html + '<ul class="slds-p-bottom_x-large">';
+          var html = html + '<h3 class="slds-text-heading_small"><b>' + sectionName + '</b></h3>';
+          var html = html + '<ul class="slds-p-top_large">';
           for (j = 0; j < sales.length; j++) {
             var id = sales[j]["ProductID"];
             var title = sales[j]["Title"];
