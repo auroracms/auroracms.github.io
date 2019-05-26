@@ -142,7 +142,6 @@
           var html = html + '                    <label class="slds-form-element__label" for="input-01">Modified Date</label>';
           var html = html + '                    <div class="slds-form-element__control">';
           var html = html + '                      <input type="text" id="date__' + id + '" name="date__' + id + '" class="slds-input" value="' + $.date(sections[i]["ModifiedBy"]) + '" readonly/>';
-          var html = html + '                      <input type="hidden" id="delete__' + id + '"  name="delete__' + id + '" class="slds-input" value="false"/>';
           var html = html + '                    </div>';
           var html = html + '                  </div>';
           var html = html + '                </div>';
@@ -160,6 +159,7 @@
           var html = html + '                  <svg class="slds-icon slds-icon-text-default" aria-hidden="true">';
           var html = html + '                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete"></use>';
           var html = html + '                  </svg>';
+          var html = html + '                  <input type="hidden" id="delete__' + id + '"  name="delete__' + id + '" class="slds-input" value="false"/>';
           var html = html + '                </a>';       
           var html = html + '              </span>';
           var html = html + '            </div>';
