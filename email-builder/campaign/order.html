@@ -144,9 +144,9 @@
     <script>
       function reorderSales(){
         var string = '';
-        $(".sortable_section").each(
+        $('.sortable_section').each(function(index){
           var string = string + '1,';
-        )
+        });
         window.alert(string);
       }
     </script>
