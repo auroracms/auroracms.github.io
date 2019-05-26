@@ -82,7 +82,7 @@
           var html = html + '    </button>';
           var html = html + '  </h3>';
           var html = html + '  <div aria-hidden="false" class="slds-section__content" id="expando-unique-id">';
-          var html = html + '    <ul class="slds-welcome-mat__tiles">';
+          var html = html + '    <ul class="slds-welcome-mat__tiles sortable_section">';
           for (j = 0; j < sales.length; j++) {
             var saleURL = sales[j]["SaleURL"];
             var saleURL = saleURL.replace(applicationName,'');
@@ -128,5 +128,12 @@
         $(".slds-card__body").html(html);
       });
     </script>
+      <script>
+        $(function() {
+          $(".sortable_section").sortable({
+            connectWith: ".sortable_section"
+          });
+        });
+       </script>
   </body>
 </html>
