@@ -59,6 +59,10 @@
       // Function to async load data here
       var campaignName = getUrlParameter('c');
       var url = "https://pages.email.secretescapes.com/aurora/campaign/details?c=" + campaignName;
+      
+      // Update campaign name 
+      $("#campaign-name").html(campaignName);
+      $("#campaign-name").attr('title', campaignName);
 
       $.getJSON(url, function(data) {
         var sections = data[0]["Sections"];
