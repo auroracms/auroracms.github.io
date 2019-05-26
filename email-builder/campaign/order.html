@@ -44,7 +44,16 @@
                 <div class="slds-spinner__dot-b"></div>
               </div>
             </div>
-            <footer class="slds-card__footer"></footer>
+            <footer class="slds-card__footer slds-align_absolute-center">
+              <div class="slds-grid slds-size_1-of-1" >
+                <div class="slds-size_1-of-2 slds-text-align_left">
+                  <a class="slds-button slds-button_text-destructive" onclick="history.back()">Cancel</a>
+                </div>
+                <div class="slds-size_1-of-2 slds-text-align_right">
+                  <button type="submit" onclick="reorderSales()" class="slds-button slds-button_brand slds-p-horizontal_large slds-p-vertical_xx-small">Submit</button>
+                </div>
+              </div>
+            </footer>
           </article>
           
         </div>
@@ -84,9 +93,10 @@
           var html = html + '  <div aria-hidden="false" class="slds-section__content" id="expando-unique-id">';
           var html = html + '    <ul class="slds-welcome-mat__tiles sortable_section">';
           for (j = 0; j < sales.length; j++) {
+            var id = sales[j]["ProductID"];
             var saleURL = sales[j]["SaleURL"];
             var saleURL = saleURL.replace(applicationName,'');
-            var html = html + '<li class="slds-welcome-mat__tile">';
+            var html = html + '<li class="slds-welcome-mat__tile" data-id="' + id + '">';
             var html = html + '  <a href="' + sales[j]["SaleURL"] + '" class="slds-box slds-box_link slds-media" target="_blank">';
             var html = html + '    <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">' + sales[j]["Position"] + '</div>';
             var html = html + '    <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">';
@@ -130,6 +140,17 @@
           connectWith: ".sortable_section"
         });
       });
+    </script>
+    <script>
+      function reorderSales(){
+        var string = '';
+        $(".sortable_section").each(
+          $("li").each(
+            var string = string + this.id;
+          )
+        )
+        window.alert(string);
+      }
     </script>
   </body>
 </html>
