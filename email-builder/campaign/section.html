@@ -175,17 +175,14 @@
     </script>
     <script>
       function deleteSale(elem){
-        //$(elem).closest('.slds-welcome-mat__tile').toggleClass('slds-welcome-mat__tile_complete');
-        $(elem).find('svg').css('fill', '#c23934');
         if($(elem).find('input[type=hidden]').val()=='false'){
+          $(elem).find('svg').css('fill', '#c23934');
           $(elem).find('input[type=hidden]').val('true');
         } else {
+          $(elem).find('svg').css('fill', 'none');
           $(elem).find('input[type=hidden]').val('false');
         }
         $(elem).toggleClass('border-delete');
-      }
-      function deleteCampaign(){
-        $('.slds-notify_container').toggleClass('slds-hide');
       }
     </script>
   </body>
