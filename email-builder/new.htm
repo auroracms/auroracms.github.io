@@ -59,21 +59,21 @@
                           <div class="slds-select_container">
                             <select class="slds-select" id="input__brand-picker" name="input__brand-picker">
                               <optgroup label="Core">
-                                <option aria-label="AT" value="https://at.secretescapes.com">https://at.secretescapes.com</option>
-                                <option aria-label="BE" value="https://be.secretescapes.com">https://be.secretescapes.com</option>
-                                <option aria-label="CH" value="https://ch.secretescapes.com">https://ch.secretescapes.com</option>
-                                <option aria-label="DE" value="https://www.secretescapes.de">https://www.secretescapes.de</option>
-                                <option aria-label="DK" value="https://dk.secretescapes.com">https://dk.secretescapes.com</option>
-                                <option aria-label="ES" value="https://es.secretescapes.com">https://es.secretescapes.com</option>
-                                <option aria-label="FR" value="https://www.evasionssecretes.fr">https://www.evasionssecretes.fr</option>
-                                <option aria-label="UK" value="https://www.secretescapes.com">https://www.secretescapes.com</option>
-                                <option aria-label="US" value="https://us.secretescapes.com">https://us.secretescapes.com</option>
+                                <option data-territory="AT" data-brand="AT" value="https://at.secretescapes.com">https://at.secretescapes.com</option>
+                                <option data-territory="BE" data-brand="BE" value="https://be.secretescapes.com">https://be.secretescapes.com</option>
+                                <option data-territory="CH" data-brand="CH" value="https://ch.secretescapes.com">https://ch.secretescapes.com</option>
+                                <option data-territory="DE" data-brand="DE" value="https://www.secretescapes.de">https://www.secretescapes.de</option>
+                                <option data-territory="DK" data-brand="DK" value="https://dk.secretescapes.com">https://dk.secretescapes.com</option>
+                                <option data-territory="ES" data-brand="ES" value="https://es.secretescapes.com">https://es.secretescapes.com</option>
+                                <option data-territory="FR" data-brand="FR" value="https://www.evasionssecretes.fr">https://www.evasionssecretes.fr</option>
+                                <option data-territory="UK" data-brand="UK" value="https://www.secretescapes.com">https://www.secretescapes.com</option>
+                                <option data-territory="US" data-brand="US" value="https://us.secretescapes.com">https://us.secretescapes.com</option>
                               </optgroup>
                               <optgroup label="TravelBird">
-                                <option aria-label="TB_BEFR" value="https://fr.travelbird.be">https://fr.travelbird.be</option>
+                                <option data-territory="FR" data-brand="TB_BEFR" value="https://fr.travelbird.be">https://fr.travelbird.be</option>
                               </optgroup>
                               <optgroup label="Whitelabel Partners">
-                                <option aria-label="TB_BEFR" value="https://fr.travelbird.be">https://fr.travelbird.be</option>
+                                <option data-territory="FR" data-brand="TB_BEFR" value="https://fr.travelbird.be">https://fr.travelbird.be</option>
                               </optgroup>
                             </select>
                           </div>
@@ -172,6 +172,7 @@
                         <div class="slds-form-element__control">
                           <textarea id="input__description" name="input__description" class="slds-textarea" placeholder="Please provide a short description of the campaign"></textarea>
                           <input type="hidden" id="input__campaign" name="input__campaign" class="slds-input" value=""/>
+                          <input type="hidden" id="input__territory" name="input__territory" class="slds-input" value=""/>
                         </div>
                       </div>
                     </div>
