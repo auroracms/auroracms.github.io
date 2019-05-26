@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Welcome to Aurora</title>
+    <link rel="stylesheet" href="/assets/styles/salesforce-lightning-design-system.min.css"/>
+    <link rel="stylesheet" href="/assets/styles/custom-styles.css"/>
+    <link rel="icon" type="image/png" href="/assets/images/aurora.ico">
+    <style>
+    /* .border-delete {border:2px solid #c23934 !important;} */
+    .border-delete { 
+      border:2px solid #c23934 !important;
+      box-shadow:0 0 0 1px #c23934 inset,0 2px 2px rgba(0,0,0,.05) !important;
+    }
+    </style>
+  </head>
+  <body class="slds-brand-band slds-brand-band_medium">
+    <div id="global-header__email" aria-label="2"></div>
+    <div id="app-launcher"></div>
+    <div id="wrapper" class="slds-m-around_medium">
+      <div class="slds-notify_container slds-is-relative slds-hide">
+        <div class="slds-notify slds-notify_toast slds-theme_error" role="status">
+          <span class="slds-assistive-text">delete</span>
+          <span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top" title="Delete the campaign">
+            <svg class="slds-icon slds-icon_small" aria-hidden="true">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete"></use>
+            </svg>
+          </span>
+          <div class="slds-notify__content">
+            <h2 class="slds-text-heading_small "><a href="#">Click here</a> to confirm that you wish to delete the campaign.</h2>
+          </div>
+          <div class="slds-notify__close">
+            <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Close">
+              <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+              </svg>
+              <span class="slds-assistive-text">Close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="slds-grid slds-wrap slds-gutters"> 
+        <div class="slds-col slds-size_1-of-1">
+          <!-- Card -->
+          <article class="slds-card">
+            <form action="https://pages.email.secretescapes.com/aurora/campaign/delete" method="post">
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                  <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
+                      <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
+                      </svg>
+                      <span class="slds-assistive-text">campaign</span>
+                    </span>
+                  </div>
+                  <div class="slds-media__body">
+                    <div class="slds-page-header__name">
+                      <div class="slds-page-header__name-title">
+                        <h1>
+                          <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+              </div>
+              <div class="slds-card__body slds-card__body_inner">
+                <div id="sale-form" style="min-height:200px;">
+                  <!-- Spinners -->
+                  <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                  </div>
+                </div>
+                <input type="hidden" id="input__campaign" name="input__campaign" class="slds-input" value=""/>
+              </div>
+              <footer class="slds-card__footer slds-align_absolute-center">
+                <div class="slds-grid slds-size_1-of-1" >
+                  <div class="slds-size_1-of-2 slds-text-align_left">
+                    <a class="slds-button slds-button_text-destructive" onclick="history.back()">Back</a>
+                  </div>
+                  <div class="slds-size_1-of-2 slds-text-align_right">
+                    <button type="submit" class="slds-button slds-button_brand slds-p-horizontal_large slds-p-vertical_xx-small">Submit</button>
+                  </div>
+                </div>
+              </footer>
+            </form>
+          </article>
+        </div>
+      </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="/scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/scripts/slds.js"></script>
+    <script type="text/javascript" src="/scripts/utilities.js"></script>
+    <script>
+      // Function to async load data here
+      var campaignName = getUrlParameter('c');
+      var url = "https://pages.email.secretescapes.com/aurora/campaign/details?c=" + campaignName;
+      
+      // Update campaign name 
+      $("#campaign-name").html(campaignName);
+      $("#campaign-name").attr('title', campaignName);
+      $("#input__campaign").val(campaignName);
+
+      $.getJSON(url, function(data) {
+        var sections = data[0]["Sections"];
+        var applicationName = data[0]["ApplicationDomain"];
+        var html = '';
+        for (i = 0; i < sections.length; i++) {
+          var id = sections[i]["SectionID"];
+          var html = html + '<ul class="slds-welcome-mat__tiles">';
+          var html = html + '  <li class="slds-welcome-mat__tile">';
+          var html = html + '    <a onclick="deleteSale(this)" class="slds-box slds-box_link slds-media" target="_blank">';
+          var html = html + '      <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">' + id + '</div>';
+          var html = html + '      <div class="slds-media__body">';
+          var html = html + '        <div class="slds-welcome-mat__tile-body">';
+          var html = html + '          <fieldset class="slds-form-element slds-form-element_compound">';
+          var html = html + '            <div class="slds-form-element__control">';
+          var html = html + '              <div class="slds-form-element__row">';
+          var html = html + '                <div class="slds-size_1-of-3">';
+          var html = html + '                  <div class="slds-form-element">';
+          var html = html + '                    <label class="slds-form-element__label" for="input-01">Section Name</label>';
+          var html = html + '                    <div class="slds-form-element__control">';
+          var html = html + '                      <input type="text" id="key__' + id + '" name="key__' + id + '" class="slds-input" value="' + sections[i]["SectionName"] + '"/>';
+          var html = html + '                    </div>';
+          var html = html + '                  </div>';
+          var html = html + '                </div>';
+          var html = html + '                <div class="slds-size_1-of-3">';
+          var html = html + '                  <div class="slds-form-element">';
+          var html = html + '                    <label class="slds-form-element__label" for="input-01">Row Count</label>';
+          var html = html + '                    <div class="slds-form-element__control">';
+          var html = html + '                      <input type="text" id="count__' + id + '" name="count__' + id + '" class="slds-input" value="' + sections[i]["RowCount"] + '" readonly/>';
+          var html = html + '                      <input type="hidden" id="delete__' + id + '"  name="delete__' + id + '" class="slds-input" value="false"/>';
+          var html = html + '                    </div>';
+          var html = html + '                  </div>';
+          var html = html + '                </div>';
+          var html = html + '              </div>';
+          var html = html + '            </div>';
+          var html = html + '          </fieldset>';     
+          var html = html + '        </div>';
+          var html = html + '      </div>';
+          var html = html + '      <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">';
+          var html = html + '        <div class="slds-welcome-mat__tile-figure slds-welcome-mat__tile-delete slds-hide">';
+          var html = html + '          <div class="slds-welcome-mat__tile-icon-container">';
+          var html = html + '            <div class="slds-welcome-mat__tile-icon-container">';
+          var html = html + '              <span class="slds-icon_container slds-icon-utility-animal_and_nature">';
+          var html = html + '                <svg class="slds-icon slds-icon-text-default" aria-hidden="true" style="fill:#c23934;">';
+          var html = html + '                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete"></use>';
+          var html = html + '                </svg>';
+          var html = html + '              </span>';
+          var html = html + '            </div>';
+          var html = html + '          </div>';
+          var html = html + '        </div>';
+          var html = html + '      </div>';
+          var html = html + '    </a>';
+          var html = html + '  </li>'; 
+          var html = html + '</ul>';
+        }
+        $("#sale-form").html(html);
+      });
+    </script>
+    <script>
+      function deleteSale(elem){
+        //$(elem).closest('.slds-welcome-mat__tile').toggleClass('slds-welcome-mat__tile_complete');
+        $(elem).find('.slds-welcome-mat__tile-delete').toggleClass('slds-hide');
+        if($(elem).find('input').val()=='false'){
+          $(elem).find('input').val('true');
+        } else {
+          $(elem).find('input').val('false');
+        }
+        $(elem).toggleClass('border-delete');
+      }
+      function deleteCampaign(){
+        $('.slds-notify_container').toggleClass('slds-hide');
+      }
+    </script>
+  </body>
+</html>
