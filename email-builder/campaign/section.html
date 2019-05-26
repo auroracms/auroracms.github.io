@@ -75,7 +75,7 @@
                   </div>
                 </div>
                 <div class="slds-col slds-size_1-of-1 slds-p-top_large" role="listitem">
-                  <a class="slds-button slds-button_neutral section__trigger">Add Section</a>
+                  <a href="" class="slds-button slds-button_neutral section__trigger">Add Section</a>
                 </div>
                 <input type="hidden" id="input__campaign" name="input__campaign" class="slds-input" value=""/>
               </div>
@@ -108,6 +108,7 @@
       $("#campaign-name").html(campaignName);
       $("#campaign-name").attr('title', campaignName);
       $("#input__campaign").val(campaignName);
+      $(".section__trigger").attr('href', 'https://auroracms.github.io/email-builder/campaign/add-section.html?c=' + campaignName);
 
       $.getJSON(url, function(data) {
         var sections = data[0]["Sections"];
