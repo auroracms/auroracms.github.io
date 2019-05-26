@@ -14,27 +14,24 @@
     <div id="global-header__email" aria-label="2"></div>
     <div id="app-launcher"></div>
     <div id="wrapper" class="slds-m-around_medium">
-      <div class="demo-only" style="height:4rem">
-        <div class="slds-notify_container slds-is-relative">
-          <div class="slds-notify slds-notify_toast slds-theme_error" role="status">
-            <span class="slds-assistive-text">error</span>
-            <span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
-              <svg class="slds-icon slds-icon_small" aria-hidden="true">
-                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete"></use>
+      <div class="slds-notify_container slds-is-relative">
+        <div class="slds-notify slds-notify_toast slds-theme_error" role="status">
+          <span class="slds-assistive-text">delete</span>
+          <span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top" title="Delete the campaign">
+            <svg class="slds-icon slds-icon_small" aria-hidden="true">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete"></use>
+            </svg>
+          </span>
+          <div class="slds-notify__content">
+            <h2 class="slds-text-heading_small "><a href="#">Click here</a> to confirm that you wish to delete the campaign.</h2>
+          </div>
+          <div class="slds-notify__close">
+            <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Close">
+              <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
               </svg>
-            </span>
-            <div class="slds-notify__content">
-              <h2 class="slds-text-heading_small ">Can’t save lead “Sally Wong” because
-                <a href="javascript:void(0);">another lead</a> has the same name.</h2>
-            </div>
-            <div class="slds-notify__close">
-              <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Close">
-                <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
-                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
-                </svg>
-                <span class="slds-assistive-text">Close</span>
-              </button>
-            </div>
+              <span class="slds-assistive-text">Close</span>
+            </button>
           </div>
         </div>
       </div>
@@ -105,6 +102,7 @@
       // Update campaign name 
       $("#campaign-name").html(campaignName);
       $("#campaign-name").attr('title', campaignName);
+      $(".slds-notify_container > a").attr('href', 'https://pages.email.secretescapes.com/aurora/campaign/delete-campaign?c=' + campaignName);
 
       $.getJSON(url, function(data) {
         var sections = data[0]["Sections"];
