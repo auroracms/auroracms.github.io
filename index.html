@@ -90,7 +90,7 @@
           $(".slds-form-element__help").addClass('slds-hide');
           if(data.authorisation==1){
             var auth = JSON.stringify(data.message[0]);
-            createCookie('sessionData', auth, 12)
+            createCookie('sessionData', auth, 120)
             window.location.replace("../email-builder");
           } else if (data.authorisation==-1){
             $("#input__password").closest(".slds-form-element").addClass('slds-has-error');
