@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Welcome to Aurora</title>
+    <link rel="stylesheet" href="/assets/styles/salesforce-lightning-design-system.min.css"/>
+    <link rel="stylesheet" href="/assets/styles/custom-styles.css"/>
+    <link rel="icon" type="image/png" href="/assets/images/aurora.ico">
+  </head>
+  <body class="slds-brand-band slds-brand-band_medium">
+    <div id="global-header__email" aria-label="2"></div>
+    <div id="app-launcher"></div>
+    <div id="wrapper" class="slds-m-around_medium">
+      <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-3">
+          <div class="slds-page-header slds-page-header_vertical">
+            <div class="slds-media slds-p-bottom_medium">
+              <div class="slds-media__figure">
+                <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
+                  <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                    <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
+                  </svg>
+                  <span class="slds-assistive-text">campaign</span>
+                </span>
+              </div>
+              <div class="slds-media__body">
+                <div class="slds-page-header__name">
+                  <div class="slds-page-header__name-title">
+                    <h1>
+                      <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="slds-welcome-mat__tiles">
+              <!-- Edit Sales -->
+              <li id="edit" class="slds-welcome-mat__tile">
+                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
+                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                    <div class="slds-welcome-mat__tile-figure">
+                      <div class="slds-welcome-mat__tile-icon-container">
+                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
+                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-media__body">
+                    <div class="slds-welcome-mat__tile-body">
+                      <h3 class="slds-welcome-mat__tile-title">Edit Sales</h3>
+                      <p class="slds-welcome-mat__tile-description">Customise the sale for the email</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!-- Add Sales -->
+              <li id="add" class="slds-welcome-mat__tile">
+                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
+                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                    <div class="slds-welcome-mat__tile-figure">
+                      <div class="slds-welcome-mat__tile-icon-container">
+                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
+                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-media__body">
+                    <div class="slds-welcome-mat__tile-body">
+                      <h3 class="slds-welcome-mat__tile-title">Add Sales</h3>
+                      <p class="slds-welcome-mat__tile-description">Add new sales to the campaign</p>
+                    </div>
+                  </div>
+                </a>
+              </li>   
+              <!-- Edit Order -->
+              <li id="order" class="slds-welcome-mat__tile">
+                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
+                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                    <div class="slds-welcome-mat__tile-figure">
+                      <div class="slds-welcome-mat__tile-icon-container">
+                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
+                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#change_record_type"></use>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-media__body">
+                    <div class="slds-welcome-mat__tile-body">
+                      <h3 class="slds-welcome-mat__tile-title">Edit Order</h3>
+                      <p class="slds-welcome-mat__tile-description">Reorder the sales in the email or apply </p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!-- Edit Section -->
+              <li id="section" class="slds-welcome-mat__tile">
+                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
+                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                    <div class="slds-welcome-mat__tile-figure">
+                      <div class="slds-welcome-mat__tile-icon-container">
+                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
+                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#ad_set"></use>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-media__body">
+                    <div class="slds-welcome-mat__tile-body">
+                      <h3 class="slds-welcome-mat__tile-title">Edit Section</h3>
+                      <p class="slds-welcome-mat__tile-description">Add, rename or delete sections</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!-- Smart Order -->
+              <li id="smart-order" class="slds-welcome-mat__tile">
+                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
+                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                    <div class="slds-welcome-mat__tile-figure">
+                      <div class="slds-welcome-mat__tile-icon-container">
+                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
+                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#einstein"></use>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-media__body">
+                    <div class="slds-welcome-mat__tile-body">
+                      <h3 class="slds-welcome-mat__tile-title">Smart Order</h3>
+                      <p class="slds-welcome-mat__tile-description">Apply saved sort method</p>
+                    </div>
+                  </div>
+                </a>
+              </li>  
+              <!-- Duplicate -->
+              <li id="copy" class="slds-welcome-mat__tile">
+                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
+                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                    <div class="slds-welcome-mat__tile-figure">
+                      <div class="slds-welcome-mat__tile-icon-container">
+                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
+                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#standard_objects"></use>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-media__body">
+                    <div class="slds-welcome-mat__tile-body">
+                      <h3 class="slds-welcome-mat__tile-title">Duplicate</h3>
+                      <p class="slds-welcome-mat__tile-description">Copy the campaign</p>
+                    </div>
+                  </div>
+                </a>
+              </li>  
+              <!-- Delete -->
+              <li id="delete" class="slds-welcome-mat__tile">
+                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
+                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                    <div class="slds-welcome-mat__tile-figure">
+                      <div class="slds-welcome-mat__tile-icon-container">
+                        <span class="slds-icon_container slds-icon-utility-animal_and_nature">
+                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete"></use>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-media__body">
+                    <div class="slds-welcome-mat__tile-body">
+                      <h3 class="slds-welcome-mat__tile-title">Delete Sales</h3>
+                      <p class="slds-welcome-mat__tile-description">Delete the sales or campaign</p>
+                    </div>
+                  </div>
+                </a>
+              </li>     
+            </ul>
+          </div>
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+          <!-- Card -->
+          <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
+                    <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                      <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#record_create"></use>
+                    </svg>
+                    <span class="slds-assistive-text">New Sales</span>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <div class="slds-page-header__name">
+                    <div class="slds-page-header__name-title">
+                      <h1>
+                        <span class="slds-page-header__title slds-hyphenate" title="Add New Sales">Add New Sales</span>
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner" style="min-height:200px;">
+              <!-- Spinners -->
+              <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+              </div>
+            </div>
+            <footer class="slds-card__footer"></footer>
+          </article>
+          
+        </div>
+      </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="/scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/scripts/slds.js"></script>
+    <script type="text/javascript" src="/scripts/utilities.js"></script>
+    <script>
+      // Function to async load data here
+      var campaignName = getUrlParameter('c');
+      var url = "https://pages.email.secretescapes.com/aurora/campaign/details?c=" + campaignName;
+      
+      // Update campaign name 
+      $("#campaign-name").html(campaignName);
+      $("#campaign-name").attr('title', campaignName);
+      $("#edit > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/edit.html?c=' + campaignName);
+      $("#add > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/add.html?c=' + campaignName);
+      $("#order > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/order.html?c=' + campaignName);
+      $("#section > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/section.html?c=' + campaignName);
+      $("#smart-order > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/smart-order.html?c=' + campaignName);
+      $("#copy > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/copy.html?c=' + campaignName);
+      $("#delete > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/delete.html?c=' + campaignName);
+      $("#raw-data").attr('href', 'https://auroracms.github.io/email-builder/campaign/data.html?c=' + campaignName);
+
+      $.getJSON(url, function(data) {
+        var sections = data[0]["Sections"];
+        var applicationName = data[0]["ApplicationDomain"];
+        var html = '';
+        for (i = 0; i < sections.length; i++) {
+          var sectionName = sections[i]["SectionName"];
+          var sales = sections[i]["Sales"];
+
+          var html = html + '<div class="slds-section slds-p-top_xxx-small slds-p-bottom_x-large slds-is-open">';
+          var html = html + '  <h3 class="slds-section__title" style="background-color:#0070d2; color:#fff">';
+          var html = html + '    <button style="background-color:#0070d2; color:#fff" class="slds-button slds-section__title-action">';
+          var html = html + '      <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">';
+          var html = html + '        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>';
+          var html = html + '      </svg>';
+          var html = html + '      <span class="slds-truncate" title="' + sectionName + '">' + sectionName + '</span>';
+          var html = html + '    </button>';
+          var html = html + '  </h3>';
+          var html = html + '  <div aria-hidden="false" class="slds-section__content" id="expando-unique-id">';
+          var html = html + '    <ul class="slds-welcome-mat__tiles">';
+          for (j = 0; j < sales.length; j++) {
+            var saleURL = sales[j]["SaleURL"];
+            var saleURL = saleURL.replace(applicationName,'');
+            var html = html + '<li class="slds-welcome-mat__tile">';
+            var html = html + '  <a href="' + sales[j]["SaleURL"] + '" class="slds-box slds-box_link slds-media" target="_blank">';
+            var html = html + '    <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">' + sales[j]["Position"] + '</div>';
+            var html = html + '    <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">';
+            var html = html + '      <div class="slds-welcome-mat__tile-figure">';
+            var html = html + '        <div class="slds-welcome-mat__tile-icon-container">';
+            var html = html + '          <img src="' + sales[j]["LeadImage1"] + '" width="80"/>';
+            var html = html + '        </div>';
+            var html = html + '      </div>';
+            var html = html + '    </div>';
+            var html = html + '    <div class="slds-media__body">';
+            var html = html + '      <div class="slds-welcome-mat__tile-body">';
+            var html = html + '        <h3 class="slds-welcome-mat__tile-title slds-p-bottom_xx-small">' + sales[j]["ProductID"] + '  •  <span style="color:blue;">' + saleURL + '</span></h3>';
+            var html = html + '        <p class="slds-welcome-mat__tile-description slds-text-title_caps">' + sales[j]["Title"] + '</p>';
+            var html = html + '        <p class="slds-welcome-mat__tile-description">' + sales[j]["DestinationName"] + '</p>';
+            var html = html + '      </div>';
+            var html = html + '    </div>';
+            if(sales[j]["ProductID"]=='False' || sales[j]["SaleURL"]==''){
+              var html = html + '    <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">';
+              var html = html + '      <div class="slds-welcome-mat__tile-figure">';
+              var html = html + '        <div class="slds-welcome-mat__tile-icon-container">';
+              var html = html + '          <div class="slds-welcome-mat__tile-icon-container">';
+              var html = html + '            <span class="slds-icon_container slds-icon-utility-animal_and_nature">';
+              var html = html + '              <svg class="slds-icon slds-icon-text-default" aria-hidden="true">';
+              var html = html + '                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>';
+              var html = html + '              </svg>';
+              var html = html + '            </span>';
+              var html = html + '          </div>';
+              var html = html + '        </div>';
+              var html = html + '      </div>';
+              var html = html + '    </div>';
+            }
+            var html = html + '  </a>';
+            var html = html + '</li>';
+          }
+          var html = html + '    </ul>';
+          var html = html + '  </div>';
+          var html = html + '</div>';
+        }
+        $(".slds-card__body").html(html);
+      });
+    </script>
+  </body>
+</html>
