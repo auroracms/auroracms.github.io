@@ -91,7 +91,7 @@
           var html = html + '    </button>';
           var html = html + '  </h3>';
           var html = html + '  <div aria-hidden="false" class="slds-section__content" id="expando-unique-id">';
-          var html = html + '    <ul class="slds-welcome-mat__tiles sortable_section" id="' + sectionName + '">';
+          var html = html + '    <ul class="slds-welcome-mat__tiles sortable_section">';
           for (j = 0; j < sales.length; j++) {
             var id = sales[j]["ProductID"];
             var saleURL = sales[j]["SaleURL"];
@@ -145,7 +145,9 @@
       function reorderSales(){
         var string = '';
         $('.sortable_section').each(function(index, element){
-          console.log(element);
+          $(element).each(function(index, element){
+            console.log(element.id);
+          });
         });
       }
     </script>
