@@ -148,13 +148,16 @@ $.date = function(dateObject) {
   var day = d.getDate();
   var month = d.getMonth() + 1;
   var year = d.getFullYear();
+  var year = d.getFullYear();
+  var hour = d.getHours();
+  var minute = d.getMinutes();
   if (day < 10) {
       day = "0" + day;
   }
   if (month < 10) {
       month = "0" + month;
   }
-  var date = day + "/" + month + "/" + year;
+  var date = day + "/" + month + "/" + year + " " + hour + ":" + minute ;
 
   return date;
 };
