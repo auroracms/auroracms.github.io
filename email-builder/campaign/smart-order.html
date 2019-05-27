@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Welcome to Aurora</title>
+    <link rel="stylesheet" href="/assets/styles/salesforce-lightning-design-system.min.css"/>
+    <link rel="stylesheet" href="/assets/styles/custom-styles.css"/>
+    <link rel="icon" type="image/png" href="/assets/images/aurora.ico">
+  </head>
+  <body class="slds-brand-band slds-brand-band_medium">
+    <div id="global-header__email" aria-label="2"></div>
+    <div id="app-launcher"></div>
+    <div id="wrapper" class="slds-m-around_medium">
+      <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-1">
+          <!-- Card -->
+          <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
+                    <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                      <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
+                    </svg>
+                    <span class="slds-assistive-text">campaign</span>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <div class="slds-page-header__name">
+                    <div class="slds-page-header__name-title">
+                      <h1>
+                        <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner" style="min-height:200px;">
+              <a href="javascript:void(0);" class="slds-box slds-box_link slds-box_x-small slds-media">
+                <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center slds-m-left_xx-small">
+                  <span class="slds-icon_container slds-icon-utility-knowledge_base">
+                    <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#knowledge_base"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="slds-media__body slds-border_left slds-p-around_small">
+                  <h2 class="slds-truncate slds-text-heading_small" title="Share the knowledge">Share the knowledge</h2>
+                  <p class="slds-m-top_small">Harness your team&#x27;s collective know-how with our powerful knowledge base</p>
+                </div>
+              </a>
+
+            </div>
+            <footer class="slds-card__footer slds-align_absolute-center"></footer>
+          </article>
+          
+        </div>
+      </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="/scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/scripts/slds.js"></script>
+    <script type="text/javascript" src="/scripts/utilities.js"></script>
+    <script>
+      // Function to async load data here
+      var campaignName = getUrlParameter('c');
+      
+      // Update campaign name 
+      $("#campaign-name").html(campaignName);
+      $("#campaign-name").attr('title', campaignName);
+
+      // Update links 
+      $("#campaign-name").html(campaignName);
+      $("#campaign-name").attr('title', campaignName);   
+    </script>
+  </body>
+</html>
