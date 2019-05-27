@@ -146,7 +146,7 @@ $(document).on('click','.slds-dropdown-trigger_click', function(){
 
 // Modal
 $(document).on('click', '.slds-modal__close', function(){
-  $(".slds-modal").toggleClass('slds-hide');
+  $(this).closest(".slds-modal").toggleClass('slds-hide');
   $(".slds-backdrop").removeClass('slds-backdrop_open');
 });
 
