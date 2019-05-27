@@ -83,6 +83,14 @@ pre {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.slds-einstein-header__astro, .slds-einstein-header__astro:last-child {
+  margin-bottom: calc((.75rem + 5px) * -1);
+  height: 4.75rem;
+  background-image: url(/assets/images/characters/astro.svg) !important;
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 .cs-mobile-menu {
   position: absolute;
   right: 0.75rem;
