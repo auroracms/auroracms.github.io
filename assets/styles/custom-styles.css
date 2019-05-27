@@ -89,7 +89,7 @@ pre {
   background-image: url(/assets/images/characters/astro.svg) !important;
   background-position: right top;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 25%;
 }
 .cs-mobile-menu {
   position: absolute;
