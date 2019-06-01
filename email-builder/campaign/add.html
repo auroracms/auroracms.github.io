@@ -136,6 +136,7 @@
           var form = form + '    <textarea id="textarea-' + i + '" name="textarea-' + i + '" rows="10" class="slds-textarea" placeholder="Add sales"></textarea>';
           var form = form + '  </div>';
           var form = form + '</div>';
+          var form = form + '<input type="hidden" id="input__campaign" name="input__campaign" class="slds-input" value="' + campaignName + '"/>';
         }
         $("#current-sales").html(html);
         $("#new-sales").html(form);
