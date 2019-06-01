@@ -138,5 +138,15 @@
         }
       }
     </script>
+    <script>
+      $(document).on('click', '.section__trigger', function(){
+        $.get( "/components/sale-section.htm", function(data) {
+          var count = parseInt($("#input__count").val()) + 1;
+          var data = data.replace(/@/g, count);
+          $("#sale-sections").append(data);
+          $("#input__count").val(count);
+        });
+      });
+    </script>
   </body>
 </html>
