@@ -88,7 +88,7 @@
       $("#campaign-name").html(campaignName);
       $("#campaign-name").attr('title', campaignName);
       $("#input__campaign").val(campaignName);
-      $(".section__trigger").attr('href', 'https://auroracms.github.io/email-builder/campaign/add-section.html?c=' + campaignName);
+      $(".section__trigger").attr('href', 'https://auroracms.github.io/email-builder/campaign/section-add.html?c=' + campaignName);
 
       $.getJSON(url, function(data) {
         var sections = data[0]["Sections"];
