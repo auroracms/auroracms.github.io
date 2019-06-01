@@ -82,13 +82,13 @@
     <script>
       // Function to async load data here
       var campaignName = getUrlParameter('c');
-      var url = "https://pages.email.secretescapes.com/aurora/campaign?c=" + campaignName;
+      var url = "https://pages.email.secretescapes.com/aurora/campaign/details?c=" + campaignName;
       
       // Update campaign name 
       $("#campaign-name").html(campaignName);
       $("#campaign-name").attr('title', campaignName);
       $("#input__campaign").val(campaignName);
-      $("#cancel").attr('href', 'https://auroracms.github.io/email-builder/campaign/add-section.html?c=' + campaignName);
+      $("#cancel").attr('href', 'https://auroracms.github.io/email-builder/campaign?c=' + campaignName);
 
       $.getJSON(url, function(data) {
         var sections = data[0]["Sections"];
