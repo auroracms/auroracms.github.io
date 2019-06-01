@@ -296,6 +296,12 @@
             var html = html + '        <p class="slds-welcome-mat__tile-description slds-p-top_x-small">';
             var html = html + '          <span class="slds-badge">&nbsp;' + sales[j]["SaleType"] + '&nbsp;</span>';
             var html = html + '          <span class="slds-badge">&nbsp;-' + sales[j]["Discount"] + '%&nbsp;</span>';
+            if(sales[j]["IsPackage"]=='True'){
+            var html = html + '          <span class="slds-badge">&nbsp; Flights Inc &nbsp;</span>'; 
+            }
+            if(sales[j]["IsEditorsPick"]=='True'){
+            var html = html + '          <span class="slds-badge slds-badge_inverse">&nbsp; Flights Inc &nbsp;</span>'; 
+            }
             var html = html + '        </p>';
             var html = html + '      </div>';
             var html = html + '    </div>';
