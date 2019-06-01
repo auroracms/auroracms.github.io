@@ -107,14 +107,6 @@
       // Update campaign name 
       $("#campaign-name").html(campaignName);
       $("#campaign-name").attr('title', campaignName);
-      $("#edit > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/edit.html?c=' + campaignName);
-      $("#add > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/add.html?c=' + campaignName);
-      $("#order > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/order.html?c=' + campaignName);
-      $("#section > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/section.html?c=' + campaignName);
-      $("#smart-order > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/smart-order.html?c=' + campaignName);
-      $("#copy > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/copy.html?c=' + campaignName);
-      $("#delete > a").attr('href', 'https://auroracms.github.io/email-builder/campaign/delete.html?c=' + campaignName);
-      $("#raw-data").attr('href', 'https://auroracms.github.io/email-builder/campaign/data.html?c=' + campaignName);
 
       $.getJSON(url, function(data) {
         var sections = data[0]["Sections"];
