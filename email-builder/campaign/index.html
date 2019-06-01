@@ -288,8 +288,10 @@
             var html = html + '    </div>';
             var html = html + '    <div class="slds-media__body">';
             var html = html + '      <div class="slds-welcome-mat__tile-body">';
-            var html = html + '        <h3 class="slds-welcome-mat__tile-title slds-p-bottom_xx-small">' + sales[j]["ProductID"] + '  •  <span style="color:blue;">' + saleURL + '</span></h3>';
-            var html = html + '        <p class="slds-welcome-mat__tile-description slds-text-title_caps">' + sales[j]["Title"] + '</p>';
+            var html = html + '        <h3 class="slds-welcome-mat__tile-title slds-p-bottom_xx-small">';
+            var html = html + '          ' + sales[j]["ProductID"] + '  •  <span style="color:blue;">' + saleURL + '</span>';
+            var html = html + '        </h3>';
+            var html = html + '        <p class="slds-welcome-mat__tile-description slds-text-title_caps">' + sales[j]["Title"] + '<span class="slds-badge">' + sales[j]["SaleType"] + ' </span></p>';
             var html = html + '        <p class="slds-welcome-mat__tile-description">' + sales[j]["DestinationName"] + '</p>';
             var html = html + '      </div>';
             var html = html + '    </div>';
