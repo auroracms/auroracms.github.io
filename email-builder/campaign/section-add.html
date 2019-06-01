@@ -119,7 +119,10 @@
       $("#campaign-name").html(campaignName);
       $("#campaign-name").attr('title', campaignName);
       $("#input__campaign").val(campaignName);
+      $(".section__trigger").attr('href', 'https://auroracms.github.io/email-builder/campaign/add-section.html?c=' + campaignName);
 
+      $.getJSON(url, function(data) {
+        $(".slds-spinner").toggleClass('slds-hide');
       });
     </script>
     <script>
