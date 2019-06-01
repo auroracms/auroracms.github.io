@@ -117,7 +117,6 @@
           var html = html + '            </label>';
           var html = html + '            <div class="slds-form-element__control">';
           var html = html + '              <textarea id="input__sales-' + newCount + '" name="input__sales-' + newCount + '" class="slds-textarea" rows="10" placeholder="Sale IDs or number of sales"></textarea>';
-          var html = html + '              <input type="hidden" id="input__count" name="input__count" class="slds-input" value="' + newCount + '"/>';
           var html = html + '            </div>';
           var html = html + '          </div>';
           var html = html + '        </div>';
@@ -128,8 +127,8 @@
           var html = html + '    <a class="slds-button slds-button_neutral section__trigger">Add Section</a>';
           var html = html + '  </div>';
           var html = html + '</div>';
-
         }
+        var html = html + '<input type="hidden" id="input__count" name="input__count" class="slds-input" value="' + newCount + '"/>';
         $("#sale-form").html(html);
       });
     </script>
