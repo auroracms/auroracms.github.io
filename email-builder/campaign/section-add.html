@@ -62,7 +62,7 @@
               <footer class="slds-card__footer slds-align_absolute-center">
                 <div class="slds-grid slds-size_1-of-1" >
                   <div class="slds-size_1-of-2 slds-text-align_left">
-                    <a class="slds-button slds-button_text-destructive" onclick="history.back()">Cancel</a>
+                    <a id="cancel" class="slds-button slds-button_text-destructive" href="">Cancel</a>
                   </div>
                   <div class="slds-size_1-of-2 slds-text-align_right">
                     <button type="submit" class="slds-button slds-button_brand slds-p-horizontal_large slds-p-vertical_xx-small">Submit</button>
@@ -82,13 +82,13 @@
     <script>
       // Function to async load data here
       var campaignName = getUrlParameter('c');
-      var url = "https://pages.email.secretescapes.com/aurora/campaign/details?c=" + campaignName;
+      var url = "https://pages.email.secretescapes.com/aurora/campaign?c=" + campaignName;
       
       // Update campaign name 
       $("#campaign-name").html(campaignName);
       $("#campaign-name").attr('title', campaignName);
       $("#input__campaign").val(campaignName);
-      $(".section__trigger").attr('href', 'https://auroracms.github.io/email-builder/campaign/add-section.html?c=' + campaignName);
+      $("#cancel").attr('href', 'https://auroracms.github.io/email-builder/campaign/add-section.html?c=' + campaignName);
 
       $.getJSON(url, function(data) {
         var sections = data[0]["Sections"];
