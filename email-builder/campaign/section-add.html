@@ -55,37 +55,6 @@
                     <div class="slds-spinner__dot-a"></div>
                     <div class="slds-spinner__dot-b"></div>
                   </div>
-                  <div class="slds-grid slds-wrap slds-gutters_large">
-                    <div class="slds-col slds-size_1-of-1" role="listitem">
-                      <div id="jetlore-sale-sections" class="slds-form" role="list">
-                        <div class="slds-form__row slds-p-bottom_x-large">
-                          <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
-                            <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                              <label class="slds-form-element__label" for="input__count-1">
-                                Section 1 Count <abbr class="slds-required" title="Required">* </abbr>
-                              </label>
-                              <div class="slds-form-element__control">
-                                <input type="number" id="input__count-1" name="input__count-1" class="slds-input" value="1" required=""/>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
-                            <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                              <label class="slds-form-element__label" for="input__tag-1">
-                                Section 1 Description <abbr class="slds-required" title="Required">* </abbr>
-                              </label>
-                              <div class="slds-form-element__control">
-                                <input type="text" id="input__tag-1" name="input__tag-1" class="slds-input" value="" placeholder="Unique section identifier"/>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="slds-col slds-size_1-of-1" role="listitem">
-                      <a class="slds-button slds-button_neutral jetlore_section__trigger">Add Section</a>
-                    </div>
-                  </div>
                 </div>
                 <input type="hidden" id="input__campaign" name="input__campaign" class="slds-input" value=""/>
                 <input type="hidden" id="input__editor" name="input__editor" class="slds-input" value=""/>
@@ -122,21 +91,47 @@
       $(".section__trigger").attr('href', 'https://auroracms.github.io/email-builder/campaign/add-section.html?c=' + campaignName);
 
       $.getJSON(url, function(data) {
-        $(".slds-spinner").toggleClass('slds-hide');
-      });
-    </script>
-    <script>
-      function deleteSale(elem){
-        if($(elem).find('input[type=hidden]').val()=='false'){
-          $(elem).find('svg').css('fill', '#c23934');
-          $(elem).find('input[type=hidden]').val('true');
-          $(elem).closest('li').find('.slds-box').toggleClass('border-delete');
-        } else {
-          $(elem).find('svg').css('fill', '#706e6b');
-          $(elem).find('input[type=hidden]').val('false');
-          $(elem).closest('li').find('.slds-box').toggleClass('border-delete');
+        var sections = data[0]["Sections"];
+        var newCount = sections.length + 1;
+        var html = '';
+        for (i = 0; i < sections.length; i++) {
+          var id = sections[i]["SectionID"];
+          var html = html + '<div class="slds-grid slds-wrap slds-gutters_large">';
+          var html = html + '  <div class="slds-col slds-size_1-of-1" role="listitem">';
+          var html = html + '    <div id="sale-sections" class="slds-form" role="list">';
+          var html = html + '      <div class="slds-form__row slds-p-bottom_x-large">';
+          var html = html + '        <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">';
+          var html = html + '          <div class="slds-form-element slds-form-element_horizontal slds-is-editing">';
+          var html = html + '            <label class="slds-form-element__label" for="input__key-' + newCount + '">';
+          var html = html + '              Section ' + newCount + ' Key <abbr class="slds-required" title="Required">* </abbr>';
+          var html = html + '            </label>';
+          var html = html + '            <div class="slds-form-element__control">';
+          var html = html + '              <input type="text" id="input__key-' + newCount + '" name="input__key-' + newCount + '" class="slds-input" value="" placeholder="Unique section identifier"/>';
+          var html = html + '            </div>';
+          var html = html + '          </div>';
+          var html = html + '        </div>';
+          var html = html + '        <div class="slds-form__item slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">';
+          var html = html + '          <div class="slds-form-element slds-form-element_horizontal slds-is-editing">';
+          var html = html + '            <label class="slds-form-element__label" for="input__sales-' + newCount + '">';
+          var html = html + '              Section ' + newCount + ' Sale ID(s) <abbr class="slds-required" title="Required">* </abbr>';
+          var html = html + '            </label>';
+          var html = html + '            <div class="slds-form-element__control">';
+          var html = html + '              <textarea id="input__sales-' + newCount + '" name="input__sales-' + newCount + '" class="slds-textarea" rows="10" placeholder="Sale IDs or number of sales"></textarea>';
+          var html = html + '              <input type="hidden" id="input__count" name="input__count" class="slds-input" value="' + newCount + '"/>';
+          var html = html + '            </div>';
+          var html = html + '          </div>';
+          var html = html + '        </div>';
+          var html = html + '      </div>';
+          var html = html + '    </div>';
+          var html = html + '  </div>';
+          var html = html + '  <div class="slds-col slds-size_1-of-1" role="listitem">';
+          var html = html + '    <a class="slds-button slds-button_neutral section__trigger">Add Section</a>';
+          var html = html + '  </div>';
+          var html = html + '</div>';
+
         }
-      }
+        $("#sale-form").html(html);
+      });
     </script>
     <script>
       $(document).on('click', '.section__trigger', function(){
