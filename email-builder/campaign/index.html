@@ -293,7 +293,10 @@
             var html = html + '        </h3>';
             var html = html + '        <p class="slds-welcome-mat__tile-description slds-text-title_caps">' + sales[j]["Title"] + '</p>';
             var html = html + '        <p class="slds-welcome-mat__tile-description">' + sales[j]["DestinationName"] + '</p>';
-            var html = html + '        <p class="slds-welcome-mat__tile-description slds-p-top_x-small"><span class="slds-badge">&nbsp;' + sales[j]["SaleType"] + '&nbsp;</span></p>';
+            var html = html + '        <p class="slds-welcome-mat__tile-description slds-p-top_x-small">';
+            var html = html + '          <span class="slds-badge">&nbsp;' + sales[j]["SaleType"] + '&nbsp;</span>';
+            var html = html + '          <span class="slds-badge">&nbsp;-' + sales[j]["Discount"] + '%&nbsp;</span>';
+            var html = html + '        </p>';
             var html = html + '      </div>';
             var html = html + '    </div>';
             if(sales[j]["ProductID"]=='False' || sales[j]["SaleURL"]==''){
