@@ -15,49 +15,45 @@
         <div class="slds-col slds-size_1-of-1">
           <!-- Card -->
           <article class="slds-card">
-            <form action="https://pages.email.secretescapes.com/aurora/campaign/edit" method="post">
-              <div class="slds-card__header slds-grid">
-                <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                  <div class="slds-media__figure">
-                    <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
-                      <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                        <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
-                      </svg>
-                      <span class="slds-assistive-text">campaign</span>
-                    </span>
-                  </div>
-                  <div class="slds-media__body">
-                    <div class="slds-page-header__name">
-                      <div class="slds-page-header__name-title">
-                        <h1>
-                          <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
-                        </h1>
-                      </div>
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
+                    <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                      <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
+                    </svg>
+                    <span class="slds-assistive-text">campaign</span>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <div class="slds-page-header__name">
+                    <div class="slds-page-header__name-title">
+                      <h1>
+                        <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
+                      </h1>
                     </div>
                   </div>
-                </header>
-              </div>
-              <div class="slds-card__body slds-card__body_inner">
-                <div id="table" style="min-height:200px;">
-                  <!-- Spinners -->
-                  <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
-                    <span class="slds-assistive-text">Loading</span>
-                    <div class="slds-spinner__dot-a"></div>
-                    <div class="slds-spinner__dot-b"></div>
-                  </div>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <div id="table" style="min-height:200px;">
+                <!-- Spinners -->
+                <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+                  <span class="slds-assistive-text">Loading</span>
+                  <div class="slds-spinner__dot-a"></div>
+                  <div class="slds-spinner__dot-b"></div>
                 </div>
               </div>
-              <footer class="slds-card__footer slds-align_absolute-center">
-                <div class="slds-grid slds-size_1-of-1" >
-                  <div class="slds-size_1-of-2 slds-text-align_left">
-                    <a class="slds-button slds-button_text-destructive" onclick="history.back()">Cancel</a>
-                  </div>
-                  <div class="slds-size_1-of-2 slds-text-align_right">
-                    <button type="submit" class="slds-button slds-button_brand slds-p-horizontal_large slds-p-vertical_xx-small">Submit</button>
-                  </div>
+            </div>
+            <footer class="slds-card__footer slds-align_absolute-center">
+              <div class="slds-grid slds-size_1-of-1" >
+                <div class="slds-size_1-of-2 slds-text-align_left">
+                  <a class="slds-button slds-button_text-destructive" onclick="history.back()">Cancel</a>
                 </div>
-              </footer>
-            </form>
+              </div>
+            </footer>
+
           </article>
         </div>
       </div>
@@ -89,7 +85,7 @@
           var html = html + '  <ul aria-labelledby="treeheading" class="slds-tree" role="tree">';
           for (j = 0; j < sales.length; j++) {
             var sale = sales[j];
-            var html = html + '<li aria-expanded="true" aria-label="Tree Branch" aria-level="1" role="treeitem">';
+            var html = html + '<li aria-expanded="false" aria-label="Tree Branch" aria-level="1" role="treeitem">';
             var html = html + '  <div class="slds-tree__item">';
             var html = html + '    <button class="slds-button slds-button_icon slds-m-right_x-small" aria-hidden="true" tabindex="-1" title="Expand Tree Branch">';
             var html = html + '      <svg class="slds-button__icon slds-button__icon_small" aria-hidden="true">';
