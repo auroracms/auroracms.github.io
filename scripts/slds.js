@@ -185,6 +185,7 @@ $(document).on('click', '.slds-tabs_scoped__item', function(){
 // Tree
 $(document).on('click', '.slds-tree__item > button', function(){
   var status = $(this).closest("li").attr('aria-expanded');
+  console.log('clicked');
   if(status='true'){
     $(this).closest("li").attr('aria-expanded','false');
   } else {
