@@ -182,6 +182,17 @@ $(document).on('click', '.slds-tabs_scoped__item', function(){
   });
 });
 
+// Tree
+$(document).on('click', '.slds-tree__item button', function(){
+  var status = $(this).closest("li").attr('aria-expanded');
+  if(status='true'){
+    $(this).closest("li").attr('aria-expanded','false');
+  } else {
+    $(this).closest("li").attr('aria-expanded','true');
+  }
+});
+
+
 // Vertical Tabs
 $(document).on('click', '.slds-vertical-tabs__nav-item', function(){
   var n = $(".slds-vertical-tabs__nav-item").index(this)
