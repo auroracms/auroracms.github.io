@@ -97,6 +97,9 @@
             var html = html + '      <span class="slds-tree__item-label slds-truncate" title="Tree Branch">' + sale.ProductID + '</span>';
             var html = html + '    </span>';
             var html = html + '  </div>';
+            $.each(sale, function(key, value) {
+              var html = html + key + ': ' + value;
+            });
             var html = html + '</li>';
           }
           var html = html + '  </ul>';
