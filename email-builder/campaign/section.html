@@ -95,7 +95,7 @@
         var applicationName = data[0]["ApplicationDomain"];
         var html = '';
         for (i = 0; i < sections.length; i++) {
-          var id = sections[i]["SectionID"];
+          var id = i + 1;
           var html = html + '<ul class="slds-welcome-mat__tiles">';
           var html = html + '  <li class="slds-welcome-mat__tile">';
           var html = html + '    <div class="slds-box slds-box_link slds-media">';
