@@ -100,13 +100,13 @@
             var html = html + '  <ul role="group">';
             var fields = '';
             $.each(sale, function(key, value) {
-              var fields += '<li aria-level="2" role="treeitem">';
-              var fields += '  <div class="slds-tree__item">';
-              var fields += '    <span class="slds-has-flexi-truncate">';
-              var fields += '      <span class="slds-tree__item-label slds-truncate">'+ key + ':' + value + '</span>';
-              var fields += '    </span>';
-              var fields += '  </div>';
-              var fields += '</li>';
+              var fields = fields + '<li aria-level="2" role="treeitem">';
+              var fields = fields + '  <div class="slds-tree__item">';
+              var fields = fields + '    <span class="slds-has-flexi-truncate">';
+              var fields = fields + '      <span class="slds-tree__item-label slds-truncate">'+ key + ':' + value + '</span>';
+              var fields = fields + '    </span>';
+              var fields = fields + '  </div>';
+              var fields = fields + '</li>';
               console.log(fields);
             });
             var html = html + fields;
