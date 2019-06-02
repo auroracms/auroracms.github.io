@@ -323,16 +323,11 @@
     <script>
       var url = "https://pages.email.secretescapes.com/aurora/campaign/details?c=" + getUrlParameter('c');
       $.getJSON(url, function(data) {
-        $("#input__brand-picker").val(data[0]["ApplicationDomain"]);
-        var iDate = new Date(data[0]["SendDate"]);
-        var tDate = iDate.getFullYear + '-' + iDate.getMonth + '-' + iDate.getDay;
-        $("#input__date").val(tDate);
         $("#input__campaign_zero").val(data[0]["CategoryLevel0"]);
         $("#input__campaign_one").val(data[0]["CategoryLevel1"]);
         $("#input__campaign_two").val(data[0]["CategoryLevel2"]);
         $("#input__campaign_three").val(data[0]["CategoryLevel3"]);
         $("#input__layout").val(data[0]["Layout"]);
-        $("#input__layout").val(tDate);
         $(".slds-spinner").addClass("slds-hide");
       });
     </script>
