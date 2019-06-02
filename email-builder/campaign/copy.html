@@ -39,6 +39,12 @@
                 </header>
               </div>
               <div class="slds-card__body slds-card__body_inner slds-p-vertical_medium">
+                <!-- Spinners -->
+                <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+                  <span class="slds-assistive-text">Loading</span>
+                  <div class="slds-spinner__dot-a"></div>
+                  <div class="slds-spinner__dot-b"></div>
+                </div>
                 <div class="slds-grid slds-wrap slds-gutters_small">
                   <div class="slds-form slds-col slds-grid slds-wrap slds-size_1-of-1" role="list">
                     <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
@@ -301,7 +307,6 @@
     <script>
       // Function to async load data here
       var campaignName = getUrlParameter('c');
-      
       // Update campaign name 
       $("#campaign-name").html(campaignName);
       $("#campaign-name").attr('title', campaignName);
@@ -314,6 +319,13 @@
         firstDay:1
       }).datepicker( "setDate", '+1d');
       $('#ui-datepicker-div').css('display','none');
+    </script>
+    <script>
+      var url = "https://pages.email.secretescapes.com/aurora/campaign/details?c=" + getUrlParameter('c');
+      $.getJSON(url, function(data) {
+        $("#input__brand-picker").val(data[0]["ApplicationDomain"]);
+        $(".slds-spinner").addClass("slds-hide");
+      });
     </script>
     <script>
       $("select").change(nameCampaign);
