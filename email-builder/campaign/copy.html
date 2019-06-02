@@ -13,281 +13,283 @@
     <div id="wrapper" class="slds-m-around_medium">
       <div class="slds-grid slds-wrap slds-gutters">
         <div class="slds-col slds-size_1-of-1">
-          <!-- Card -->
-          <article class="slds-card">
-            <div class="slds-card__header slds-grid">
-              <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                <div class="slds-media__figure">
-                  <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
-                    <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                      <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
-                    </svg>
-                    <span class="slds-assistive-text">campaign</span>
-                  </span>
-                </div>
-                <div class="slds-media__body">
-                  <div class="slds-page-header__name">
-                    <div class="slds-page-header__name-title">
-                      <h1>
-                        <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
-                      </h1>
-                    </div>
+          <form action="https://pages.email.secretescapes.com/aurora/campaign/duplicate" method="post">
+            <!-- Card -->
+            <article class="slds-card">
+              <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                  <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-brand" title="campaign">
+                      <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                        <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#campaign"></use>
+                      </svg>
+                      <span class="slds-assistive-text">campaign</span>
+                    </span>
                   </div>
-                </div>
-                <div class="slds-einstein-header__astro slds-size_1-of-4"></div>
-              </header>
-            </div>
-            <div class="slds-card__body slds-card__body_inner slds-p-vertical_medium">
-              <div class="slds-grid slds-wrap slds-gutters_small">
-                <div class="slds-form slds-col slds-grid slds-wrap slds-size_1-of-1" role="list">
-                  <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
-                    <!-- Application Name Input-->
-                    <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__brand-picker">
-                            Select Brand <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <div class="slds-select_container">
-                            <select class="slds-select" id="input__brand-picker" name="input__brand-picker">
-                              <optgroup label="Core">
-                                <option data-territory="AT" data-brand="AT" value="https://at.secretescapes.com">https://at.secretescapes.com</option>
-                                <option data-territory="BE" data-brand="BE" value="https://be.secretescapes.com">https://be.secretescapes.com</option>
-                                <option data-territory="CH" data-brand="CH" value="https://ch.secretescapes.com">https://ch.secretescapes.com</option>
-                                <option data-territory="DE" data-brand="DE" value="https://www.secretescapes.de">https://www.secretescapes.de</option>
-                                <option data-territory="DK" data-brand="DK" value="https://dk.secretescapes.com">https://dk.secretescapes.com</option>
-                                <option data-territory="ES" data-brand="ES" value="https://es.secretescapes.com">https://es.secretescapes.com</option>
-                                <option data-territory="FR" data-brand="FR" value="https://www.evasionssecretes.fr">https://www.evasionssecretes.fr</option>
-                                <option data-territory="UK" data-brand="UK" value="https://www.secretescapes.com">https://www.secretescapes.com</option>
-                                <option data-territory="US" data-brand="US" value="https://us.secretescapes.com">https://us.secretescapes.com</option>
-                              </optgroup>
-                              <optgroup label="TravelBird">
-                                <option data-territory="FR" data-brand="TB_BEFR" value="https://fr.travelbird.be">https://fr.travelbird.be</option>
-                              </optgroup>
-                              <optgroup label="Whitelabel Partners">
-                                <option data-territory="FR" data-brand="TB_BEFR" value="https://fr.travelbird.be">https://fr.travelbird.be</option>
-                              </optgroup>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Send Date Input-->
-                    <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__date">
-                          Send Date <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <input type="text" id="input__date" name="input__date" class="slds-input" />
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Send Time Input-->
-                    <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__time">
-                          Select Time <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <div class="slds-select_container">
-                            <select class="slds-select" id="input__time" name="input__time">
-                              <option value="00:00">00:00</option>
-                              <option value="00:30">00:30</option>
-                              <option value="01:00">01:00</option>
-                              <option value="01:30">01:30</option>
-                              <option value="02:00">02:00</option>
-                              <option value="02:30">02:30</option>
-                              <option value="03:00">03:00</option>
-                              <option value="03:30">03:30</option>
-                              <option value="04:00">04:00</option>
-                              <option value="04:30">04:30</option>
-                              <option value="05:00">05:00</option>
-                              <option value="05:30">05:30</option>
-                              <option value="06:00">06:00</option>
-                              <option value="06:30">06:30</option>
-                              <option value="07:00" selected>07:00</option>
-                              <option value="07:30">07:30</option>
-                              <option value="08:00">08:00</option>
-                              <option value="08:30">08:30</option>
-                              <option value="09:00">09:00</option>
-                              <option value="09:30">09:30</option>
-                              <option value="10:00">10:00</option>
-                              <option value="10:30">10:30</option>
-                              <option value="11:00">11:00</option>
-                              <option value="11:30">11:30</option>
-                              <option value="12:00">12:00</option>
-                              <option value="12:30">12:30</option>
-                              <option value="13:00">13:00</option>
-                              <option value="13:30">13:30</option>
-                              <option value="14:00">14:00</option>
-                              <option value="14:30">14:30</option>
-                              <option value="15:00">15:00</option>
-                              <option value="15:30">15:30</option>
-                              <option value="16:00">16:00</option>
-                              <option value="16:30">16:30</option>
-                              <option value="17:00">17:00</option>
-                              <option value="17:30">17:30</option>
-                              <option value="18:00">18:00</option>
-                              <option value="18:30">18:30</option>
-                              <option value="19:00">19:00</option>
-                              <option value="19:30">19:30</option>
-                              <option value="20:00">20:00</option>
-                              <option value="20:30">20:30</option>
-                              <option value="21:00">21:00</option>
-                              <option value="21:30">21:30</option>
-                              <option value="22:00">22:00</option>
-                              <option value="22:30">22:30</option>
-                              <option value="23:00">23:00</option>
-                              <option value="23:30">23:30</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Unique Camapign Identifier Input-->
-                    <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__id">
-                          Custom Identifier <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <input type="text" id="input__id" name="input__id" class="slds-input" value="V2" placeholder="Unique campaign identifier" required=""/>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Short Description Input -->
-                    <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__description">Description</label>
-                        <div class="slds-form-element__control">
-                          <textarea id="input__description" name="input__description" class="slds-textarea" placeholder="Please provide a short description of the campaign"></textarea>
-                          <input type="hidden" id="input__campaign" name="input__campaign" class="slds-input" value=""/>
-                          <input type="hidden" id="input__campaign_source" name="input__campaign_source" class="slds-input" value=""/>
-                          <input type="hidden" id="input__territory" name="input__territory" class="slds-input" value=""/>
-                        </div>
+                  <div class="slds-media__body">
+                    <div class="slds-page-header__name">
+                      <div class="slds-page-header__name-title">
+                        <h1>
+                          <span id="campaign-name" class="slds-page-header__title slds-hyphenate" title=""></span>
+                        </h1>
                       </div>
                     </div>
                   </div>
-                  <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
-                    <!-- Category Level 0 Input-->
-                    <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__campaign_zero">
-                          Build Method <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <div class="slds-select_container">
-                            <select class="slds-select" id="input__campaign_zero" name="input__campaign_zero">
-                              <option value="Aurora">Aurora</option>
-                              <option value="Jetlore">Jetlore</option>
-                              <option value="Auto">Auto</option>
-                              <option value="None">None</option>
-                            </select>
+                  <div class="slds-einstein-header__astro slds-size_1-of-4"></div>
+                </header>
+              </div>
+              <div class="slds-card__body slds-card__body_inner slds-p-vertical_medium">
+                <div class="slds-grid slds-wrap slds-gutters_small">
+                  <div class="slds-form slds-col slds-grid slds-wrap slds-size_1-of-1" role="list">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                      <!-- Application Name Input-->
+                      <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input__brand-picker">
+                              Select Brand <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                              <select class="slds-select" id="input__brand-picker" name="input__brand-picker">
+                                <optgroup label="Core">
+                                  <option data-territory="AT" data-brand="AT" value="https://at.secretescapes.com">https://at.secretescapes.com</option>
+                                  <option data-territory="BE" data-brand="BE" value="https://be.secretescapes.com">https://be.secretescapes.com</option>
+                                  <option data-territory="CH" data-brand="CH" value="https://ch.secretescapes.com">https://ch.secretescapes.com</option>
+                                  <option data-territory="DE" data-brand="DE" value="https://www.secretescapes.de">https://www.secretescapes.de</option>
+                                  <option data-territory="DK" data-brand="DK" value="https://dk.secretescapes.com">https://dk.secretescapes.com</option>
+                                  <option data-territory="ES" data-brand="ES" value="https://es.secretescapes.com">https://es.secretescapes.com</option>
+                                  <option data-territory="FR" data-brand="FR" value="https://www.evasionssecretes.fr">https://www.evasionssecretes.fr</option>
+                                  <option data-territory="UK" data-brand="UK" value="https://www.secretescapes.com">https://www.secretescapes.com</option>
+                                  <option data-territory="US" data-brand="US" value="https://us.secretescapes.com">https://us.secretescapes.com</option>
+                                </optgroup>
+                                <optgroup label="TravelBird">
+                                  <option data-territory="FR" data-brand="TB_BEFR" value="https://fr.travelbird.be">https://fr.travelbird.be</option>
+                                </optgroup>
+                                <optgroup label="Whitelabel Partners">
+                                  <option data-territory="FR" data-brand="TB_BEFR" value="https://fr.travelbird.be">https://fr.travelbird.be</option>
+                                </optgroup>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Send Date Input-->
+                      <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input__date">
+                            Send Date <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <input type="text" id="input__date" name="input__date" class="slds-input" />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Send Time Input-->
+                      <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input__time">
+                            Select Time <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                              <select class="slds-select" id="input__time" name="input__time">
+                                <option value="00:00">00:00</option>
+                                <option value="00:30">00:30</option>
+                                <option value="01:00">01:00</option>
+                                <option value="01:30">01:30</option>
+                                <option value="02:00">02:00</option>
+                                <option value="02:30">02:30</option>
+                                <option value="03:00">03:00</option>
+                                <option value="03:30">03:30</option>
+                                <option value="04:00">04:00</option>
+                                <option value="04:30">04:30</option>
+                                <option value="05:00">05:00</option>
+                                <option value="05:30">05:30</option>
+                                <option value="06:00">06:00</option>
+                                <option value="06:30">06:30</option>
+                                <option value="07:00" selected>07:00</option>
+                                <option value="07:30">07:30</option>
+                                <option value="08:00">08:00</option>
+                                <option value="08:30">08:30</option>
+                                <option value="09:00">09:00</option>
+                                <option value="09:30">09:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                                <option value="21:30">21:30</option>
+                                <option value="22:00">22:00</option>
+                                <option value="22:30">22:30</option>
+                                <option value="23:00">23:00</option>
+                                <option value="23:30">23:30</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Unique Camapign Identifier Input-->
+                      <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input__id">
+                            Custom Identifier <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <input type="text" id="input__id" name="input__id" class="slds-input" value="V2" placeholder="Unique campaign identifier" required=""/>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Short Description Input -->
+                      <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input__description">Description</label>
+                          <div class="slds-form-element__control">
+                            <textarea id="input__description" name="input__description" class="slds-textarea" placeholder="Please provide a short description of the campaign"></textarea>
+                            <input type="hidden" id="input__campaign" name="input__campaign" class="slds-input" value=""/>
+                            <input type="hidden" id="input__campaign_source" name="input__campaign_source" class="slds-input" value=""/>
+                            <input type="hidden" id="input__territory" name="input__territory" class="slds-input" value=""/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2" role="listitem">
+                      <!-- Category Level 0 Input-->
+                      <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input__campaign_zero">
+                            Build Method <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                              <select class="slds-select" id="input__campaign_zero" name="input__campaign_zero">
+                                <option value="Aurora">Aurora</option>
+                                <option value="Jetlore">Jetlore</option>
+                                <option value="Auto">Auto</option>
+                                <option value="None">None</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Category Level 1 Input-->
+                      <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input__campaign_one">
+                            Campaign Type <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                              <select class="slds-select" id="input__campaign_one" name="input__campaign_one">
+                                <option aria-label="" value="Active Core">Active Core</option>
+                                <option aria-label="INACTIVE_" value="Inactive Core">Inactive Core</option>
+                                <option aria-label="PARTNER_" value="Active Partner">Active Partner</option>
+                                <option aria-label="INACTIVE_PARTNER_" value="Inactive Partner">Inactive Partner</option>
+                                <option aria-label="MEDIA_" value="Media">Media</option>
+                                <option aria-label="" value="Journey">Journey</option>
+                                <option aria-label="" value="Trigger">Trigger</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Category Level 2 Input-->
+                      <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input__campaign_two">
+                            Email Type <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                              <select class="slds-select" id="input__campaign_two" name="input__campaign_two">
+                                <option aria-label="_APOL" value="Apology">Apology</option>
+                                <option aria-label="_BRND" value="Brand">Brand</option>
+                                <option aria-label="_ENGT" value="Engagement">Engagement</option>
+                                <option aria-label="_NEWS" value="Newsletter" selected>Newsletter</option>
+                                <option aria-label="_SERV" value="Service">Service</option>
+                                <option aria-label="_SOLU" value="Solus">Solus</option>
+                                <option aria-label="_EVBM" value="EBM">Event Based Mailing</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Category Level 3 Input-->
+                      <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input__campaign_three">
+                            Content Type <abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                              <select class="slds-select" id="input__campaign_three" name="input__campaign_three">
+                                <option aria-label="" value="Default">Default</option>
+                                <option aria-label="_FLASH" value="Flash Sale">Flash Sale</option>
+                                <option aria-label="_PRICEDROP" value="Price Drop">Price Drop</option>
+                                <option aria-label="_PRODUCT" value="Product Launch">Product Launch</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Layout Input-->
+                      <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
+                        <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                          <label class="slds-form-element__label" for="input__layout">
+                            Layout Name<abbr class="slds-required" title="Required">* </abbr>
+                          </label>
+                          <div class="slds-form-element__control">
+                            <input type="text" id="input__layout" name="input__layout" class="slds-input" placeholder="Jetlore or Template layout" required=""/>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <!-- Category Level 1 Input-->
-                    <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__campaign_one">
-                          Campaign Type <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <div class="slds-select_container">
-                            <select class="slds-select" id="input__campaign_one" name="input__campaign_one">
-                              <option aria-label="" value="Active Core">Active Core</option>
-                              <option aria-label="INACTIVE_" value="Inactive Core">Inactive Core</option>
-                              <option aria-label="PARTNER_" value="Active Partner">Active Partner</option>
-                              <option aria-label="INACTIVE_PARTNER_" value="Inactive Partner">Inactive Partner</option>
-                              <option aria-label="MEDIA_" value="Media">Media</option>
-                              <option aria-label="" value="Journey">Journey</option>
-                              <option aria-label="" value="Trigger">Trigger</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Category Level 2 Input-->
-                    <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__campaign_two">
-                          Email Type <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <div class="slds-select_container">
-                            <select class="slds-select" id="input__campaign_two" name="input__campaign_two">
-                              <option aria-label="_APOL" value="Apology">Apology</option>
-                              <option aria-label="_BRND" value="Brand">Brand</option>
-                              <option aria-label="_ENGT" value="Engagement">Engagement</option>
-                              <option aria-label="_NEWS" value="Newsletter" selected>Newsletter</option>
-                              <option aria-label="_SERV" value="Service">Service</option>
-                              <option aria-label="_SOLU" value="Solus">Solus</option>
-                              <option aria-label="_EVBM" value="EBM">Event Based Mailing</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Category Level 3 Input-->
-                    <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__campaign_three">
-                          Content Type <abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <div class="slds-select_container">
-                            <select class="slds-select" id="input__campaign_three" name="input__campaign_three">
-                              <option aria-label="" value="Default">Default</option>
-                              <option aria-label="_FLASH" value="Flash Sale">Flash Sale</option>
-                              <option aria-label="_PRICEDROP" value="Price Drop">Price Drop</option>
-                              <option aria-label="_PRODUCT" value="Product Launch">Product Launch</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <!-- Layout Input-->
-                    <div class="slds-form__item slds-size_1-of-1 slds-m-vertical_small" role="listitem">
-                      <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
-                        <label class="slds-form-element__label" for="input__layout">
-                          Layout Name<abbr class="slds-required" title="Required">* </abbr>
-                        </label>
-                        <div class="slds-form-element__control">
-                          <input type="text" id="input__layout" name="input__layout" class="slds-input" placeholder="Jetlore or Template layout" required=""/>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-
+                </div>
+                <div class="slds-grid slds-wrap slds-gutters_small slds-m-around_medium">
+                  <div class="slds-col slds-text-heading_small slds-size_1-of-1 slds-p-vertical_medium" role="listitem">
+                    Campaign Name
+                  </div>
+                  <div class="slds-box slds-theme_shade slds-size_1-of-1">
+                    <p class="slds-text-color_weak"><i> Complete form to generate campaign name</i></p>
+                  </div>
                 </div>
               </div>
-              <div class="slds-grid slds-wrap slds-gutters_small slds-m-around_medium">
-                <div class="slds-col slds-text-heading_small slds-size_1-of-1 slds-p-vertical_medium" role="listitem">
-                  Campaign Name
+              <footer class="slds-card__footer slds-align_absolute-center">
+                <div class="slds-grid slds-size_1-of-1" >
+                  <div class="slds-size_1-of-2 slds-text-align_left">
+                    <a class="slds-button slds-button_text-destructive" onclick="history.back()">Cancel</a>
+                  </div>
+                  <div class="slds-size_1-of-2 slds-text-align_right">
+                    <button type="submit" class="slds-button slds-button_brand slds-p-horizontal_large slds-p-vertical_xx-small">Submit</button>
+                  </div>
                 </div>
-                <div class="slds-box slds-theme_shade slds-size_1-of-1">
-                  <p class="slds-text-color_weak"><i> Complete form to generate campaign name</i></p>
-                </div>
-              </div>
-            </div>
-            <footer class="slds-card__footer slds-align_absolute-center">
-              <div class="slds-grid slds-size_1-of-1" >
-                <div class="slds-size_1-of-2 slds-text-align_left">
-                  <a class="slds-button slds-button_text-destructive" onclick="history.back()">Cancel</a>
-                </div>
-                <div class="slds-size_1-of-2 slds-text-align_right">
-                  <button type="submit" class="slds-button slds-button_brand slds-p-horizontal_large slds-p-vertical_xx-small">Submit</button>
-                </div>
-              </div>
-            </footer>
-          </article>
+              </footer>
+            </article>
+          </form>
         </div>
       </div>
     </div>
