@@ -97,9 +97,18 @@
             var html = html + '      <span class="slds-tree__item-label slds-truncate" title="Tree Branch">' + sale.ProductID + '</span>';
             var html = html + '    </span>';
             var html = html + '  </div>';
+            var html = html + '  <ul role="group">;
             $.each(sale, function(key, value) {
+              var html = html + '<li aria-level="2" role="treeitem">';
+              var html = html + '  <div class="slds-tree__item">';
+              var html = html + '    <span class="slds-has-flexi-truncate">';
+              var html = html + '      <span class="slds-tree__item-label slds-truncate" title="Tree Item">'+ key + '':'' + value + '</span>';
+              var html = html + '    </span>';
+              var html = html + '  </div>';
+              var html = html + '</li>';
               console.log(key + ":" + value);
             });
+            var html = html + '  </ul>';
             var html = html + '</li>';
           }
           var html = html + '  </ul>';
