@@ -278,6 +278,7 @@
                 <div class="slds-grid slds-wrap slds-gutters_small slds-m-around_medium">
                   <div class="slds-col slds-text-heading_small slds-size_1-of-1 slds-p-vertical_medium" role="listitem">
                     Campaign Name
+                    <input type="hidden" id="input__old" name="input__old" class="slds-input" value=""/>
                   </div>
                   <div class="slds-box slds-theme_shade slds-size_1-of-1">
                     <p class="slds-text-color_weak"><i> Complete form to generate campaign name</i></p>
@@ -328,6 +329,7 @@
         var dt = emailName.substring(start, start + 4) + '-' + emailName.substring(start + 4, start + 6) + '-' + emailName.substring(start + 6, start + 8);
         $("#input__brand-picker").val(data[0]["ApplicationDomain"]);
         $("#input__date").val(dt);
+        $("#input__old").val(emailName);
         $("#input__campaign_zero").val(data[0]["CategoryLevel0"]);
         $("#input__campaign_one").val(data[0]["CategoryLevel1"]);
         $("#input__campaign_two").val(data[0]["CategoryLevel2"]);
