@@ -38,7 +38,7 @@
                 </header>
               </div>
               <div class="slds-card__body slds-card__body_inner">
-                <div id="sale-form" style="min-height:200px;">
+                <div id="table" style="min-height:200px;">
                   <!-- Spinners -->
                   <div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
                     <span class="slds-assistive-text">Loading</span>
@@ -46,7 +46,6 @@
                     <div class="slds-spinner__dot-b"></div>
                   </div>
                 </div>
-                <input type="hidden" id="input__editor" name="input__editor" class="slds-input" value=""/>
               </div>
               <footer class="slds-card__footer slds-align_absolute-center">
                 <div class="slds-grid slds-size_1-of-1" >
@@ -85,84 +84,29 @@
           var sectionName = sections[i]["SectionName"];
           var sales = sections[i]["Sales"];
 
-          var html = html + '<div class="slds-section slds-p-top_xxx-small slds-p-bottom_x-large slds-is-open">';
-          var html = html + '  <h3 class="slds-section__title" style="background-color:#0070d2; color:#fff">';
-          var html = html + '    <a style="background-color:#0070d2; color:#fff" class="slds-button slds-section__title-action">';
-          var html = html + '      <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">';
-          var html = html + '        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>';
-          var html = html + '      </svg>';
-          var html = html + '      <span class="slds-truncate" title="' + sectionName + '">' + sectionName + '</span>';
-          var html = html + '    </a>';
-          var html = html + '  </h3>';
-          var html = html + '  <div aria-hidden="false" class="slds-section__content" id="expando-unique-id">';
-          var html = html + '    <ul class="slds-welcome-mat__tiles">';
+          var html = html + '<div class="slds-tree_container">';
+          var html = html + '  <h4 class="slds-tree__group-header" id="treeheading">' + sectionName + '</h4>';
+          var html = html + '  <ul aria-labelledby="treeheading" class="slds-tree" role="tree">';
           for (j = 0; j < sales.length; j++) {
-            var id = sales[j]["ProductID"];
-
-            var html = html + '<li class="slds-welcome-mat__tile">';
-            var html = html + '  <div class="slds-box slds-box_link slds-media">';
-            var html = html + '  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">' + sales[j]["Position"] + '</div>';
-            var html = html + '  <div class="slds-media__body">';
-            var html = html + '    <div class="slds-welcome-mat__tile-body">';
-            var html = html + '      <fieldset class="slds-form-element slds-form-element_compound">';
-            var html = html + '        <div class="slds-form-element__control">';
-            var html = html + '          <div class="slds-form-element__row">';
-            var html = html + '            <div class="slds-size_1-of-6">';
-            var html = html + '              <div class="slds-form-element">';
-            var html = html + '                <label class="slds-form-element__label" for="input-01">Sale ID</label>';
-            var html = html + '                <div class="slds-form-element__control">';
-            var html = html + '                  <input type="text" id="input-01" class="slds-input" value="' + id + '" readonly/>';
-            var html = html + '                </div>';
-            var html = html + '              </div>';
-            var html = html + '            </div>';
-            var html = html + '            <div class="slds-size_1-of-2">';
-            var html = html + '              <div class="slds-form-element">';
-            var html = html + '                <label class="slds-form-element__label" for="title__' + id + '">Sale Title</label>';
-            var html = html + '                <div class="slds-form-element__control">';
-            var html = html + '                  <input type="text" id="title__' + id + '"  name="title__' + id + '" class="slds-input" value="' + sales[j]["Title"] + '"/>';
-            var html = html + '                </div>';
-            var html = html + '              </div>';
-            var html = html + '            </div>';
-            var html = html + '            <div class="slds-size_1-of-3">';
-            var html = html + '              <div class="slds-form-element">';
-            var html = html + '                <label class="slds-form-element__label" for="destination__' + id + '">Destination Name</label>';
-            var html = html + '                <div class="slds-form-element__control">';
-            var html = html + '                  <input type="text" id="destination__' + id + '"  name="destination__' + id + '" class="slds-input" value="' + sales[j]["DestinationName"] + '"/>';
-            var html = html + '                </div>';
-            var html = html + '              </div>';
-            var html = html + '            </div>';
-            var html = html + '          </div>';
-            var html = html + '          <div class="slds-form-element__row slds-p-top_x-small">';
-            var html = html + '            <div class="slds-size_1-of-2">';
-            var html = html + '              <div class="slds-form-element">';
-            var html = html + '                <label class="slds-form-element__label" for="img__' + id + '">Lead Image</label>';
-            var html = html + '                <div class="slds-form-element__control">';
-            var html = html + '                  <input type="text" id="img__' + id + '"  name="img__' + id + '" class="slds-input" value="' + sales[j]["LeadImage1"] + '"/>';
-            var html = html + '                </div>';
-            var html = html + '              </div>';
-            var html = html + '            </div>';
-            var html = html + '            <div class="slds-size_1-of-2">';
-            var html = html + '              <div class="slds-form-element">';
-            var html = html + '                <label class="slds-form-element__label" for="url__' + id + '">Sale URL</label>';
-            var html = html + '                <div class="slds-form-element__control">';
-            var html = html + '                  <input type="text" id="url__' + id + '"  name="url__' + id + '" class="slds-input" value="' + sales[j]["SaleURL"] + '"/>';
-            var html = html + '                </div>';
-            var html = html + '              </div>';
-            var html = html + '            </div>';
-            var html = html + '          </div>';
-            var html = html + '        </div>';
-            var html = html + '      </fieldset>';
-            var html = html + '    </div>';
-            var html = html + '  </div>';
+            var sale = sales[j];
+            var html = html + '<li aria-expanded="true" aria-label="Tree Branch" aria-level="1" role="treeitem">';
+            var html = html + '  <div class="slds-tree__item">';
+            var html = html + '    <button class="slds-button slds-button_icon slds-m-right_x-small" aria-hidden="true" tabindex="-1" title="Expand Tree Branch">';
+            var html = html + '      <svg class="slds-button__icon slds-button__icon_small" aria-hidden="true">';
+            var html = html + '        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"></use>';
+            var html = html + '      </svg>';
+            var html = html + '      <span class="slds-assistive-text">Expand Tree Branch</span>';
+            var html = html + '    </button>';
+            var html = html + '    <span class="slds-has-flexi-truncate">';
+            var html = html + '      <span class="slds-tree__item-label slds-truncate" title="Tree Branch">' + sale.ProductID + '</span>';
+            var html = html + '    </span>';
             var html = html + '  </div>';
             var html = html + '</li>';
           }
-          var html = html + '    </ul>';
-          var html = html + '  </div>';
+          var html = html + '  </ul>';
           var html = html + '</div>';
         }
-        var html = html + '<input type="hidden" id="input__campaign" name="input__campaign" class="slds-input" value="' + campaignName + '"/>';
-        $("#sale-form").html(html);
+        $("#table").html(html);
       });
     </script>
   </body>
