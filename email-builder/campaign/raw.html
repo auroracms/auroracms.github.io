@@ -100,11 +100,11 @@
             var html = html + '  <ul role="group">';
             for (var key in sale) {
               var value = sale[key];
-              var value = value.replace(/br\/>/g, ' ');
+              var value = value.replace(/<br>/g, ' ');
               var html = html + '<li aria-level="2" role="treeitem">';
               var html = html + '  <div class="slds-tree__item">';
               var html = html + '    <span class="slds-has-flexi-truncate">';
-              var html = html + '      <span class="slds-tree__item-label slds-truncate">'+ key + ':' + value + '</span>';
+              var html = html + '      <span class="slds-tree__item-label slds-truncate"><b>'+ key + ':</b> ' + value + '</span>';
               var html = html + '    </span>';
               var html = html + '  </div>';
               var html = html + '</li>';
