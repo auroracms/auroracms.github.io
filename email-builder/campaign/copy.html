@@ -324,7 +324,7 @@
       var url = "https://pages.email.secretescapes.com/aurora/campaign/details?c=" + getUrlParameter('c');
       $.getJSON(url, function(data) {
         $("#input__brand-picker").val(data[0]["ApplicationDomain"]);
-        var iDate = new Date(data[0]["SendDate"]);
+        var iDate = data[0]["SendDate"];
         var tDate = iDate.getFullYear + '-' + iDate.getMonth + '-' + iDate.getDay;
         $("#input__date").val(tDate);
         $("#input__campaign_zero").val(data[0]["CategoryLevel0"]);
