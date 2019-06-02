@@ -184,12 +184,13 @@ $(document).on('click', '.slds-tabs_scoped__item', function(){
 
 // Tree
 $(document).on('click', '.slds-tree__item > button', function(){
-  var status = $(this).closest("li").attr('aria-expanded');
+  var list = $(this).closest("li");
+  var status = list.attr('aria-expanded');
   console.log(status);
-  if(status='true'){
-    $(this).closest("li").attr('aria-expanded','false');
+  if(status==='true'){
+    list.attr('aria-expanded','false');
   } else {
-    $(this).closest("li").attr('aria-expanded','true');
+    list.attr('aria-expanded','true');
   } 
 });
 
