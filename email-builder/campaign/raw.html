@@ -98,17 +98,17 @@
             var html = html + '    </span>';
             var html = html + '  </div>';
             var html = html + '  <ul role="group">';
-            var html = html + sale.length;
-            $.each(sale, function(key, value, fields) {
-              var html = html + '<li aria-level="2" role="treeitem">';
-              var html = html + '  <div class="slds-tree__item">';
-              var html = html + '    <span class="slds-has-flexi-truncate">';
-              var html = html + '      <span class="slds-tree__item-label slds-truncate">'+ key + ':' + value + '</span>';
-              var html = html + '    </span>';
-              var html = html + '  </div>';
-              var html = html + '</li>';
-              console.log(fields);
-            });
+            console.log(sale);
+            // $.each(sale, function(key, value, fields) {
+            //   var html = html + '<li aria-level="2" role="treeitem">';
+            //   var html = html + '  <div class="slds-tree__item">';
+            //   var html = html + '    <span class="slds-has-flexi-truncate">';
+            //   var html = html + '      <span class="slds-tree__item-label slds-truncate">'+ key + ':' + value + '</span>';
+            //   var html = html + '    </span>';
+            //   var html = html + '  </div>';
+            //   var html = html + '</li>';
+            //   console.log(fields);
+            // });
             var html = html + '  </ul>';
             var html = html + '</li>';
           }
