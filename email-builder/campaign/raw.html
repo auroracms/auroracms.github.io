@@ -80,8 +80,8 @@
           var sectionName = sections[i]["SectionName"];
           var sales = sections[i]["Sales"];
 
-          var html = html + '<div class="slds-tree_container slds-p-top_large" style="max-width:100%;">';
-          var html = html + '  <h4 class="slds-tree__group-header slds-text-heading_medium" id="treeheading">' + sectionName + '</h4>';
+          var html = html + '<div class="slds-tree_container slds-p-bottom_large" style="max-width:100%;">';
+          var html = html + '  <h4 class="slds-tree__group-header slds-text-heading_medium slds-p-vertical_small" id="treeheading">' + sectionName + '</h4>';
           var html = html + '  <ul aria-labelledby="treeheading" class="slds-tree" role="tree">';
           for (j = 0; j < sales.length; j++) {
             var sale = sales[j];
