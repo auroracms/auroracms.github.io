@@ -101,6 +101,7 @@
             console.log(sale);
             for (var key in sale) {
               var value = sale[key];
+              var value = value.replace(/br\/>/g, ' ');
               var html = html + '<li aria-level="2" role="treeitem">';
               var html = html + '  <div class="slds-tree__item">';
               var html = html + '    <span class="slds-has-flexi-truncate">';
