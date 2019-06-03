@@ -1,27 +1,41 @@
+Aurora - Brand Builder Endpoints
+==========================================================================
+Brand Builder - 01 - Site Details               aurora/brand/sites
+Brand Builder - 02 - Site Edit                  aurora/brand/site-edit
+Brand Builder - 03 - Theme Details              aurora/brand/theme
+Brand Builder - 04 - Theme Edit                 aurora/brand/theme-edit 
+
+
 Aurora - Calendar Endpoints
-
-
-Calendar - 01 - Campaigns               aurora/email/calendar
-Calendar - 02 - Planner                 aurora/planner/calendar
-Calendar - 03 - New Campaign            aurora/planner/campaign
-Calendar - 04 - New Day Plan            aurora/planner/day
-Calendar - 05 - New Test Plan           aurora/planner/test
-Calendar - 06 - New Banner Plan         aurora/planner/banner
-Calendar - 07 - Planner Details         aurora/planner/details
-Calendar - 08 - Planner Edit            aurora/planner/edit
-Calendar - 09 - Planner Delete          aurora/planner/delete
+==========================================================================
+Calendar - 01 - Campaigns                       aurora/email/calendar
+Calendar - 02 - Planner                         aurora/planner/calendar
+Calendar - 03 - New Campaign                    aurora/planner/campaign
+Calendar - 04 - New Day Plan                    aurora/planner/day
+Calendar - 05 - New Test Plan                   aurora/planner/test
+Calendar - 06 - New Banner Plan                 aurora/planner/banner
+Calendar - 07 - Planner Details                 aurora/planner/details
+Calendar - 08 - Planner Edit                    aurora/planner/edit
+Calendar - 09 - Planner Delete                  aurora/planner/delete
 
 
 Aurora - Campaign Builder Endpoints
-Campaign Builder - 01 - Email Details      aurora/campaign/details
-Campaign Builder - 02 - Validate           aurora/campaign/validate
-Campaign Builder - 03 - Create Email       aurora/campaign/create
-Campaign Builder - 04 - Build Email        aurora/campaign/build 
+==========================================================================
+Campaign Builder - 01 - Email Details           aurora/campaign/details
+Campaign Builder - 02 - Validate                aurora/campaign/validate
+Campaign Builder - 03 - Create Email            aurora/campaign/create
+Campaign Builder - 04 - Populate Email          aurora/campaign/populate
+Campaign Builder - 05 - Edit Sales              aurora/campaign/edit
+Campaign Builder - 06 - Add Sales               aurora/campaign/add
+Campaign Builder - 07 - Order Sales             aurora/campaign/order
+Campaign Builder - 08 - Sections                aurora/campaign/sections
+Campaign Builder - 09 - Add Section             aurora/campaign/section/add
+Campaign Builder - 10 - Duplicate Email         aurora/campaign/duplicate
+Campaign Builder - 11 - Delete Sales            aurora/campaign/delete
+Campaign Builder - 12 - Delete Email            aurora/campaign/delete-campaign
 
 
-Aurora - Brand Builder Endpoints
-Brand Builder - 01 - Site Details      aurora/brand/sites
-Brand Builder - 02 - Site Edit         aurora/brand/site-edit
-Brand Builder - 03 - Theme Details       aurora/brand/theme
-Brand Builder - 04 - Theme Edit        aurora/brand/theme-edit 
-
+Aurora - Login Endpoints
+==========================================================================
+Login - 01 - Authenticate                       aurora/login/authenticate
+Login - 02 - Register                           aurora/login/register
