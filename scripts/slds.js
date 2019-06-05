@@ -182,6 +182,13 @@ $(document).on('click', '.slds-tabs_scoped__item', function(){
   });
 });
 
+// Toolstips
+$(document).on('mouseenter','.tooltip-trigger_hover', function(){
+  $(this).parent().find('.slds-popover_tooltip').removeClass('slds-hide');
+}).on('mouseleave','.slds-dropdown-trigger_hover', function(){
+  $(this).closest('.slds-popover_tooltip').addClass('slds-hide');
+});
+
 // Tree
 $(document).on('click', '.slds-tree__item > button', function(){
   var list = $(this).closest("li");
