@@ -183,10 +183,8 @@ $(document).on('click', '.slds-tabs_scoped__item', function(){
 });
 
 // Toolstips
-$(document).on('mouseenter','.tooltip-trigger_hover', function(){
-  $(this).parent().find('.slds-popover_tooltip').removeClass('slds-hide');
-}).on('mouseleave','.slds-dropdown-trigger_hover', function(){
-  $(this).closest('.slds-popover_tooltip').addClass('slds-hide');
+$(document).on('click','.tooltip-trigger_hover', function(){
+  $(this).parent().find('.slds-popover_tooltip').toggleClass('slds-hide');
 });
 
 // Tree
