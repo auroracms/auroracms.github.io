@@ -121,6 +121,7 @@ function nameCampaign(){
       $(".slds-box").css('border-color','#ff0000');
       $(".error__campaign").removeClass('slds-hide');
       $("#wrapper button").prop( "disabled", true );
+      console.log('duplicate');
     } else {
       $(".slds-box").css('border-color','');
       $(".error__campaign").addClass('slds-hide');
