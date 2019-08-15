@@ -1,0 +1,48 @@
+<script runat = server >
+    Platform.Load("Core", "1");
+    HTTPHeader.SetValue("Access-Control-Allow-Methods","GET");
+    HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+  
+    var start = Request.GetQueryStringParameter("start");
+    var end = Request.GetQueryStringParameter("end");
+    var territory= Request.GetQueryStringParameter("t");
+  
+    // filter for start and end dates
+    var filterDates = {
+      LeftOperand: {Property: "SendDate", SimpleOperator: "greaterThanOrEqual", Value: new Date(start)},
+      LogicalOperator: "AND",
+      RightOperand: {Property: "SendDate", SimpleOperator: "lessThanOrEqual", Value: new Date(end)}
+    };
+    
+    // filter for data retrieve
+    var filterData = {
+      LeftOperand: filterDates,
+      LogicalOperator: "AND",
+      RightOperand: {Property: "Territory", SimpleOperator: "equals", Value: territory}
+    };
+  
+    // retrieve data
+    var campaignDE = DataExtension.Init("EML_CAMPAIGNS");
+    var campaignData = campaignDE.Rows.Retrieve(filterData);
+    var multiArray = [];
+  
+  
+    for (i = 0; i < campaignData.length; i++) {
+      var emailName = campaignData[i]["EmailName"];
+      var category = campaignData[i]["CategoryLevel1"];
+      var emailDate = Format(campaignData[i]["SendDate"],"yyyy-MM-dd");
+      var url = '/email-builder/campaign?c=' + emailName;
+  
+      if(category=='Active Partner' || category=='Inactive Partner'){
+        var color = '#4bca81';
+      } else if(category=='Media'){
+        var color = '#706e6b';
+      } else if(category=='Journey' || category=='Trigger'){
+        var color = '#182337';
+      } else {
+        var color = '#0070d2';
+      }
+      multiArray.push({title: emailName, start: emailDate, url: url, backgroundColor: color, borderColor: color, className: 'slds-text-title_caps'});
+    }
+    Write(Stringify(multiArray));
+  </script>

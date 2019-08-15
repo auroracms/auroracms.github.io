@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <script runat=server>
+      Platform.Load("Core","1");
+      HTTPHeader.SetValue("Access-Control-Allow-Methods","POST");
+      HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+      
+      // retrieve form data
+      var guid = Platform.Function.GUID();
+      var startDate = Request.GetFormField("input__start-test");
+      var endDate = new Date(Request.GetFormField("input__end-test"));
+      var endDate = new Date(endDate.getUTCFullYear(), endDate.getUTCMonth(), endDate.getUTCDate()+1);
+      var territory = Request.GetFormField("input__cterritory"); 
+      var testName = Request.GetFormField("input__test");
+      var description = Request.GetFormField("input_description");
+
+      var variation1 = '<li>' + Request.GetFormField("input__test1") + '</li>';
+      var variation2 = '<li>' + Request.GetFormField("input__test2") + '</li>';
+      var variation3 = '<li>' + Request.GetFormField("input__test3") + '</li>';
+      var variation4 = '<li>' + Request.GetFormField("input__test4") + '</li>';
+      var fullDetails = variation1 + variation2 + variation3 + variation4;
+
+      // define system functions
+      var systime = new Date();
+      var utcTime = new Date(systime.getUTCFullYear(), systime.getUTCMonth(), systime.getUTCDate(), systime.getUTCHours(), systime.getUTCMinutes());
+
+      if(testName!=''){
+        var rows = Platform.Function.UpsertDE("AURORA_CMS_PLANNER",["ID"],[guid],
+          ["EventType","EventName", "Territory", "Description", "FullDetails", "StartDate","EndDate","ModifiedTimestamp"],
+          ['Test', testName, territory, description, fullDetails, startDate, endDate, utcTime]
+        );
+      }
+
+      Platform.Response.Redirect('https://auroracms.github.io/email-builder/');
+    </script>
+  </head>
+  <body class="slds-brand-band slds-brand-band_medium">&nbsp;</body>
+</html>

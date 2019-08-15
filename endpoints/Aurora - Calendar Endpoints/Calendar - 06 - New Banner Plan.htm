@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <script runat=server>
+      Platform.Load("Core","1");
+      HTTPHeader.SetValue("Access-Control-Allow-Methods","POST");
+      HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+      
+      // retrieve form data
+      var guid = Platform.Function.GUID();
+      var startDate = Request.GetFormField("input__start-banner");
+      var endDate = new Date(Request.GetFormField("input__end-banner")); 
+      var endDate = new Date(endDate.getUTCFullYear(), endDate.getUTCMonth(), endDate.getUTCDate()+1);
+      var eventName = Request.GetFormField("input__banner");
+      var territory = Request.GetFormField("input__cterritory"); 
+      var description = Request.GetFormField("input__description");
+
+      // define system functions
+      var systime = new Date();
+      var utcTime = new Date(systime.getUTCFullYear(), systime.getUTCMonth(), systime.getUTCDate(), systime.getUTCHours(), systime.getUTCMinutes());
+
+      var rows = Platform.Function.UpsertDE("AURORA_CMS_PLANNER",["ID"],[guid],
+        ["EventType","EventName", "Territory", "Description","StartDate","EndDate","ModifiedTimestamp"],
+        ['Banner', eventName, territory, description, startDate, endDate, utcTime]
+      );
+      Platform.Response.Redirect('https://auroracms.github.io/email-builder/');
+    </script>
+  </head>
+  <body class="slds-brand-band slds-brand-band_medium">&nbsp;</body>
+</html>

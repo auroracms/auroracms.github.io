@@ -1,0 +1,66 @@
+<script runat="server">
+  Platform.Load("Core","1");
+  HTTPHeader.SetValue("Access-Control-Allow-Methods","POST"); 
+  HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+
+  // define time functions
+  var systime = new Date();
+  var utcTime = new Date(systime.getUTCFullYear(), systime.getUTCMonth(), systime.getUTCDate(), systime.getUTCHours(), systime.getUTCMinutes());
+
+  // retrieve process data
+  var emailName = Request.GetFormField("input__campaign");
+  var filter = {Property: "EmailName", SimpleOperator: "equals", Value: emailName}
+  var editorUsername = Request.GetFormField("input__editor");
+
+  // data extension
+  var campaignDE = DataExtension.Init("EML_CAMPAIGNS"); // EML_CAMPAIGNS
+  var sectionsDE = DataExtension.Init("EML_SALE_SECTIONS"); // EML_SALE_SECTIONS
+  var productsDE = DataExtension.Init("EML_SALE_SELECTIONS"); // EML_SALE_SELECTIONS
+  var productsData = productsDE.Rows.Retrieve(filter);
+  productsData.sort(function(a, b){return a.Position-b.Position});
+
+
+  // delete processing
+  for (var i = 0; i < productsData.length; i++) {
+    var saleId = productsData[i]["ProductID"];
+    var action = Request.GetFormField("delete__" +  saleId);
+    if(action=='true'){
+      productsDE.Rows.Remove(["ProductID"], [saleId]);
+    }
+  }
+
+  // Re-count sections
+  var sectionData = sectionsDE.Rows.Retrieve(filter);
+  sectionData.sort(function(a, b){return a.SectionID-b.SectionID});
+  for (var i = 0; i < sectionData.length; i++) {
+    var sectionID = sectionData[i]["SectionID"];
+    var saleFilter = {
+      LeftOperand:{Property:"EmailName", SimpleOperator:"equals", Value: emailName},
+      LogicalOperator:"AND",
+      RightOperand:{Property:"SectionID", SimpleOperator:"equals", Value: sectionID}
+    };
+    var productsData = productsDE.Rows.Retrieve(saleFilter);
+    if(productsData.length>0){
+      sectionsDE.Rows.Update({RowCount: productsData.length, ModifiedBy: editorUsername, ModifiedTimestamp:utcTime}, ["EmailName", "SectionID"], [emailName, sectionID]);
+    } else {
+      sectionsDE.Rows.Remove(["SectionID"], [sectionID]);
+    }
+  }
+
+  // Re-organise sections
+  var sectionData = sectionsDE.Rows.Retrieve(filter);
+  sectionData.sort(function(a, b){return a.SectionID-b.SectionID});
+  for (var i = 0; i < sectionData.length; i++) {
+    var sectionID = sectionData[i]["SectionID"];
+    var newID = i + 1;
+    sectionsDE.Rows.Update({SectionID: newID}, ["EmailName", "SectionID"], [emailName, sectionID]);
+    productsDE.Rows.Update({SectionID: newID}, ["EmailName", "SectionID"], [emailName, sectionID]);
+  }
+
+  // update campaign table
+  campaignDE.Rows.Update({ModifiedBy: editorUsername, ModifiedTimestamp:utcTime}, ["EmailName"], [emailName]);
+
+  // redirect user on to population page
+  var url = 'https://auroracms.github.io/email-builder/campaign?c=' + emailName;
+  Redirect(url,false);
+</script>

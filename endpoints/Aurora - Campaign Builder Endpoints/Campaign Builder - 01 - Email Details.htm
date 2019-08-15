@@ -1,0 +1,33 @@
+<script runat = server >
+  Platform.Load("Core", "1");
+  HTTPHeader.SetValue("Access-Control-Allow-Methods","GET");
+  HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+  
+  // initiate data extensions
+  var campaignDE = DataExtension.Init("EML_CAMPAIGNS"); // EML_CAMPAIGNS
+  var sectionDE = DataExtension.Init("EML_SALE_SECTIONS"); // EML_SALE_SECTIONS
+  var productsDE = DataExtension.Init("EML_SALE_SELECTIONS"); // EML_SALE_SELECTIONS
+
+  // retrieve data
+  var emailName = Request.GetQueryStringParameter("c");
+  var filter = {Property: "EmailName", SimpleOperator: "equals", Value: emailName}
+  var campaignData = campaignDE.Rows.Retrieve(filter);
+  var sectionData = sectionDE.Rows.Retrieve(filter);
+
+  // Build Array
+  if(campaignData.length>0){
+    for (var i = 0; i < sectionData.length; i++) {
+      var sectionID = sectionData[i]["SectionID"];
+      var saleFilter = {
+        LeftOperand:{Property:"EmailName", SimpleOperator:"equals", Value: emailName},
+        LogicalOperator:"AND",
+        RightOperand:{Property:"SectionID", SimpleOperator:"equals", Value: sectionID}
+      };
+      var productsData = productsDE.Rows.Retrieve(saleFilter);
+      productsData.sort(function(a, b){return a.Position-b.Position});
+      sectionData[i]["Sales"] = productsData;
+    }
+    campaignData[0]["Sections"] = sectionData;
+  }
+  Write(Stringify(campaignData));
+</script>

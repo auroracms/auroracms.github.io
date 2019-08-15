@@ -1,0 +1,58 @@
+<script runat="server">
+    Platform.Load("Core","1");
+    HTTPHeader.SetValue("Access-Control-Allow-Methods","POST"); 
+    HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+    
+    // define time functions
+    var systime = new Date();
+    var utcTime = new Date(systime.getUTCFullYear(), systime.getUTCMonth(), systime.getUTCDate(), systime.getUTCHours(), systime.getUTCMinutes());
+    
+    // retrieve form data
+    var emailName = Request.GetFormField("input__campaign");
+    var startCount = parseInt(Request.GetFormField("input__start"));
+    var sectionCount = parseInt(Request.GetFormField("input__count")) + 1;
+    var editorUsername = Request.GetFormField("input__editor");
+    
+    // retrieve campaign data
+    var productsDE = DataExtension.Init("EML_SALE_SELECTIONS"); // EML_SALE_SELECTIONS
+    var productsData = productsDE.Rows.Retrieve({Property: "EmailName", SimpleOperator: "equals", Value: emailName});
+    var row = productsData.length;
+    var applicationDomain = productsData[0]["ApplicationDomain"];
+  
+    // Write data to EML_SALE_SECTIONS and EML_SALE_SELECTIONS
+    for (i = startCount; i < sectionCount; i++) {
+      var sectionName = Request.GetFormField("input__key-" + i);
+      var sectionSales = Request.GetFormField("input__sales-" + i);
+      var rowSales = sectionSales.split("\r\n");
+  
+      // Write data to EML_CAMPAIGNS
+      var detailsRows = Platform.Function.UpsertDE("EML_CAMPAIGNS",["EmailName"],[emailName],
+        ["ModifiedTimestamp", "ModifiedBy"],
+        [utcTime, editorUsername]
+      );
+  
+      // Write data to EML_SALE_SECTIONS
+      var sectionRows = Platform.Function.UpsertDE("EML_SALE_SECTIONS",
+        ["EmailName", "SectionID"],[emailName, i],
+        ["SectionName", "RowCount", "ModifiedTimestamp", "ModifiedBy"],
+        [sectionName, rowSales.length, utcTime, editorUsername]
+      );
+  
+      // Write data to EML_SALE_SELECTIONS
+      for (var j = 0; j < rowSales.length; j++) {
+        var row = row + 1;
+        var saleId = rowSales[j];
+        if(saleId!='' && saleId!=null){
+          var sectionRows = Platform.Function.UpsertDE("EML_SALE_SELECTIONS",
+            ["EmailName", "ProductID"],[emailName, saleId],
+            ["ApplicationDomain", "SectionID", "SectionName", "Position"],
+            [applicationDomain, i, sectionName, row]
+          );
+        }
+      }
+    }
+  
+    // redirect user on to population page
+    var url = 'https://pages.email.secretescapes.com/aurora/campaign/populate?c=' + emailName + '&type=add';
+    Redirect(url,false);
+  </script>

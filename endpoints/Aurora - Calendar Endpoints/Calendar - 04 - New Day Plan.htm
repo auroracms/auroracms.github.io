@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <script runat=server>
+      Platform.Load("Core","1");
+      HTTPHeader.SetValue("Access-Control-Allow-Methods","POST");
+      HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+      
+      // retrieve form data
+      var guid1 = Platform.Function.GUID();
+      var guid2 = Platform.Function.GUID();
+      var guid3 = Platform.Function.GUID();
+      var guid4 = Platform.Function.GUID();
+      var guid5 = Platform.Function.GUID();
+      var startDate = Request.GetFormField("input__campaign-date");
+      var endDate = new Date(Request.GetFormField("input__campaign-date"));
+      var endDate = new Date(endDate.getUTCFullYear(), endDate.getUTCMonth(), endDate.getUTCDate()+1);
+      var territory = Request.GetFormField("input__cterritory"); 
+      var eventOne = Request.GetFormField("input__campaign-1");
+      var descriptionOne = Request.GetFormField("input__description-1");
+      var eventTwo = Request.GetFormField("input__campaign-2");
+      var descriptionTwo = Request.GetFormField("input__description-2");
+      var eventThree = Request.GetFormField("input__campaign-3");
+      var descriptionThree = Request.GetFormField("input__description-3");
+      var eventFour = Request.GetFormField("input__campaign-4");
+      var descriptionFour = Request.GetFormField("input__description-4");
+      var banner = Request.GetFormField("input__banner");
+
+      // define system functions
+      var systime = new Date();
+      var utcTime = new Date(systime.getUTCFullYear(), systime.getUTCMonth(), systime.getUTCDate(), systime.getUTCHours(), systime.getUTCMinutes());
+
+      if(eventOne!=''){
+        var rows = Platform.Function.UpsertDE("AURORA_CMS_PLANNER",["ID"],[guid1],
+          ["EventType","EventName", "Territory", "Description","StartDate","EndDate","ModifiedTimestamp"],
+          ['Campaign', eventOne, territory, descriptionOne, startDate, endDate, utcTime]
+        );
+      }
+
+      if(eventTwo!=''){
+        var rows = Platform.Function.UpsertDE("AURORA_CMS_PLANNER",["ID"],[guid2],
+          ["EventType","EventName", "Territory", "Description","StartDate","EndDate","ModifiedTimestamp"],
+          ['Campaign', eventTwo, territory, descriptionTwo, startDate, endDate, utcTime]
+        );
+      }
+
+      if(eventThree!=''){
+        var rows = Platform.Function.UpsertDE("AURORA_CMS_PLANNER",["ID"],[guid3],
+          ["EventType","EventName", "Territory", "Description","StartDate","EndDate","ModifiedTimestamp"],
+          ['Campaign', eventThree, territory, descriptionThree, startDate, endDate, utcTime]
+        );
+      }
+
+      if(eventFour!=''){
+        var rows = Platform.Function.UpsertDE("AURORA_CMS_PLANNER",["ID"],[guid4],
+          ["EventType","EventName", "Territory", "Description","StartDate","EndDate","ModifiedTimestamp"],
+          ['Incremental', eventFour, territory, descriptionFour, startDate, endDate, utcTime]
+        );
+      }
+
+      if(banner!=''){
+        var rows = Platform.Function.UpsertDE("AURORA_CMS_PLANNER",["ID"],[guid5],
+          ["EventType","EventName", "Territory", "StartDate","EndDate","ModifiedTimestamp"],
+          ['Banner', banner, territory, startDate, endDate, utcTime]
+        );
+      }
+
+      Platform.Response.Redirect('https://auroracms.github.io/email-builder/');
+    </script>
+  </head>
+  <body class="slds-brand-band slds-brand-band_medium">&nbsp;</body>
+</html>

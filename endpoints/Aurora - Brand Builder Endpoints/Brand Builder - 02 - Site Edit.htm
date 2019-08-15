@@ -1,0 +1,44 @@
+<script runat="server">
+    Platform.Load("Core","1");
+    HTTPHeader.SetValue("Access-Control-Allow-Methods","POST"); 
+    HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+    
+    // define time functions
+    var systime = new Date();
+    var utcTime = new Date(systime.getUTCFullYear(), systime.getUTCMonth(), systime.getUTCDate(), systime.getUTCHours(), systime.getUTCMinutes());
+  
+    // retrieve form data
+    var applicationDomain = Request.GetFormField("input__domain");
+    var applicationName = Request.GetFormField("input__name");
+    var applicationType = Request.GetFormField("input__type");
+    var affiliateURL = Request.GetFormField("input__url");
+    var territory = Request.GetFormField("input__appterritory");
+    var locale = Request.GetFormField("input__locale");
+    var applicationStatus = Request.GetFormField("input__status");
+  
+    //email settings
+    var fromName = Request.GetFormField("input__from");
+    var fromAddress = Request.GetFormField("input__address");
+    var emailTitle = Request.GetFormField("input__title");
+    var displayName = Request.GetFormField("input__display");
+    var legalName = Request.GetFormField("input__legal");
+    var signOffName = Request.GetFormField("input__signoff");
+    var termsConditions = Request.GetFormField("input__terms");
+  
+    //integration settings
+    var jetloreID = Request.GetFormField("input__jid");
+    var jetloreFeed = Request.GetFormField("input__jfeed");
+    var trustPilotID = Request.GetFormField("input__trustpilot");
+    var trustPilotLink = Request.GetFormField("input__tplink");
+  
+    //write variables
+    var siteRows = Platform.Function.UpsertDE("DIM_SITES",["ApplicationDomain"],[applicationDomain],
+        ["ApplicationName", "ApplicationType", "AffiliateURL", "Territory", "Locale", "ApplicationStatus", "FromName", "FromAddress", "EmailTitle", "DisplayName", "LegalName", "SignOffName", 'TermsConditions', "JetloreID", "JetloreFeed", "TrustPilotID", "TrustPilotLink"],
+        [applicationName, applicationType, affiliateURL, territory, locale, applicationStatus, fromName, fromAddress, emailTitle, displayName, legalName, signOffName, termsConditions, jetloreID, jetloreFeed, trustPilotID, trustPilotLink]
+      );
+  
+    // redirect user back to page
+    var url = 'https://auroracms.github.io/email-builder/brand/site.htm?status=success'
+    Redirect(url,false);
+  
+  </script>

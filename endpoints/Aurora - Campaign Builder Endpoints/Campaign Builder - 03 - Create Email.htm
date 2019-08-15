@@ -1,0 +1,82 @@
+<script runat="server">
+  Platform.Load("Core","1");
+  HTTPHeader.SetValue("Access-Control-Allow-Methods","POST"); 
+  HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+  
+  var row = 0;
+
+  // define time functions
+  var systime = new Date();
+  var utcTime = new Date(systime.getUTCFullYear(), systime.getUTCMonth(), systime.getUTCDate(), systime.getUTCHours(), systime.getUTCMinutes());
+
+  // retrieve form data
+  var applicationDomain = Request.GetFormField("input__brand-picker");
+  var sendDate = new Date(Request.GetFormField("input__date"));
+  var sendTimestamp = new Date(Request.GetFormField("input__date") + ' ' + Request.GetFormField("input__time"));
+
+  var territory = Request.GetFormField("input__territory");
+
+  var campaignLevel0 = Request.GetFormField("input__campaign_zero");
+  var campaignLevel1 = Request.GetFormField("input__campaign_one");
+  var campaignLevel2 = Request.GetFormField("input__campaign_two");
+  var campaignLevel3 = Request.GetFormField("input__campaign_three");
+  var layoutName = Request.GetFormField("input__layout");
+
+  var description = Request.GetFormField("input__description");
+  var emailName = Request.GetFormField("input__campaign");
+  var campaignName = Request.GetFormField("input__campaign");
+  var sectionCount = parseInt(Request.GetFormField("input__count"))+1;
+  var editorUsername = Request.GetFormField("input__editor");
+
+  
+  // Write data to EML_CAMPAIGNS
+  if(input__campaign != ''){
+    var detailsRows = Platform.Function.UpsertDE("EML_CAMPAIGNS",["EmailName"],[emailName],
+      ["ApplicationDomain", "Territory", "CategoryLevel0", "CategoryLevel1", "CategoryLevel2", "CategoryLevel3", "Layout", "SendDate", "SendTimestamp", "Description", "CreatedBy", "CreatedTimestamp"],
+      [applicationDomain, territory, campaignLevel0, campaignLevel1, campaignLevel2, campaignLevel3, layoutName, sendDate, sendTimestamp, description, editorUsername, utcTime]
+    );
+  }
+
+  // Write data to EML_SALE_SECTIONS and EML_SALE_SELECTIONS
+  if(campaignLevel0=='Jetlore'){
+    for (i = 1; i < sectionCount; i++) {
+      var productCount = Request.GetFormField("input__count-" + i);
+      var sectionTag = Request.GetFormField("input__tag-" + i);
+      
+      // Write data to EML_SALE_SECTIONS
+      var sectionRows = Platform.Function.UpsertDE("EML_SALE_SECTIONS",
+        ["EmailName", "SectionID"],[emailName, i],
+        ["SectionName", "RowCount", "ModifiedTimestamp", "ModifiedBy"],
+        [sectionTag, productCount, utcTime, editorUsername]);
+
+    };
+  } else {
+    for (i = 1; i < sectionCount; i++) {
+      var sectionName = Request.GetFormField("input__key-" + i);
+      var sectionSales = Request.GetFormField("input__sales-" + i);
+      var rowSales = sectionSales.split("\r\n");
+  
+      // Write data to EML_SALE_SECTIONS
+      var sectionRows = Platform.Function.UpsertDE("EML_SALE_SECTIONS",
+        ["EmailName", "SectionID"],[emailName, i],
+        ["SectionName", "RowCount", "ModifiedTimestamp", "ModifiedBy"],
+        [sectionName, rowSales.length, utcTime, editorUsername]);
+  
+      // Write data to EML_SALE_SELECTIONS
+      for (var j = 0; j < rowSales.length; j++) {
+        var row = row + 1;
+        var saleId = rowSales[j];
+        if(saleId!='' && saleId!=null){
+          var sectionRows = Platform.Function.UpsertDE("EML_SALE_SELECTIONS",
+            ["EmailName", "ProductID"],[emailName, saleId],
+            ["ApplicationDomain", "SectionID", "SectionName", "Position"],
+            [applicationDomain, i, sectionName, row]
+          );
+        }
+      }
+    }
+  }
+  // redirect user on to population page
+  var url = 'https://pages.email.secretescapes.com/aurora/campaign/populate?c=' + emailName;
+  Redirect(url,false);
+</script>

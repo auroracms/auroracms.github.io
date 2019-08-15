@@ -1,0 +1,26 @@
+<script runat="server">
+  Platform.Load("Core","1");
+  HTTPHeader.SetValue("Access-Control-Allow-Methods","POST"); 
+  HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+
+  // define time functions
+  var systime = new Date();
+  var utcTime = new Date(systime.getUTCFullYear(), systime.getUTCMonth(), systime.getUTCDate(), systime.getUTCHours(), systime.getUTCMinutes());
+
+  // retrieve form data
+  var emailName = Request.GetQueryStringParameter("c");
+
+  // data extension
+  var campaignDE = DataExtension.Init("EML_CAMPAIGNS"); // EML_CAMPAIGNS
+  var sectionsDE = DataExtension.Init("EML_SALE_SECTIONS"); // EML_SALE_SECTIONS
+  var productsDE = DataExtension.Init("EML_SALE_SELECTIONS"); // EML_SALE_SELECTIONS
+
+  // delete campaign
+  campaignDE.Rows.Remove(["EmailName"], [emailName]);
+  sectionsDE.Rows.Remove(["EmailName"], [emailName]);
+  productsDE.Rows.Remove(["EmailName"], [emailName]);
+
+  // redirect user on to population page
+  var url = 'https://auroracms.github.io/email-builder/calendar.htm';
+  Redirect(url,false);
+</script>

@@ -1,0 +1,43 @@
+<script runat = server >
+    Platform.Load("Core", "1");
+    HTTPHeader.SetValue("Access-Control-Allow-Methods","GET");
+    HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+  
+    var start = new Date(Request.GetQueryStringParameter("start"));
+    var rangeStart = new Date(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()-30);
+    var end = new Date(Request.GetQueryStringParameter("end"));
+    var rangeEnd = new Date(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()+30);
+    var territory= Request.GetQueryStringParameter("t");
+  
+    // filter for start and end dates
+    var filterDates = {
+      LeftOperand: {Property: "StartDate", SimpleOperator: "greaterThanOrEqual", Value: rangeStart},
+      LogicalOperator: "AND",
+      RightOperand: {Property: "StartDate", SimpleOperator: "lessThanOrEqual", Value: rangeEnd}
+    };
+    
+    // filter for data retrieve
+    var filterData = {
+      LeftOperand: filterDates,
+      LogicalOperator: "AND",
+      RightOperand: {Property: "Territory", SimpleOperator: "equals", Value: territory}
+    };
+  
+    // retrieve data
+    var plannerDE = DataExtension.Init("AURORA_CMS_PLANNER");
+    var plannerData = plannerDE.Rows.Retrieve(filterData);
+    var multiArray = [];
+  
+  
+    for (i = 0; i < plannerData.length; i++) {
+      var eventType = plannerData[i]["EventType"];
+      var emailName = plannerData[i]["EventName"];
+      var startDate = Format(plannerData[i]["StartDate"],"yyyy-MM-dd");
+      var endDate = Format(plannerData[i]["EndDate"],"yyyy-MM-dd");
+      var url = 'TBC';
+  
+      if(eventType=='Campaign'){var color = '#0070d2';} else if(eventType=='Incremental'){var color = '#4bca81';} else if(eventType=='Test'){var color = '#16325c';} else {var color = '#3e4041';}
+      multiArray.push({title: emailName, start: startDate, end: endDate, backgroundColor: color, borderColor: color, className: 'slds-text-title_caps slds-text-align_center slds-p-around_xx-small'});
+    }
+    Write(Stringify(multiArray));
+  </script>

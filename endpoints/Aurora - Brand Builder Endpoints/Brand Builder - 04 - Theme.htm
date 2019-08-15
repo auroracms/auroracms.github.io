@@ -1,0 +1,58 @@
+<script runat="server">
+    Platform.Load("Core","1");
+    HTTPHeader.SetValue("Access-Control-Allow-Methods","POST"); 
+    HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+    
+    // define time functions
+    var systime = new Date();
+    var utcTime = new Date(systime.getUTCFullYear(), systime.getUTCMonth(), systime.getUTCDate(), systime.getUTCHours(), systime.getUTCMinutes());
+  
+    // retrieve form data
+    var ThemeID = Request.GetFormField("input__id");
+    var ThemeName = Request.GetFormField("input__name");
+    var Logo = Request.GetFormField("input__logo");
+    var LogoWidth = Request.GetFormField("input__width");
+    var LogoIcon = Request.GetFormField("input__icon");
+    var FontFamily = Request.GetFormField("input__font");
+    var FontFamilyTitle = Request.GetFormField("input__title");
+    var FontFamilyContent = Request.GetFormField("input__font_content");
+    var HeaderColor = Request.GetFormField("input__headercolour");
+    var HeaderFontColor1 = Request.GetFormField("input__headerfontcolor1");
+    var HeaderFontColor2 = Request.GetFormField("input__headerfontcolor2");
+    var BodyColor = Request.GetFormField("input__bodycolor");
+    var BodyFontColor1 = Request.GetFormField("input__bodyfontcolor1");
+    var BodyFontColor2 = Request.GetFormField("input__bodyfontcolor2");
+    var BodyFontColor3 = Request.GetFormField("input__bodyfontcolor3");
+    var PrimaryButtonColor = Request.GetFormField("input__buttoncolor");
+    var PrimaryButtonHoverColor = Request.GetFormField("input__buttonhover");
+    var PrimaryButtonFontColor1 = Request.GetFormField("input__buttonfontcolor");
+    var SecondButtonColor = Request.GetFormField("input__secondcolor");
+    var SecondButtonHoverColor = Request.GetFormField("input__secondhover");
+    var SecondButtonFontColor1 = Request.GetFormField("input__secondfontcolor");
+    var ArticleColor = Request.GetFormField("input__articlecolor");
+    var ArticleFontColor1 = Request.GetFormField("input__articlefontcolor1");
+    var ArticleFontColor2 = Request.GetFormField("input__articlefontcolor2");
+    var ArticleFontColor3 = Request.GetFormField("input__articlefontcolor3");
+    var SaleCardColor = Request.GetFormField("input__cardcolor");
+    var SaleCardFontColor1 = Request.GetFormField("input__cardfontcolor1");
+    var SaleCardFontColor2 = Request.GetFormField("input__cardfontcolor2");
+    var SaleCardFontColor3 = Request.GetFormField("input__cardfontcolor3");
+    var SaleCardFontColor4 = Request.GetFormField("input__cardfontcolor4");  
+    var SignOffColor = Request.GetFormField("input__signcolor");
+    var SignOffFontColor1 = Request.GetFormField("input__signfontcolor1");
+    var SignOffFontColor2 = Request.GetFormField("input__signfontcolor2");
+    var FooterColor = Request.GetFormField("input__footercolor");
+    var FooterFontColor1 = Request.GetFormField("input__footerfontcolor1");
+    var FooterFontColor2 = Request.GetFormField("input__footerfontcolor2");
+  
+    //write variables
+    var siteRows = Platform.Function.UpsertDE("STAGING_DIM_THEMES",["ThemeID"],[ThemeID],
+      ["ThemeName", "Logo", "LogoWidth", "LogoIcon", "FontFamily", "FontFamilyTitle", "FontFamilyContent", "HeaderColor", "HeaderFontColor1", "HeaderFontColor2", "BodyColor", "BodyFontColor1", "BodyFontColor2", "BodyFontColor3", "PrimaryButtonColor", "PrimaryButtonHoverColor", "PrimaryButtonFontColor1", "SecondButtonColor", "SecondButtonHoverColor", "SecondButtonFontColor1", "ArticleColor", "ArticleFontColor1", "ArticleFontColor2", "ArticleFontColor3", "SaleCardColor", "SaleCardFontColor1", "SaleCardFontColor2", "SaleCardFontColor3", "SaleCardFontColor4", "SignOffColor", "SignOffFontColor1", "SignOffFontColor2", "FooterColor", "FooterFontColor1", "FooterFontColor2", "ModifiedTimestamp"],
+      [ThemeName, Logo, LogoWidth, LogoIcon, FontFamily, FontFamilyTitle, FontFamilyContent, HeaderColor, HeaderFontColor1, HeaderFontColor2, BodyColor, BodyFontColor1, BodyFontColor2, BodyFontColor3, PrimaryButtonColor, PrimaryButtonHoverColor, PrimaryButtonFontColor1, SecondButtonColor, SecondButtonHoverColor, SecondButtonFontColor1, ArticleColor, ArticleFontColor1, ArticleFontColor2, ArticleFontColor3, SaleCardColor, SaleCardFontColor1, SaleCardFontColor2, SaleCardFontColor3, SaleCardFontColor4, SignOffColor, SignOffFontColor1, SignOffFontColor2, FooterColor, FooterFontColor1, FooterFontColor2, utcTime]
+    );
+    
+    // redirect user back to page
+    var url = 'https://auroracms.github.io/email-builder/brand/theme.htm?status=success'
+    Redirect(url,false);
+  
+  </script>

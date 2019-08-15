@@ -1,0 +1,17 @@
+<script runat = server >
+    Platform.Load("Core", "1");
+    HTTPHeader.SetValue("Access-Control-Allow-Methods","GET");
+    HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+    
+    // initiate data extensions
+    var themeDE = DataExtension.Init("DIM_THEMES");
+    var theme = Request.GetQueryStringParameter("id");
+  
+    // retrieve data
+    if(theme!=''&&theme!=null){
+      var themeData = themeDE.Rows.Retrieve({Property: "ThemeID", SimpleOperator: "equals", Value: theme});
+    } else {
+      var themeData = themeDE.Rows.Retrieve();
+    }
+    Write(Stringify(themeData))
+  </script>

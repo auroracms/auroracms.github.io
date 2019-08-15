@@ -1,0 +1,30 @@
+<script runat=server>
+    Platform.Load("Core","1");
+    HTTPHeader.SetValue("Access-Control-Allow-Methods","GET");
+    HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+    
+    var accountID = Request.GetQueryStringParameter("u");
+    var password = Request.GetQueryStringParameter("p");
+    var loginFilter = {
+      LeftOperand:{Property:"Username",SimpleOperator:"equals",Value: accountID},
+      LogicalOperator:"AND",
+      RightOperand:{Property:"Password",SimpleOperator:"equals",Value: password}
+    };
+    var loginDE = DataExtension.Init("AURORA_CMS_USERS");
+    var userData = loginDE.Rows.Retrieve({Property:"Username",SimpleOperator:"equals",Value: accountID});
+    var loginData = loginDE.Rows.Retrieve(loginFilter);
+     
+  
+    // Output data
+    if(userData.length>0 && loginData.length>0) {
+      var authPayload = Platform.Function.ParseJSON('{"authorisation": 1, "message": '+Stringify(userData)+'}');
+      loginDE.Rows.Update({LoginTimestamp:DateTime.SystemDateToLocalDate(Now())}, ["Username"], [accountID]);
+      Write(Stringify(authPayload))
+    } else if(userData.length>0) {
+      var authPayload = Platform.Function.ParseJSON('{"authorisation": -1, "message": "Invalid password"}');
+      Write(Stringify(authPayload))
+    } else {
+      var authPayload = Platform.Function.ParseJSON('{"authorisation": -2, "message": "No user found"}');
+      Write(Stringify(authPayload))
+    }
+  </script>

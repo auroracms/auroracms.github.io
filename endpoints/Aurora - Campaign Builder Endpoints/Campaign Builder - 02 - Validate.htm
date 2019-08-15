@@ -1,0 +1,16 @@
+<script runat = server >
+  Platform.Load("Core", "1");
+  HTTPHeader.SetValue("Access-Control-Allow-Methods","GET");
+  HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+  
+  // initiate data extensions
+  var campaignDE = DataExtension.Init("E030FE79-3ECA-49E9-8A71-CE23F3BAD505"); // STAGING_EML_CAMPAIGN_DETAILS
+  var sectionDE = DataExtension.Init("899E7474-9C99-437A-B42F-CFCDFA5F38DC"); // STAGING_EML_CAMPAIGN_SECTIONS
+  var productsDE = DataExtension.Init("6E7FBF18-3A09-4C7C-8F00-8CA113C2D35B"); // STAGING_EML_CAMPAIGN_PRODUCTS
+
+
+  // retrieve data
+  var campaign = Request.GetQueryStringParameter("c");
+  var campaignData = campaignDE.Rows.Retrieve({Property: "EmailName", SimpleOperator: "equals", Value: campaign});
+  Write(Stringify(campaignData));
+</script>

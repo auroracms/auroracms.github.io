@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="refresh" content="5;url=https://auroracms.github.io/" />
+    <title>Welcome to Aurora</title>
+    <link href="https://auroracms.github.io/assets/styles/salesforce-lightning-design-system.min.css" rel="stylesheet"/>
+    <script runat=server>
+      Platform.Load("Core","1");
+      HTTPHeader.SetValue("Access-Control-Allow-Methods","POST");
+      HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+      
+      // retrieve form data
+      var email = Request.GetFormField("input__email");
+      var password = Base64Encode(Request.GetFormField("input__password"));
+      var password = password.replace(/=/g,'');
+      var fName = Request.GetFormField("input__fname"); 
+      var lName = Request.GetFormField("input__lname"); 
+      var fullname = fName + ' ' + lName;
+      var territory = Request.GetFormField("input__territory");
+      var avatar = Request.GetFormField("input__avatar");
+
+      // define system functions
+      var systime = new Date();
+      var utcTime = new Date(systime.getUTCFullYear(), systime.getUTCMonth(), systime.getUTCDate(), systime.getUTCHours(), systime.getUTCMinutes());
+      var accountID = Platform.Function.GUID();
+
+      // define data extension functions
+      var loginDE = DataExtension.Init("AURORA_CMS_USERS"); // DE containing user details MERLIN_V2_USER_INFO
+      var loginData = loginDE.Rows.Retrieve({Property:"Username", SimpleOperator:"equals", Value: email});
+
+    // Validate sign up
+      if(loginData.length==0 && email!=''){
+        loginDE.Rows.Add({
+          Username: email, 
+          Password: password, 
+          AccountID: accountID,
+          AccountStatus: 'Active', 
+          AccountType:'Standard',
+          Avatar: avatar,
+          FirstName: fName,
+          FullName: fullname, 
+          LastName: lName, 
+          Territory: territory,
+          ModifiedTimestamp: utcTime
+        });
+        Variable.SetValue("Header","Your new account has been created");
+        Variable.SetValue("Body","Redirecting you back to the log in page.");
+      } else if(loginData.length==0){
+        Variable.SetValue("Header","An error has occurred");
+        Variable.SetValue("Body","Redirecting you back to the log in page.");
+      } else {
+        Variable.SetValue("Header","Account already exists");
+        Variable.SetValue("Body","Redirecting you back to the log in page.");
+      }
+    </script>
+  </head>
+  <body class="slds-brand-band slds-brand-band_medium">
+    <div class="demo-only" style="height: 24rem;">
+      <section role="alertdialog" tabindex="-1" aria-labelledby="prompt-heading-id" aria-describedby="prompt-message-wrapper" class="slds-modal slds-fade-in-open slds-modal_prompt" aria-modal="true">
+        <div class="slds-modal__container">
+          <header class="slds-modal__header slds-theme_error slds-theme_alert-texture">
+            <h2 class="slds-text-heading_medium" id="prompt-heading-id">%%=v(@Header)=%%</h2>
+          </header>
+          <div class="slds-modal__content slds-p-around_medium" id="prompt-message-wrapper">
+            <p>%%=v(@Body)=%%</p>
+          </div>
+        </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+  </body>
+</html>

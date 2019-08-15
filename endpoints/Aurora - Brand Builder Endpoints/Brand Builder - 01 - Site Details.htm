@@ -1,0 +1,17 @@
+<script runat = server >
+    Platform.Load("Core", "1");
+    HTTPHeader.SetValue("Access-Control-Allow-Methods","GET");
+    HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+    
+    // initiate data extensions
+    var siteDE = DataExtension.Init("DIM_SITES");
+    var brand = Request.GetQueryStringParameter("u");
+  
+    // retrieve data
+    if(brand!=''&&brand!=null){
+      var siteData = siteDE.Rows.Retrieve({Property: "ApplicationDomain", SimpleOperator: "equals", Value: brand});
+    } else {
+      var siteData = siteDE.Rows.Retrieve();
+    }
+    Write(Stringify(siteData))
+  </script>

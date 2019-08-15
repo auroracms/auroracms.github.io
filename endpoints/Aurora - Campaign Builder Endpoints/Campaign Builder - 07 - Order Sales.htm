@@ -1,0 +1,41 @@
+<script runat="server">
+  Platform.Load("Core","1");
+  HTTPHeader.SetValue("Access-Control-Allow-Methods","POST"); 
+  HTTPHeader.SetValue("Access-Control-Allow-Origin","https://auroracms.github.io");
+
+  // define time functions
+  var systime = new Date();
+  var utcTime = new Date(systime.getUTCFullYear(), systime.getUTCMonth(), systime.getUTCDate(), systime.getUTCHours(), systime.getUTCMinutes());
+
+  // retrieve process data
+  var emailName = Request.GetQueryStringParameter("c");
+  var orderedList = Request.GetQueryStringParameter("o");
+
+  // retrieve sections
+  var sections = orderedList.split("|");
+  var rowNum = 0;
+
+  for (var i = 0; i < sections.length; i++) {
+    var sectionID = i + 1;
+    var sectionName = Platform.Function.Lookup("EML_SALE_SECTIONS","SectionName","SectionID",sectionID);
+    var rows = sections[i].split("-");
+    for (var j = 0; j < rows.length; j++) {
+      Write(rows[j] + '<br/>');
+      var rowNum = rowNum + 1;
+      // update sections table
+      var selectionRows = Platform.Function.UpsertDE("EML_SALE_SELECTIONS",
+        ["EmailName", "ProductID"],[emailName, rows[j]],
+        ["SectionID", "SectionName", "Position"], [sectionID, sectionName, rowNum]
+      );
+    }
+    // update sections table
+    var sectionRows = Platform.Function.UpsertDE("EML_SALE_SECTIONS",
+      ["EmailName", "SectionID"],[emailName, sectionID],
+      ["RowCount", "ModifiedTimestamp"],[rows.length, utcTime]
+    );
+  }
+
+  // redirect user on to population page
+  var url = 'https://auroracms.github.io/email-builder/campaign?c=' + emailName;
+  Redirect(url,false);
+</script>
